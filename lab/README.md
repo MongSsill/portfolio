@@ -687,3 +687,5 @@ PR #2 브랜치(`lab/ai-game-3`, Chain Echo 포함)에서 분기한 **비교용 
 - 성장 과정 버튼은 글자 17px, 패딩 상하 14px·좌우 22px로 키웠습니다. 테두리 빛은 7초 주기로 회전하고, 타임라인 점은 2.4초 주기로 차례로 켜집니다. 390px에서는 제목 아래 가로 전체 폭에 표시합니다.
 - Playwright에서 1440px 기본·호버·누름 상태, 키보드 포커스 링, 390px 너비와 모션 줄이기, 기존 표시 대상 게임의 팝오버를 확인했습니다.
 - [히어로 1440px](screenshots/hero-v15-1440.png), [성장 과정 1440px](screenshots/ai-head-button-v15-1440.png), [호버 1440px](screenshots/ai-head-button-v15-hover-1440.png), [성장 과정 390px](screenshots/ai-head-button-v15-390.png).
+
+## 16차 — 히어로 상단 라벨을 ‘게임 기획자 · 스토리 연출 · 시스템 / 콘텐츠 기획’으로 변경했습니다.
