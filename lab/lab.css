@@ -899,3 +899,82 @@ html:not(.js) .platform-panel::before { content: attr(aria-labelledby); display:
   .photo-grid.ch2 { grid-template-columns: 1fr 1fr; grid-template-rows: minmax(0, 1.4fr) minmax(0, 1fr); height: calc(var(--stage-h) + 100px); }
   .photo-grid.ch2 figure.big { grid-row: 1; grid-column: 1 / span 2; }
 }
+
+/* ============================================================
+   10차: 창작 게임 Chain Echo 피처드 블록 + 기획서 페이지
+   ============================================================ */
+@font-face {
+  font-family: "Jersey 10";
+  src: url("assets/fonts/Jersey10.ttf") format("truetype");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+.ai-intro { margin: -8px 0 18px; font-size: 14px; color: var(--dk-text-2); }
+.ai-intro b { color: var(--dk-text); font-weight: 700; }
+.badge-original { display: inline-block; margin-left: 8px; padding: 2px 9px; border-radius: 6px; background: var(--dk-accent); color: var(--dk-accent-text); font-size: 11px; font-weight: 800; letter-spacing: .04em; text-transform: none; vertical-align: 1px; }
+.ai-card.featured-game { display: grid; grid-template-columns: 1fr; gap: 18px; border-color: color-mix(in srgb, var(--dk-accent) 45%, var(--dk-border)); box-shadow: 0 0 0 1px color-mix(in srgb, var(--dk-accent) 25%, transparent), var(--shadow); }
+.fg-head { padding: 4px 4px 0; }
+.ai-card h3.fg-title { font-family: "Jersey 10", "Pretendard Variable", sans-serif; font-weight: 400; font-size: 84px; line-height: .95; letter-spacing: .02em; margin: 6px 0 10px; color: #fff; text-shadow: 0 0 28px color-mix(in srgb, var(--dk-accent) 55%, transparent); }
+.fg-pitch { margin: 0; font-size: 19px; line-height: 1.55; font-weight: 600; color: var(--dk-text); max-width: 40em; }
+.fg-visual { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 12px; }
+.fg-visual figure { margin: 0; position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--dk-border); background: #0a0d12; }
+.fg-visual img { width: 100%; height: 100%; object-fit: cover; display: block; aspect-ratio: 960 / 544; }
+.fg-visual figcaption { position: absolute; left: 10px; bottom: 10px; font-size: 11.5px; font-weight: 600; padding: 3px 8px; border-radius: 6px; background: rgba(10, 13, 18, .78); color: #fff; }
+.fg-label { margin: 0 0 8px; display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.fg-label .en { font-size: 11.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--dk-text-3); }
+.fg-label .hint { font-size: 11.5px; color: var(--dk-text-3); }
+.ult-strip { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 6px; }
+.ult-strip li { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.ult-strip .photo-btn { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; border-radius: 8px; overflow: hidden; }
+.ult-strip img { width: 100%; aspect-ratio: 480 / 272; object-fit: cover; display: block; border-radius: 8px; border: 1px solid var(--dk-border); opacity: .62; filter: saturate(.75); transform: scale(1); transition: opacity .25s ease, filter .25s ease, transform .25s ease, box-shadow .25s ease; }
+.ult-strip li.is-on img, .ult-strip .photo-btn:hover img, .ult-strip .photo-btn:focus-visible img { opacity: 1; filter: none; transform: scale(1.04); box-shadow: 0 0 0 2px var(--dk-accent); }
+.ult-strip .photo-btn:focus-visible { outline: 2px solid var(--dk-accent); outline-offset: 2px; }
+.ult-strip .cap { font-size: 11.5px; color: var(--dk-text-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ult-strip .cap b { color: var(--dk-accent); font-weight: 800; margin-right: 4px; font-variant-numeric: tabular-nums; }
+.ult-strip li.is-on .cap { color: var(--dk-text); }
+.fg-body .fg-text { padding: 0 4px; }
+.fg-keys { list-style: none; margin: 14px 0 6px; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.fg-keys li { padding: 12px 14px; border: 1px solid var(--dk-border); border-radius: 10px; background: rgba(255,255,255,.03); font-size: 13.5px; line-height: 1.55; color: var(--dk-text-2); }
+.fg-keys li strong { display: block; color: var(--dk-text); font-size: 14px; margin-bottom: 2px; }
+.fg-keys .k { float: right; font-size: 10.5px; font-weight: 700; color: var(--dk-accent); letter-spacing: .02em; margin-left: 8px; }
+.ai-card.featured-game .actions .btn.ghost { background: transparent; border-color: #34405a; color: var(--dk-text); }
+.ai-card.featured-game .actions .btn.ghost:hover { border-color: var(--dk-accent); color: var(--dk-accent); }
+@media (max-width: 900px) {
+  .ai-card h3.fg-title { font-size: 64px; }
+  .fg-pitch { font-size: 17px; }
+  .fg-visual { grid-template-columns: 1fr; }
+  .ult-strip { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+  .fg-keys { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) { .ai-card h3.fg-title { font-size: 52px; } .ult-strip { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; } .ult-strip .cap { font-size: 10.5px; } }
+@media (prefers-reduced-motion: reduce) { .ult-strip img { transition: none; } }
+
+/* 기획서 페이지 (상세 페이지 톤 위에) */
+.spec-page .spec-head { padding-bottom: 24px; margin-bottom: 32px; border-bottom: 1px solid var(--border); }
+.spec-page .spec-head h1 { font-family: "Jersey 10", "Pretendard Variable", sans-serif; font-weight: 400; font-size: 64px; line-height: 1; letter-spacing: .02em; margin: 14px 0 4px; }
+.spec-page .spec-head h1 small { display: block; font-family: "Pretendard Variable", Pretendard, sans-serif; font-size: 16px; font-weight: 700; letter-spacing: -.01em; margin-top: 8px; color: var(--text-2); }
+.spec-page .meta-grid { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 12px 0 0; font-size: 13.5px; color: var(--text-2); }
+.spec-page .meta-grid b { color: var(--text); font-weight: 700; }
+.spec-page .status { display: inline-block; font-size: 10.5px; font-weight: 700; padding: 1px 7px; border-radius: 5px; letter-spacing: .02em; vertical-align: 1px; white-space: nowrap; }
+.spec-page .status.ok { background: var(--accent-soft); color: var(--accent); }
+.spec-page .status.tmp { background: var(--tag-bg); color: var(--tag-text); }
+.spec-page .status.tbd { background: #fff1e5; color: #a8481a; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .spec-page .status.tbd { background: #3a2415; color: #f2a46a; } }
+.spec-page table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 10px 0 4px; }
+.spec-page th, .spec-page td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.spec-page th { font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--text-3); }
+.spec-page td:first-child { white-space: nowrap; font-weight: 600; color: var(--text); }
+.spec-page .rules { display: grid; gap: 12px; margin: 12px 0 0; }
+.spec-page .rule { padding: 14px 16px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--card); }
+.spec-page .rule h3 { margin: 0 0 6px; font-size: 16px; font-weight: 800; }
+.spec-page .rule p, .spec-page .rule li { color: var(--text-2); font-size: 14px; }
+.spec-page .rule ul { margin: 4px 0 0; padding-left: 18px; }
+.spec-page .stages td:nth-child(2) { font-weight: 700; color: var(--text); white-space: nowrap; }
+.spec-page .tbd-list { columns: 2; column-gap: 24px; padding-left: 20px; color: var(--text-2); font-size: 14px; }
+.spec-page .tbd-list li { break-inside: avoid; margin: 3px 0; }
+.spec-page .ult-strip { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-top: 8px; }
+.spec-page .ult-strip img { opacity: 1; filter: none; border-color: var(--border); }
+.spec-page .ult-strip .cap { color: var(--text-3); }
+.spec-page .ult-strip .cap b { color: var(--accent); }
+.spec-page .ult-strip li.is-on img { box-shadow: 0 0 0 2px var(--accent); }
+.spec-page .dark-note { padding: 12px 14px; border-radius: var(--radius-sm); background: var(--bg-soft); border: 1px solid var(--border); font-size: 13px; color: var(--text-2); margin: 16px 0 0; }
+@media (max-width: 560px) { .spec-page .spec-head h1 { font-size: 48px; } .spec-page .tbd-list { columns: 1; } .spec-page table { font-size: 13px; } .spec-page td:first-child { white-space: normal; } }
