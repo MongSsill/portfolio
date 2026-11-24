@@ -445,3 +445,93 @@
 | 해제 | ✕ 클릭 | [21, 15, 38] |
 | 스크롤바 | `scrollbar-width` 계산값 | none / none |
 | JS 오류 | pageerror·console.error 수집 | 0 / 0 |
+
+---
+
+## 8차 (2026-11-24): 커버 정리 · 리듬 통합 · 마리오 파티 DS · 게임 밖 활동 챕터형 · AI 캐러셀 깨짐 수정
+
+같은 브랜치에 쌓은 여덟 번째 변경입니다. 기존 파일은 여전히 건드리지 않았습니다.
+
+### 커버 교체 (가로 키아트 레터박스 → 바른 비율의 공식 이미지)
+
+- **모바일 15종 전부 → 공식 앱 아이콘**(App Store KR `artworkUrl` 1024 원본 → 512×512 WebP). 모바일 줄 타일은 **1:1 정사각 + 둥근 모서리(22%)**, 높이는 다른 줄과 같은 184px(모바일 폭에서 165px). 작업으로 이어진 게임 줄의 리버스: 1999 · 몬길: STAR DIVE 카드와 팝오버도 정사각으로 바뀝니다. Mini Warriors 는 스토어에 없어 **주인 제공 아이콘**을 썼습니다.
+- **콘솔 29종 → 박스아트**. 닌텐도 KR 스토어와 nintendo.com(US) 제품 페이지의 og:image 는 모두 16:9 키아트라 박스아트로 쓸 수 없어, **Wikipedia 문서의 박스아트 파일(③)** 을 썼습니다. DS·GBA·Wii 패키지는 거의 정사각(세로 1.2배 미만)이라 3:4 틀에 **박스 대표색을 어둡게 한 단색 패드** 위에 원본 비율 그대로 올렸습니다(흐린 배경 없음). 세로형 박스(슈퍼 페이퍼 마리오, 털실 커비 이야기, 페이퍼 마리오 1000년의 문, 리듬 히어로)는 3:4 크롭. 짱구는 못말려 DS 는 **주인 제공 박스아트**.
+- **PC 2종**: 리그 오브 레전드는 Riot 공식 세로 키아트를 찾지 못해 **로고(Wikimedia Commons SVG)를 가운데 둔 단색 타일**(Riot 남색 `#0a1428`), 방구석에 인어아가씨(모바일 앱이지만 PC 줄)는 **앱 아이콘을 가운데 둔 단색 타일**. 나머지 PC 19종은 Steam 세로 캡슐 그대로.
+- 메인 카드(메이플스토리)는 가로 이미지가 맞으니 그대로. 커버 폴더 총 2.0MB(74장).
+
+**교체 전/후: 46장** (모바일 15 / 콘솔 29 / PC 2). 구분: ① 15 · ③ 29 · 주인 제공 2. **글자 타일 0.**
+
+여전히 세로형 박스아트가 아닌 것(가로·정사각 원본을 단색 패드에 올린 것): 젤다의 전설 지혜의 투영(en 위키 infobox 가 가로 키아트), 포켓몬스터소드·바이올렛·DP(위키 infobox 가 두 버전 패키지를 나란히 놓은 가로 합성), 마리오 vs. 동키콩(2024 리메이크 Switch 아이콘 — 문서의 박스아트 파일은 GBA 원작), 그 밖의 DS 패키지 20종(원래 거의 정사각).
+
+| 플랫폼 | 게임 | 파일 | 교체 전 (6차) | 교체 후 (8차) | 구분 | 처리 |
+|---|---|---|---|---|---|---|
+| 모바일 | 리버스: 1999 | `reverse1999.webp` | https://re1999.bluepoch.com/ og:image (레터박스) | App Store KR 앱 아이콘(1024) https://apps.apple.com/kr/app/id6449023119 | ① | 1:1 아이콘 |
+| 모바일 | 승리의 여신: 니케 | `nikke.webp` | https://nikke-kr.com/ og:image (레터박스) | App Store KR 앱 아이콘(1024) https://apps.apple.com/kr/app/id1585915174 | ① | 1:1 아이콘 |
+| 모바일 | 블루 아카이브 | `blue-archive.webp` | https://bluearchive.nexon.com/ og:image (레터박스) | App Store KR 앱 아이콘(1024) https://apps.apple.com/kr/app/id1571873795 | ① | 1:1 아이콘 |
+| 모바일 | 원신 | `genshin.webp` | https://genshin.hoyoverse.com/ko/home og:image (크롭) | App Store KR 앱 아이콘(1024) https://apps.apple.com/kr/app/id1517783697 | ① | 1:1 아이콘 |
+| 모바일 | 트릭컬 리바이브 | `trickcal-revive.webp` | App Store KR 앱 아이콘 https://apps.apple.com/kr/app/id6443824730 (letterbox) | App Store KR 앱 아이콘(1024) https://apps.apple.com/kr/app/id6443824730 | ① | 1:1 아이콘 |
+| 모바일 | 젠레스 존 제로 | `zenless-zone-zero.webp` | App Store KR 앱 아이콘 https://apps.apple.com/kr/app/id1606356401 (letterbox) | App Store KR 앱 아이콘(1024) https://apps.apple.com/kr/app/id1606356401 | ① | 1:1 아이콘 |
+| 모바일 | 스텔라 소라 | `stella-sora.webp` | App Store KR 앱 아이콘 https://apps.apple.com/kr/app/id6738407268 (letterbox) | App Store KR 앱 아이콘(1024) https://apps.apple.com/kr/app/id6738407268 | ① | 1:1 아이콘 |
+| 모바일 | 헤븐 번즈 레드 | `heaven-burns-red.webp` | App Store KR 앱 아이콘 https://apps.apple.com/kr/app/id1576831351 (letterbox) | App Store KR 앱 아이콘(1024) https://apps.apple.com/kr/app/id1576831351 | ① | 1:1 아이콘 |
+| 모바일 | 몬길: STAR DIVE | `mongil-stardive.webp` | 몬길: STAR DIVE 공식 사이트 og:image https://stardive.netmarble.com/ (letterbox) | App Store KR 앱 아이콘(1024) https://apps.apple.com/kr/app/id6483252725 | ① | 1:1 아이콘 |
+| 모바일 | 쿠키런: 킹덤 | `cookierun-kingdom.webp` | https://www.cookierun-kingdom.com/ko/ og:image (크롭) | App Store KR 앱 아이콘(1024) https://apps.apple.com/kr/app/id1509450845 | ① | 1:1 아이콘 |
+| 모바일 | 세븐나이츠 키우기 | `seven-knights-idle.webp` | App Store KR 앱 아이콘 https://apps.apple.com/kr/app/id1658717149 (letterbox) | App Store KR 앱 아이콘(1024) https://apps.apple.com/kr/app/id1658717149 | ① | 1:1 아이콘 |
+| 모바일 | 전략적 팀 전투 | `tft.webp` | App Store KR 앱 아이콘 https://apps.apple.com/kr/app/id1480616748 (letterbox) | App Store KR 앱 아이콘(1024) https://apps.apple.com/kr/app/id1480616748 | ① | 1:1 아이콘 |
+| 모바일 | 브롤스타즈 | `brawl-stars.webp` | https://supercell.com/en/games/brawlstars/ og:image (크롭) | App Store KR 앱 아이콘(1024) https://apps.apple.com/kr/app/id1229016807 | ① | 1:1 아이콘 |
+| 모바일 | Pokémon GO | `pokemon-go.webp` | App Store KR 앱 아이콘 https://apps.apple.com/kr/app/id1094591345 (letterbox) | App Store KR 앱 아이콘(1024) https://apps.apple.com/kr/app/id1094591345 | ① | 1:1 아이콘 |
+| 모바일 | Mini Warriors ※ | `mini-warriors.webp` | 글자 타일 | 주인이 직접 제공한 앱 아이콘 owner-images/mini-warriors-icon.png | 주인 제공 | 1:1 아이콘 |
+| PC | 리그 오브 레전드 | `lol.webp` | https://www.leagueoflegends.com/ko-kr/ og:image (가로 키아트, 레터박스) | Wikimedia Commons 파일 https://commons.wikimedia.org/wiki/File:League%20of%20Legends%202019%20vector.svg | ③ | 로고 단색 타일 |
+| PC | 방구석에 인어아가씨 | `mermaid-in-my-room.webp` | App Store KR 앱 아이콘 https://apps.apple.com/kr/app/id904882274 (letterbox) | App Store KR 앱 아이콘(1024) https://apps.apple.com/kr/app/id904882274 | ① | 아이콘 단색 타일 |
+| 콘솔 | 젤다의 전설 지혜의 투영 | `zelda-echoes-of-wisdom.webp` | 닌텐도 코리아 스토어 제품 이미지 https://store.nintendo.co.kr/70010000084620 (letterbox) | Wikipedia(en) 문서 박스아트 파일 https://en.wikipedia.org/wiki/The_Legend_of_Zelda%3A_Echoes_of_Wisdom (파일: https://en.wikipedia.org/wiki/File%3AThe%20Legend%20of%20Zelda%20%E2%80%93%20Echoes%20of%20Wisdom.jpg) | ③ | 3:4 단색 패드(박스 비율 유지) |
+| 콘솔 | 젤다의 전설 꿈꾸는 섬 | `zelda-links-awakening.webp` | 닌텐도 코리아 스토어 제품 이미지 https://store.nintendo.co.kr/70010000022823 (letterbox) | Wikipedia(en) 문서 박스아트 파일 https://en.wikipedia.org/wiki/The_Legend_of_Zelda%3A_Link's_Awakening_(2019_video_game) (파일: https://en.wikipedia.org/wiki/File%3AThe%20Legend%20of%20Zelda%20Link's%20Awakening%20(2019%20video%20game).jpg) | ③ | 3:4 단색 패드(박스 비율 유지) |
+| 콘솔 | 젤다의 전설 몽환의 모래시계 ※ | `zelda-phantom-hourglass.webp` | nintendo.co.jp DS 소프트 페이지 https://www.nintendo.co.jp/ds/azej/ (letterbox) | Wikipedia(en) 문서 박스아트 파일 https://en.wikipedia.org/wiki/The_Legend_of_Zelda%3A_Phantom_Hourglass (파일: https://en.wikipedia.org/wiki/File%3AThe%20Legend%20of%20Zelda%20Phantom%20Hourglass%20Game%20Cover.jpg) | ③ | 3:4 단색 패드(박스 비율 유지) |
+| 콘솔 | 포켓몬스터DP 디아루가·펄기아 / 포켓몬스터Pt 기라티나 ※ | `pokemon-dp-pt.webp` | nintendo.co.jp DS 소프트 페이지 https://www.nintendo.co.jp/ds/adaj/ (letterbox) | Wikipedia(en) 문서 박스아트 파일 https://en.wikipedia.org/wiki/Pok%C3%A9mon_Diamond_and_Pearl (파일: https://en.wikipedia.org/wiki/File%3APokemonDiamondPearlBoxArt.jpg) | ③ | 3:4 단색 패드(박스 비율 유지) |
+| 콘솔 | 포켓몬스터소드 | `pokemon-sword.webp` | 닌텐도 코리아 스토어 제품 이미지 https://store.nintendo.co.kr/70010000026251 (letterbox) | Wikipedia(ko) 문서 박스아트 파일 https://ko.wikipedia.org/wiki/%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0_%EC%86%8C%EB%93%9C%C2%B7%EC%8B%A4%EB%93%9C (파일: https://ko.wikipedia.org/wiki/File%3A%ED%8F%AC%EC%BC%93%EB%AA%AC%EC%8A%A4%ED%84%B0_%EC%86%8C%EB%93%9C_%EC%8B%A4%EB%93%9C.png) | ③ | 3:4 단색 패드(박스 비율 유지) |
+| 콘솔 | 포켓몬스터바이올렛 | `pokemon-violet.webp` | 닌텐도 코리아 스토어 제품 이미지 https://store.nintendo.co.kr/70010000053973 (letterbox) | Wikipedia(en) 문서 박스아트 파일 https://en.wikipedia.org/wiki/Pok%C3%A9mon_Scarlet_and_Violet (파일: https://en.wikipedia.org/wiki/File%3APok%C3%A9mon_Scarlet_and_Violet_banner.png) | ③ | 3:4 단색 패드(박스 비율 유지) |
+| 콘솔 | 슈퍼 마리오 64 DS ※ | `super-mario-64-ds.webp` | nintendo.co.jp DS 소프트 페이지 https://www.nintendo.co.jp/ds/asmj/ (letterbox) | Wikipedia(en) 문서 박스아트 파일 https://en.wikipedia.org/wiki/Super_Mario_64_DS (파일: https://en.wikipedia.org/wiki/File%3ASuper%20Mario%2064%20DS%20Coverart.png) | ③ | 3:4 단색 패드(박스 비율 유지) |
+| 콘솔 | 마리오 카트 DS ※ | `mario-kart-ds.webp` | nintendo.co.jp DS 소프트 페이지 https://www.nintendo.co.jp/ds/amcj/ (letterbox) | Wikipedia(en) 문서 박스아트 파일 https://en.wikipedia.org/wiki/Mario_Kart_DS (파일: https://en.wikipedia.org/wiki/File%3AMario%20Kart%20DS%20cover.jpg) | ③ | 3:4 단색 패드(박스 비율 유지) |
+| 콘솔 | 뉴 슈퍼 마리오브라더스 ※ | `new-super-mario-bros.webp` | Wikipedia(en) 문서 infobox 박스아트 파일 https://en.wikipedia.org/wiki/New_Super_Mario_Bros. (letterbox) | Wikipedia(en) 문서 박스아트 파일 https://en.wikipedia.org/wiki/New_Super_Mario_Bros. (파일: https://en.wikipedia.org/wiki/File%3ANewSuperMarioBrothers.jpg) | ③ | 3:4 단색 패드(박스 비율 유지) |
+| 콘솔 | 마리오 vs. 동키콩 | `mario-vs-donkey-kong.webp` | 닌텐도 코리아 스토어 제품 이미지 https://store.nintendo.co.kr/70010000072193 (letterbox) | Wikipedia(en) 문서 박스아트 파일 https://en.wikipedia.org/wiki/Mario_vs._Donkey_Kong_(2024_video_game) (파일: https://en.wikipedia.org/wiki/File%3AMario_vs._Donkey_Kong_Nintendo_Switch_remake_icon.jpg) | ③ | 3:4 단색 패드(박스 비율 유지) |
+| 콘솔 | 슈퍼 마리오 메이커 2 | `super-mario-maker-2.webp` | 닌텐도 코리아 스토어 제품 이미지 https://store.nintendo.co.kr/70010000020843 (letterbox) | Wikipedia(en) 문서 박스아트 파일 https://en.wikipedia.org/wiki/Super_Mario_Maker_2 (파일: https://en.wikipedia.org/wiki/File%3ASuper%20Mario%20Maker%202.jpg) | ③ | 3:4 단색 패드(박스 비율 유지) |
+| 콘솔 | 마리오 파티 DS | `mario-party.webp` | 글자 타일 | Wikipedia(en) 문서 박스아트 파일 https://en.wikipedia.org/wiki/Mario_Party_DS (파일: https://en.wikipedia.org/wiki/File%3AMario_Party_DS_US_cover.jpg) | ③ | 3:4 단색 패드(박스 비율 유지) |
+| 콘솔 | 요시 아일랜드 DS ※ | `yoshis-island-ds.webp` | Wikipedia(en) 문서 infobox 박스아트 파일 https://en.wikipedia.org/wiki/Yoshi's_Island_DS (letterbox) | Wikipedia(en) 문서 박스아트 파일 https://en.wikipedia.org/wiki/Yoshi's_Island_DS (파일: https://en.wikipedia.org/wiki/File%3AYoshi'sIslandDScover.PNG) | ③ | 3:4 단색 패드(박스 비율 유지) |
+| 콘솔 | 슈퍼 페이퍼 마리오 ※ | `super-paper-mario.webp` | nintendo.co.jp Wii 소프트 페이지 https://www.nintendo.co.jp/wii/r8pj/ (letterbox) | Wikipedia(en) 문서 박스아트 파일 https://en.wikipedia.org/wiki/Super_Paper_Mario (파일: https://en.wikipedia.org/wiki/File%3ASuper%20Paper%20Mario%20cover.jpg) | ③ | 3:4 크롭 |
+| 콘솔 | 페이퍼 마리오 1000년의 문 | `paper-mario-ttyd.webp` | 닌텐도 코리아 스토어 제품 이미지 https://store.nintendo.co.kr/70010000079169 (letterbox) | Wikipedia(en) 문서 박스아트 파일 https://en.wikipedia.org/wiki/Paper_Mario%3A_The_Thousand-Year_Door (파일: https://en.wikipedia.org/wiki/File%3APaper%20Mario%20The%20Thousand-Year%20Door%20(artwork).jpg) | ③ | 3:4 크롭 |
+| 콘솔 | 마리오&루이지 RPG 시간의 파트너 ※ | `mario-luigi-partners-in-time.webp` | nintendo.co.jp DS 소프트 페이지 https://www.nintendo.co.jp/ds/armj/ (letterbox) | Wikipedia(en) 문서 박스아트 파일 https://en.wikipedia.org/wiki/Mario_%26_Luigi%3A_Partners_in_Time (파일: https://en.wikipedia.org/wiki/File%3AMario%20%26%20Luigi%20-%20Parnters%20In%20Time%20(box%20art).jpg) | ③ | 3:4 단색 패드(박스 비율 유지) |
+| 콘솔 | 별의 커비 도팡 일당의 습격 ※ | `kirby-squeak-squad.webp` | Wikipedia(en) 문서 infobox 박스아트 파일 https://en.wikipedia.org/wiki/Kirby%3A_Squeak_Squad (letterbox) | Wikipedia(en) 문서 박스아트 파일 https://en.wikipedia.org/wiki/Kirby%3A_Squeak_Squad (파일: https://en.wikipedia.org/wiki/File%3AKirby%20-%20Squeak%20Squad%20Coverart.png) | ③ | 3:4 단색 패드(박스 비율 유지) |
+| 콘솔 | 별의 커비 울트라 슈퍼 디럭스 ※ | `kirby-super-star-ultra.webp` | Wikipedia(en) 문서 infobox 박스아트 파일 https://en.wikipedia.org/wiki/Kirby_Super_Star_Ultra (letterbox) | Wikipedia(en) 문서 박스아트 파일 https://en.wikipedia.org/wiki/Kirby_Super_Star_Ultra (파일: https://en.wikipedia.org/wiki/File%3AKirbySuperStarUltra.png) | ③ | 3:4 단색 패드(박스 비율 유지) |
+| 콘솔 | 털실 커비 이야기 ※ | `kirbys-epic-yarn.webp` | nintendo.co.jp Wii 소프트 페이지 https://www.nintendo.co.jp/wii/rk5j/ (letterbox) | Wikipedia(en) 문서 박스아트 파일 https://en.wikipedia.org/wiki/Kirby's_Epic_Yarn (파일: https://en.wikipedia.org/wiki/File%3AKirby's%20Epic%20Yarn%20Title.png) | ③ | 3:4 크롭 |
+| 콘솔 | 레이튼 교수와 이상한 마을 ※ | `layton-curious-village.webp` | Level-5 레이튼 시리즈 공식 페이지 https://www.layton.jp/fushigi/ (letterbox) | Wikipedia(en) 문서 박스아트 파일 https://en.wikipedia.org/wiki/Professor_Layton_and_the_Curious_Village (파일: https://en.wikipedia.org/wiki/File%3AProfessor%20Layton%20and%20the%20Curious%20Village%20NA%20Boxart.JPG) | ③ | 3:4 단색 패드(박스 비율 유지) |
+| 콘솔 | 레이튼 교수와 악마의 상자 ※ | `layton-diabolical-box.webp` | Level-5 레이튼 시리즈 공식 페이지 https://www.layton.jp/akuma/ (letterbox) | Wikipedia(en) 문서 박스아트 파일 https://en.wikipedia.org/wiki/Professor_Layton_and_the_Diabolical_Box (파일: https://en.wikipedia.org/wiki/File%3ADiabolical%20Box.jpg) | ③ | 3:4 단색 패드(박스 비율 유지) |
+| 콘솔 | 레이튼 교수와 최후의 시간여행 ※ | `layton-unwound-future.webp` | Wikipedia(en) 문서 infobox 박스아트 파일 https://en.wikipedia.org/wiki/Professor_Layton_and_the_Unwound_Future (letterbox) | Wikipedia(en) 문서 박스아트 파일 https://en.wikipedia.org/wiki/Professor_Layton_and_the_Unwound_Future (파일: https://en.wikipedia.org/wiki/File%3AProfessor%20Layton%20and%20the%20Unwound%20Future.png) | ③ | 3:4 단색 패드(박스 비율 유지) |
+| 콘솔 | 리듬 세상 ※ | `rhythm-heaven-ds.webp` | Wikipedia(en) 문서 대표 이미지(박스아트) https://en.wikipedia.org/wiki/Rhythm_Heaven (letterbox) | Wikipedia(en) 문서 박스아트 파일 https://en.wikipedia.org/wiki/Rhythm_Heaven_(video_game) (파일: https://en.wikipedia.org/wiki/File%3ARhythmHeaven.PNG) | ③ | 3:4 단색 패드(박스 비율 유지) |
+| 콘솔 | 도와줘! 리듬 히어로 ※ | `rhythm-heaven-fever.webp` | nintendo.co.jp Wii 소프트 페이지 https://www.nintendo.co.jp/wii/somj/ (letterbox) | Wikipedia(en) 문서 박스아트 파일 https://en.wikipedia.org/wiki/Rhythm_Heaven_Fever (파일: https://en.wikipedia.org/wiki/File%3ARhythm-heaven-fever.jpg) | ③ | 3:4 크롭 |
+| 콘솔 | 놀러오세요 동물의 숲 ※ | `animal-crossing-wild-world.webp` | Wikipedia(en) 문서 박스아트 파일 https://en.wikipedia.org/wiki/Animal_Crossing:_Wild_World (letterbox) | Wikipedia(en) 문서 박스아트 파일 https://en.wikipedia.org/wiki/Animal_Crossing%3A_Wild_World (파일: https://en.wikipedia.org/wiki/File%3AAnimal_Crossing_Wild_World_cover.png) | ③ | 3:4 단색 패드(박스 비율 유지) |
+| 콘솔 | 엘레비츠: 카이와 제로의 신비한 모험 ※ | `elebits-ds.webp` | Wikipedia(en) 문서 infobox 박스아트 파일 https://en.wikipedia.org/wiki/Elebits%3A_The_Adventures_of_Kai_and_Zero (letterbox) | Wikipedia(en) 문서 박스아트 파일 https://en.wikipedia.org/wiki/Elebits%3A_The_Adventures_of_Kai_and_Zero (파일: https://en.wikipedia.org/wiki/File%3AElebits%20-%20The%20Adventures%20of%20Kai%20and%20Zero%20-%20cover.png) | ③ | 3:4 단색 패드(박스 비율 유지) |
+| 콘솔 | 메이플스토리DS ※ | `maplestory-ds.webp` | Wikipedia(en) 문서 infobox 박스아트 파일 https://en.wikipedia.org/wiki/MapleStory_DS (letterbox) | Wikipedia(en) 문서 박스아트 파일 https://en.wikipedia.org/wiki/MapleStory_DS (파일: https://en.wikipedia.org/wiki/File%3AMapleStoryDS.jpg) | ③ | 3:4 단색 패드(박스 비율 유지) |
+| 콘솔 | 그려라 터치! 내가 만드는 세상 ※ | `drawn-to-life.webp` | Wikipedia(en) 문서 infobox 박스아트 파일 https://en.wikipedia.org/wiki/Drawn_to_Life (letterbox) | Wikipedia(en) 문서 박스아트 파일 https://en.wikipedia.org/wiki/Drawn_to_Life (파일: https://en.wikipedia.org/wiki/File%3ADrawn%20to%20Life%20coverart.jpg) | ③ | 3:4 단색 패드(박스 비율 유지) |
+| 콘솔 | 짱구는 못말려 DS 알쏭달쏭 크레용 대작전! ※ | `shin-chan-ds.webp` | 글자 타일 | 주인이 직접 제공한 NDS 패키지 박스아트 owner-images/shinchan-ds-boxart.png | 주인 제공 | 3:4 단색 패드(박스 비율 유지) |
+
+### 장르 "리듬" 통합
+
+PC 의 리듬(칼파: 코스믹 심포니)과 콘솔의 리듬(리듬 세상 · 리듬 천국 미라클 스타즈 · 도와줘! 리듬 히어로)을 **하나의 장르 "리듬"(4종)** 으로 합쳤습니다. 장르 키가 플랫폼 접두어 대신 공용 `rhythm` 이 되어 분포 바 칸 1개 · 칩 1개(툴팁 "PC · 콘솔 · 리듬")로 보이고, 필터를 켜면 PC 줄 1종 + 콘솔 줄 3종이 함께 남습니다. 같은 이름이 다른 플랫폼에 또 있는지 전부 점검했고 리듬만 중복이었습니다. 장르 그룹 수 19 → **18**, 요약 띠와 분포 바 모두 갱신.
+
+### 마리오 파티 → 마리오 파티 DS
+
+주인 확인에 따라 **마리오 파티 DS** 로 표기하고 ※ 를 뗐습니다. 공식 표기 확인: 한국닌텐도 발표를 인용한 게임메카 기사 https://www.gamemeca.com/view.php?gid=71286 ("'마리오 파티 DS'를 한글화하여 정식 발매"). 닌텐도 코리아 사이트에는 DS 타이틀 페이지가 남아 있지 않아 1차 출처는 없습니다(다른 DS 타이틀과 같은 상황이지만, 주인이 작품을 특정했으므로 지시대로 ※ 제거). 박스아트는 Wikipedia(en) `Mario_Party_DS_US_cover.jpg`.
+
+### 게임 밖 활동: 챕터형 캐러셀
+
+- 사진 6장을 한 장씩 넘기던 캐러셀을 **챕터 2개**로 바꿨습니다. 챕터 1 "게임 안에서 · 5년의 기록" = 메이플 스크린샷 2장 + 2000일 출석 이미지, 챕터 2 "게임 밖에서 · 현장의 기록" = 오프라인 사진 3장. 각 챕터는 **왼쪽 큰 1장 + 오른쪽 위아래 2장 격자**(모바일에서는 위 큰 1장 + 아래 2장)로 한 화면에 보이고, 칸은 `object-fit: cover` 로 채웁니다.
+- 좌우 화살표·점 2개·키보드 ←/→·스와이프는 **챕터 전환**. 왼쪽 글(챕터 제목·한 줄 문장·"1 / 2")은 유지.
+- 칸을 누르면 **원본 비율 확대 보기**(`<dialog>`, Esc·바깥 클릭으로 닫힘, 캡션 표시). 캡션 자리는 칸 아래 띠로 유지(`<figure data-caption="">`, "캡션 추가 예정").
+- 섹션 하단의 "자세히" 링크 두 개(`game/passion.html`, `game/perspective.html`)는 **삭제**했습니다. 기존 파일은 그대로 있고 lab 에서 링크만 없앴습니다.
+
+### AI로 만든 게임 캐러셀 깨짐 수정 (주인 보고)
+
+원인: 7차에 추가한 게임 스트림 규칙 `.track { display:flex; width:max-content; … }` 이 범위 없이 모든 `.track` 에 걸려, AI 게임 카드의 `.carousel .track` 과 게임 밖 활동의 `.carousel.big .track` 폭이 0 으로 접혔습니다. `.track` · `.tile` 계열 규칙을 모두 `.stream .track` · `.stream .tile` 로 범위를 좁혔고, JS 는 이미 `root.querySelector('.track')`, `car.querySelectorAll('.slide')` 처럼 컨테이너 안에서만 찾고 있어 손대지 않았습니다. 확인 캡처 `lab/screenshots/ai-cards-1440.png`(두 카드 모두 정상 비율), 게임 밖 활동은 `beyond-chapter-1440.png`.
+
+### 8차에서 비워 둔 자리
+
+- 사진 6장 캡션: `#beyond .photo-grid figure[data-caption=""] figcaption` (확대 보기에도 같은 문구가 표시됩니다)
+- 관찰 메모: 메인 카드 `#game-maplestory .obs`, 팝오버 `#gd-obs`
