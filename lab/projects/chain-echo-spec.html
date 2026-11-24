@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chain Echo 기획 명세서 v0.1 요약 · 박민규 포트폴리오</title>
+  <meta name="description" content="창작 게임 Chain Echo 기획 명세서 v0.1 요약. 게임 개요, 태그·PERFECT·합동 필살기 핵심 규칙, 5개 스테이지 구성, 미결정 사항." />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Chain Echo 기획 명세서 v0.1 요약 · 박민규 포트폴리오" />
+  <meta property="og:description" content="창작 게임 Chain Echo 기획 명세서 v0.1 요약. 게임 개요, 태그·PERFECT·합동 필살기 핵심 규칙, 5개 스테이지 구성, 미결정 사항." />
+  <meta property="og:url" content="https://mongssill.github.io/portfolio/lab/projects/chain-echo-spec.html" />
+  <meta property="og:image" content="https://mongssill.github.io/portfolio/lab/assets/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="../assets/profile.webp" />
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <link rel="stylesheet" href="../lab.css" />
+  <style>@font-face { font-family: "Jersey 10"; src: url("../assets/fonts/Jersey10.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }</style>
+</head>
+<body>
+
+<nav class="nav" id="nav" aria-label="상단 바">
+  <div class="wrap">
+    <a class="brand" href="../index.html">박민규 · Portfolio</a>
+    <div class="nav-right">
+      <a class="btn primary sm" href="mailto:mjyb9853@naver.com">연락하기</a>
+      <button class="nav-toggle" type="button" aria-controls="nav-menu" aria-expanded="false" aria-label="메뉴 열기"><span></span></button>
+    </div>
+    <ul id="nav-menu" class="nav-menu">
+      <li><a href="../index.html#projects"><span class="num">01</span>대표 프로젝트</a></li>
+      <li><a href="../index.html#ai-game"><span class="num">02</span>AI로 만든 게임</a></li>
+      <li><a href="../index.html#portfolio"><span class="num">03</span>기획서 PDF</a></li>
+      <li><a href="../index.html#gamelog"><span class="num">04</span>플레이한 게임</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="detail-page spec-page">
+  <header class="spec-head">
+    <a class="back" href="../index.html#chain-echo">← AI로 만든 게임으로 돌아가기</a>
+    <h1>Chain Echo<small>창작 게임 기획 명세서 — 요약</small></h1>
+    <p class="meta-grid">
+      <span><b>문서 버전</b> v0.1</span>
+      <span><b>기준일</b> 2026-11-23</span>
+      <span><b>상태</b> 개발 착수용 기획 정리 / 미확정 사항 포함</span>
+      <span><b>프로젝트명</b> Chain Echo 는 가칭, 최종 게임명 미확정</span>
+    </p>
+    <p class="dark-note">이 페이지는 명세서 v0.1 의 구조를 살려 요약한 것입니다. 상태 표기는 원문을 그대로 따릅니다 — <span class="status ok">[확정]</span> 사용자와 대화에서 채택한 규칙 · <span class="status tmp">[잠정]</span> 제안됐으나 수치·방식 검증 전 · <span class="status tbd">[미결정]</span> 방안이 여럿이거나 확정 없음. 몬길: 스타다이브 캐릭터 콘셉트를 차용한 IP 활용 게임이며 비영리 창작 게임입니다. 원작 게임의 그림과 소리는 넣지 않았습니다.</p>
+  </header>
+
+  <div class="steps">
+    <h2>게임 개요</h2>
+    <table>
+      <thead><tr><th>항목</th><th>내용</th><th>상태</th></tr></thead>
+      <tbody>
+        <tr><td>장르</td><td>2D 도트 액션 플랫포머, 3인 캐릭터 태그 액션</td><td><span class="status ok">[확정]</span></td></tr>
+        <tr><td>목표 플레이타임</td><td>전체 5~10분</td><td><span class="status ok">[확정]</span></td></tr>
+        <tr><td>스테이지 수</td><td>총 5개, Stage 5는 최종 보스전</td><td><span class="status ok">[확정]</span></td></tr>
+        <tr><td>핵심 플레이</td><td>전투와 이동에 공통 적용되는 캐릭터별 기술, 태그를 이용한 행동 연계</td><td><span class="status ok">[확정]</span></td></tr>
+        <tr><td>전투의 핵심 보상</td><td>공격 적중 직후 PERFECT 태그 → 이전 캐릭터의 에코 공격 + 태그 자원 반환</td><td><span class="status ok">[확정]</span></td></tr>
+        <tr><td>최종 전투 보상</td><td>파티 공용 연계 게이지를 충전해 3인 합동 필살기 사용</td><td><span class="status ok">[확정]</span></td></tr>
+        <tr><td>목표 플랫폼</td><td>PC 플레이 중심</td><td><span class="status tmp">[잠정]</span></td></tr>
+        <tr><td>권장 구현 환경</td><td>Phaser + TypeScript + Vite 기반 웹 게임</td><td><span class="status tmp">[잠정/추천]</span></td></tr>
+        <tr><td>제작 방식</td><td>AI가 코드 대부분 작성, 사용자는 기획·테스트·수정 담당</td><td><span class="status ok">[확정]</span></td></tr>
+      </tbody>
+    </table>
+    <p><strong>포트폴리오 목적 <span class="status ok">[확정]</span></strong> — 목표 A: 독창적인 핵심 재미 시스템의 실제 구현(타이밍을 맞춘 태그의 명확한 추가 보상, 이전·다음 캐릭터 행동의 자연스러운 연결, 동일한 고유 기술의 이동·전투 겸용). 목표 B: 튜토리얼형 스테이지의 자연스러운 학습 흐름을 통한 레벨 디자인 역량 입증.</p>
+
+    <h2>핵심 규칙</h2>
+    <div class="rules">
+      <article class="rule">
+        <h3>태그 — 교체가 아니라 연계 <span class="status ok">[확정]</span></h3>
+        <p>태그 버튼 입력 한 번으로 캐릭터가 교체되고 <b>다음 캐릭터의 고유 기술이 자동 발동</b>한다. NORMAL 태그에서도 자동 발동한다. 태그는 전투와 이동에 동일한 기본 시스템을 사용한다.</p>
+        <ul>
+          <li>캐릭터별 고유 기술 — 빨강(플레아) 용 변신 화염 돌진 <span class="status ok">[핵심 컨셉 확정]</span>, 파랑(오필리아) 빙결 활주 <span class="status ok">[A안 확정]</span>, 바람(클로에) 상승 기류 <span class="status ok">[핵심 컨셉 확정]</span>. 수치와 적중 효과는 대부분 <span class="status tmp">[잠정]</span>.</li>
+          <li>태그 자원은 2회 충전형 스택(최대 2, 2초마다 1개 회복) <span class="status tmp">[잠정]</span>. 교체 순서(고정 vs 자유 선택)·등장 위치·입력 방향은 <span class="status tbd">[미결정]</span>.</li>
+        </ul>
+      </article>
+      <article class="rule">
+        <h3>PERFECT — 적중 직후의 태그 <span class="status ok">[확정 / 시간 잠정]</span></h3>
+        <p>공격이 실제 적에게 적중한 <b>직후</b> 태그하면 PERFECT. 교체되어 나가는 캐릭터가 공격의 남은 동작을 <b>에코</b>로 마무리하고, 사용한 태그 스택 1개가 반환된다. 허공 공격이나 순수 이동에는 PERFECT 가 없고, 놓치면 NORMAL 태그로 작동하며 벌칙은 없다.</p>
+        <ul>
+          <li>타이밍 윈도우 250ms 는 추천 초기 테스트값 <span class="status tmp">[잠정]</span>. 기술 1회당 PERFECT 기회 1회 <span class="status tmp">[잠정]</span>.</li>
+          <li>일반 공격으로 PERFECT 가능 여부, 에코의 타격 횟수·범위·대미지는 <span class="status tbd">[미결정]</span>.</li>
+        </ul>
+      </article>
+      <article class="rule">
+        <h3>연계 게이지와 3인 합동 필살기 <span class="status ok">[확정된 방향]</span></h3>
+        <p>캐릭터별이 아닌 <b>파티 전체 공용 게이지 1개</b>. 전투 태그/공격 적중으로 충전하며 PERFECT 에 더 큰 보상. 게이지 100% 에서 3인 합동 필살기. 허공 태그만 반복해 충전하는 구조는 지양.</p>
+        <ul>
+          <li>연출 순서 — 빨강 용 화염 돌진 → 파랑 빙결 연계 → 바람 상승 기류 후속 → 세 캐릭터 합동 마무리 <span class="status tmp">[잠정]</span>. 충전량·필살기 대미지·사용 조건은 <span class="status tbd">[미결정]</span>.</li>
+        </ul>
+        <ol class="ult-strip" aria-label="합동 필살기 연출 8장면 (현재 데모)">
+          <li><button type="button" class="photo-btn" data-src="../assets/ai/chain-echo/ult-1-start.webp" data-alt="합동 필살기 1 · 시작"><img src="../assets/ai/chain-echo/ult-1-start.webp" alt="" width="480" height="272" loading="lazy" /></button><span class="cap"><b>1</b> 시작</span></li>
+          <li><button type="button" class="photo-btn" data-src="../assets/ai/chain-echo/ult-2-dragon.webp" data-alt="합동 필살기 2 · 용"><img src="../assets/ai/chain-echo/ult-2-dragon.webp" alt="" width="480" height="272" loading="lazy" /></button><span class="cap"><b>2</b> 용</span></li>
+          <li><button type="button" class="photo-btn" data-src="../assets/ai/chain-echo/ult-3-ice-rain.webp" data-alt="합동 필살기 3 · 얼음비"><img src="../assets/ai/chain-echo/ult-3-ice-rain.webp" alt="" width="480" height="272" loading="lazy" /></button><span class="cap"><b>3</b> 얼음비</span></li>
+          <li><button type="button" class="photo-btn" data-src="../assets/ai/chain-echo/ult-4-storm.webp" data-alt="합동 필살기 4 · 폭풍"><img src="../assets/ai/chain-echo/ult-4-storm.webp" alt="" width="480" height="272" loading="lazy" /></button><span class="cap"><b>4</b> 폭풍</span></li>
+          <li><button type="button" class="photo-btn" data-src="../assets/ai/chain-echo/ult-5-cutscene.webp" data-alt="합동 필살기 5 · 컷신"><img src="../assets/ai/chain-echo/ult-5-cutscene.webp" alt="" width="480" height="272" loading="lazy" /></button><span class="cap"><b>5</b> 컷신</span></li>
+          <li><button type="button" class="photo-btn" data-src="../assets/ai/chain-echo/ult-6-gather.webp" data-alt="합동 필살기 6 · 집결"><img src="../assets/ai/chain-echo/ult-6-gather.webp" alt="" width="480" height="272" loading="lazy" /></button><span class="cap"><b>6</b> 집결</span></li>
+          <li><button type="button" class="photo-btn" data-src="../assets/ai/chain-echo/ult-7-joint-strike.webp" data-alt="합동 필살기 7 · 합동 타격"><img src="../assets/ai/chain-echo/ult-7-joint-strike.webp" alt="" width="480" height="272" loading="lazy" /></button><span class="cap"><b>7</b> 합동 타격</span></li>
+          <li><button type="button" class="photo-btn" data-src="../assets/ai/chain-echo/ult-8-explosion.webp" data-alt="합동 필살기 8 · 폭발"><img src="../assets/ai/chain-echo/ult-8-explosion.webp" alt="" width="480" height="272" loading="lazy" /></button><span class="cap"><b>8</b> 폭발</span></li>
+        </ol>
+      </article>
+    </div>
+
+    <h2>스테이지 구성 — 학습 기반 레벨 디자인</h2>
+    <p><span class="status ok">[확정]</span> 총 5개 스테이지, Stage 5는 최종 보스전. 전체 5~10분. 시스템을 하나씩 추가하는 구조가 아니라 <b>같은 핵심 기술을 여러 맥락에서 활용해 배우는 구조</b>이며, 지나친 설명 텍스트 없이 지형과 적의 배치로 행동을 유도한다. Stage 2에 PERFECT 학습을 배치한다.</p>
+    <table class="stages">
+      <thead><tr><th>Stage</th><th>역할</th><th>학습·검증 요소</th><th>초기 시간 배분 <span class="status tmp">[잠정]</span></th></tr></thead>
+      <tbody>
+        <tr><td>1-1</td><td>발견 — 태그 이동</td><td>이동·점프·태그 시 기술 자동 발동</td><td>45~60초</td></tr>
+        <tr><td>1-2</td><td>학습 — 태그 전투</td><td>공격 적중 후 PERFECT, 에코 공격</td><td>60~90초</td></tr>
+        <tr><td>1-3</td><td>응용 — 연속 태그</td><td>태그 스택, 세 캐릭터 이동·전투 연계</td><td>60~75초</td></tr>
+        <tr><td>1-4</td><td>숙달 — 복합 상황</td><td>이동과 전투를 결합, 연계 게이지와 3인 필살기</td><td>75~105초</td></tr>
+        <tr><td>1-5</td><td>최종 검증 — 보스</td><td>이동 회피, PERFECT 연계, 에코, 게이지 활용</td><td>90~150초</td></tr>
+      </tbody>
+    </table>
+    <p>최종 보스 <span class="status ok">[핵심 구조 확정 / 패턴 잠정]</span> — 새 기술 학습보다 기존 학습의 검증에 집중한다. 지면 충격파(수직 이동), 전방 돌진(태그 이동 회피), 공격 후 빈틈(PERFECT 태그), 무방비 구간(3인 연속 기술), 체력 후반부(합동 필살기)가 패턴 후보이며 상세 AI·체력·간격은 <span class="status tbd">[미결정]</span>.</p>
+    <p>피할 것 — PERFECT 실패 시 이동 불가한 길, 설명문 없이는 이해 못 하는 구간, 스테이지마다 새 조작을 계속 추가하는 설계, 스택 회복만 기다려야 하는 발판, Stage 5에서 처음 등장하는 필수 시스템.</p>
+
+    <h2>구현 전에 확정해야 할 미결정 항목</h2>
+    <p class="muted small">명세서 §11 의 항목 제목만 옮깁니다. 높은 우선순위 8개 · 중간 우선순위 7개.</p>
+    <ol class="tbd-list">
+      <li>태그 선택 방법: 고정 순서인가, 자유 선택인가</li>
+      <li>기술 직접 사용 버튼의 존재 여부와 쿨타임 관계</li>
+      <li>방향 결정: 파랑 빙결 활주 4방향 vs 8방향</li>
+      <li>새 캐릭터의 출현 위치·속도 계승</li>
+      <li>태그 스택 최종 채택(최대 2 · 회복 2초 · PERFECT 1개 반환)</li>
+      <li>PERFECT 판정 공격 범위(기본 공격 허용 여부, 다단히트)</li>
+      <li>빨강 돌진 방어 정책(경직 면역·접촉 공격·보스 예외)</li>
+      <li>파랑 경로 충돌 구현(경사 단방향 발판·1.5초 소멸)</li>
+      <li>바람 상승 기술의 공격 판정 및 추가 효과</li>
+      <li>에코 공격의 정확한 프레임/시간/대미지</li>
+      <li>게이지 충전량·조건, 필살기 대미지 및 사용 조건</li>
+      <li>캐릭터별 능력 수치, 물리·스프라이트 크기, 판정 시간</li>
+      <li>스테이지별 구체 맵, 체크포인트·리스폰·게임오버</li>
+      <li>적/보스 아트, AI 상태·경직 저항 정책</li>
+      <li>Phaser 웹 개발 환경 최종 선택 여부</li>
+    </ol>
+
+    <h2>한 문장 게임 정의</h2>
+    <p><strong>세 캐릭터의 이동·전투 기술을 태그로 연결하고, 공격 적중 직후의 PERFECT 태그로 에코 공격과 연속 연계 보상을 얻으며, 다섯 개의 점진적 학습 스테이지를 거쳐 최종 보스를 공략하는 2D 도트 액션 플랫포머.</strong></p>
+    <div class="actions" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:16px">
+      <a class="btn primary" href="https://mongssill.github.io/ai-seed-kit-games/g3-original/" target="_blank" rel="noopener">직접 해보기 ↗</a>
+      <a class="btn" href="https://claude.ai/artifact/QQgNLu9UE5DxC6NVqHAgeE" target="_blank" rel="noopener">작업 방식 보기 ↗</a>
+    </div>
+  </div>
+</main>
+
+<footer class="footer"><div class="wrap">© 박민규 · 기획자 포트폴리오</div></footer>
+
+<dialog class="photo-dialog" id="photo-dialog" aria-label="사진 크게 보기">
+  <form method="dialog" class="pd-inner">
+    <button type="submit" class="gd-close" aria-label="닫기">×</button>
+    <img id="pd-img" src="" alt="" />
+    <p class="pd-cap" id="pd-cap"></p>
+  </form>
+</dialog>
+
+<script>
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var nav = document.getElementById('nav');
+  var toggle = nav.querySelector('.nav-toggle');
+  function setOpen(open) { nav.classList.toggle('is-open', open); toggle.setAttribute('aria-expanded', open ? 'true' : 'false'); toggle.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기'); }
+  toggle.addEventListener('click', function () { setOpen(!nav.classList.contains('is-open')); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+  var pd = document.getElementById('photo-dialog');
+  pd.addEventListener('click', function (e) { if (e.target === pd) pd.close(); });
+  document.querySelectorAll('.ult-strip').forEach(function (strip) {
+    var items = strip.querySelectorAll('li'); var timer = null, idx = -1;
+    function mark(i) { items.forEach(function (li, k) { li.classList.toggle('is-on', k === i); }); }
+    function step() { idx = (idx + 1) % items.length; mark(idx); }
+    strip.addEventListener('mouseenter', function () { if (reduce || timer) return; idx = -1; step(); timer = setInterval(step, 650); });
+    strip.addEventListener('mouseleave', function () { clearInterval(timer); timer = null; mark(-1); });
+    strip.addEventListener('click', function (e) {
+      var btn = e.target.closest('.photo-btn'); if (!btn) return;
+      document.getElementById('pd-img').src = btn.getAttribute('data-src'); document.getElementById('pd-img').alt = btn.getAttribute('data-alt') || '';
+      document.getElementById('pd-cap').textContent = btn.getAttribute('data-alt') || '';
+      if (typeof pd.showModal === 'function') pd.showModal(); else pd.setAttribute('open', '');
+      pd.addEventListener('close', function once() { btn.focus({ preventScroll: true }); pd.removeEventListener('close', once); });
+    });
+  });
+})();
+</script>
+</body>
+</html>
