@@ -142,16 +142,22 @@
     <section class="section wrap reveal">
       <div class="section-label">
         <p class="en"><span class="num">02</span>Games Made with AI</p>
-        <h2 class="ko">AI로 만든 게임</h2>
-        <p class="desc"><b>완전 카피</b>(길 건너기) → <b>큰 게임의 일부</b>(태그 보스전) → <b>창작</b>(Chain Echo) 순서로, 같은 방식(기획은 내가, 코드는 AI)으로 만든 세 게임입니다.</p>
+        <div class="ai-heading">
+          <h2 class="ko">AI로 만든 게임</h2>
+          <a class="growth-link" href="https://claude.ai/artifact/Q7hrUpb6ytYvDwqR7nPa7R" target="_blank" rel="noopener" aria-label="AI와의 성장 과정 보기 (새 탭)">
+            <span class="growth-track" aria-hidden="true"><i></i><i></i><i></i></span>
+            AI와의 성장 과정 보기 ↗
+          </a>
+        </div>
+        <p class="desc">카피 게임(길 건너기) → 인상적인 게임의 시스템(태그 보스전) → 창작 게임(Chain Echo) 순서로 만든 세 종류의 게임입니다.</p>
       </div>
       <div class="section-body ai-list">
-        <!-- 게임 3: 창작 데모 (피처드) -->
+        <!-- 게임 3: 창작 게임 (피처드) -->
         <article class="ai-card featured-game reveal" id="chain-echo">
           <header class="fg-head">
-            <p class="kicker">게임 3 · 창작 데모 · 몬길: 스타다이브 캐릭터 콘셉트 차용 · 비영리 <span class="badge-original">창작</span></p>
+            <p class="kicker">게임 3 · 창작 게임 · 몬길: 스타다이브 캐릭터 콘셉트 차용 · 비영리 <span class="badge-original">창작</span></p>
             <h3 class="fg-title">Chain Echo</h3>
-            <p class="fg-pitch">세 캐릭터의 이동·전투 기술을 태그로 연결하고, 적중 직후의 PERFECT 태그로 에코 공격과 연계 보상을 얻는 2D 도트 액션 플랫포머.</p>
+            <p class="fg-pitch">세 캐릭터의 기술을 태그로 연결하고, PERFECT 태그로 에코 공격과 연계 보상을 얻는 2D 도트 액션 플랫포머.</p>
           </header>
 
           <div class="demo-player" id="g3-demo" style="--demo-ratio: 1280 / 720">
@@ -194,23 +200,22 @@
 
           <div class="fg-body">
             <div class="fg-text">
-              <p>몬길: 스타다이브 캐릭터 콘셉트를 차용한 IP 활용 게임, 비영리 창작 게임입니다. 원작 게임의 그림과 소리는 넣지 않았고, 그림·효과음은 레퍼런스를 확보한 뒤 AI로 재가공하고 게임에 맞게 잘라 도트로 다시 칠했습니다. 제목 글꼴은 Jersey 10(SIL Open Font License).</p>
               <p>한 판은 스테이지 하나(1-1 ~ 1-5, 앞 스테이지를 깨야 다음이 열림. 1-5 는 보스)입니다.</p>
               <ol class="fg-keys">
-                <li><span class="k">[확정]</span><strong>태그는 교체가 아니라 연계.</strong> 태그 한 번으로 캐릭터가 교체되고 다음 캐릭터의 고유 기술이 자동 발동해 이전 행동과 이어집니다.</li>
-                <li><span class="k">[확정]</span><strong>적중 직후 PERFECT 태그.</strong> 이전 캐릭터의 에코 공격이 남고 태그 자원이 반환됩니다. 순수 이동에는 PERFECT 보상이 없습니다.</li>
-                <li><span class="k">[확정]</span><strong>5개 스테이지로 단계 학습 → 보스.</strong> 같은 기술을 여러 맥락에서 익히고, 보스전에서는 파티 공용 연계 게이지로 3인 합동 필살기를 씁니다.</li>
+                <li><strong>태그는 교체가 아니라 연계.</strong> 태그 한 번으로 캐릭터가 교체되고 다음 캐릭터의 고유 기술이 자동 발동해 이전 행동과 이어집니다.</li>
+                <li><strong>적중 직후 PERFECT 태그.</strong> 이전 캐릭터의 에코 공격이 남고 태그 자원이 반환됩니다. 순수 이동에는 PERFECT 보상이 없습니다.</li>
+                <li><strong>5개 스테이지로 단계 학습 → 보스.</strong> 같은 기술을 여러 맥락에서 익히고, 보스전에서는 파티 공용 연계 게이지로 3인 합동 필살기를 씁니다.</li>
               </ol>
               <dl class="split">
-                <div><dt>내가 한 것</dt><dd>우선순위·규칙 결정, 플레이 테스트, 난이도 평가, 수정 사항 제시. 캐릭터 리소스와 연출의 품질 검토. 그림·효과음은 레퍼런스 확보 후 AI로 재가공하고 실제 확인을 통해 수정.</dd></div>
-                <div><dt>AI(Claude Code · Codex)에게 맡긴 것</dt><dd>이동/점프/태그/스택/전투/에코/게이지 시스템 구현, 적/보스, 스테이지 데이터, HUD, 기술 애니메이션 연동, 오류 수정과 테스트용 디버그 도구.</dd></div>
+                <div><dt>직접 수정 및 결정한 것</dt><dd>우선순위·규칙 결정, 플레이 테스트, 난이도 평가, 수정 사항 제시. 캐릭터 리소스와 연출의 품질 검토. 그림·효과음은 레퍼런스 확보 후 AI로 재가공하고 실제 확인을 통해 수정.</dd></div>
+                <div><dt>AI(Claude Code · Codex)에게 지시한 것</dt><dd>이동/점프/태그/스택/전투/에코/게이지 시스템 구현, 적/보스, 스테이지 데이터, HUD, 기술 애니메이션 연동, 오류 수정과 테스트용 디버그 도구.</dd></div>
               </dl>
               <div class="actions">
                 <a class="btn primary" href="https://mongssill.github.io/ai-seed-kit-games/g3-original/" target="_blank" rel="noopener">직접 해보기 ↗</a>
                 <a class="btn ghost" href="https://claude.ai/artifact/QQgNLu9UE5DxC6NVqHAgeE" target="_blank" rel="noopener">작업 방식 보기 ↗</a>
                 <a class="btn ghost" href="projects/chain-echo-spec.html">기획서 보기</a>
               </div>
-              <p class="note">PC 키보드 전용 · ← → 이동, Space 점프, A S D 태그, F 기본 공격, Shift 이동폼 ↔ 공격폼, E 체인 에코</p>
+              <p class="note">PC 키보드 전용</p>
             </div>
           </div>
         </article>
@@ -254,13 +259,13 @@
             </div>
           </div>
           <div class="info">
-            <p class="kicker">게임 1 · 완전 카피 · 원작 길건너친구들</p>
+            <p class="kicker">게임 1 · 카피 게임 · 원작 길건너친구들</p>
             <h3>길 건너기</h3>
-            <p>방향키나 WASD로 한 칸씩 움직여 자동차·열차·강 같은 장애물을 피하며 최대한 멀리 전진하는 게임입니다. 가만히 있으면 뒤에서 붉은 선이 따라오고, 뒤로 4번 연속 가도 끝납니다.</p>
-            <p>원작은 길건너친구들(Crossy Road)로, 규칙을 따라 만들되 원작의 그림과 소리는 쓰지 않았습니다. 그림은 모두 도형으로 그렸고, 소리는 파일 없이 브라우저가 직접 만듭니다.</p>
+            <p>방향키 혹은 WASD로 한 칸씩 움직여 자동차·열차·강과 같은 장애물을 피하며 최대한 멀리 전진하는 게임입니다. 정지해 있으면 뒤에서 붉은 선이 다가와 게임이 끝나게 되고, 뒤로 4번 연속 간다면...? 어떤 일이 생길지 모릅니다</p>
+            <p>원작은 길건너친구들(Crossy Road)의 규칙을 따라 만들되 일정 부분 추가 및 수정한 부분들이 존재합니다. 또한 원작의 그림과 소리는 사용하지 않았습니다. 그림과 소리는 모두 자체 에셋으로 구현되었습니다.</p>
             <dl class="split">
-              <div><dt>내가 한 것</dt><dd>원작을 분석해 출발점을 정하고, 규칙을 정의하며 reviewer 로 반복 검토해 잘못된 게임 오버 규칙을 바로잡았습니다. 빌드된 게임을 직접 플레이해 설계대로인지 확인하고, 테스터 피드백을 받아 수정했습니다.</dd></div>
-              <div><dt>AI(Claude Code)에게 맡긴 것</dt><dd>게임 코드 작성과 수정, 브라우저 없이 규칙을 검사하는 도구와 검사, 문서 정리.</dd></div>
+              <div><dt>직접 수정 및 결정한 것</dt><dd>원작을 분석해 출발점을 정하고, 규칙을 정의하며 reviewer 로 반복 검토해 잘못된 게임 오버 규칙을 바로잡았습니다. 빌드된 게임을 직접 플레이해 설계대로인지 확인하고, 테스터 피드백을 받아 수정했습니다.</dd></div>
+              <div><dt>AI(Claude Code)에게 지시한 것</dt><dd>게임 코드 작성과 수정, 브라우저 없이 규칙을 검사하는 도구와 검사, 문서 정리.</dd></div>
             </dl>
             <div class="actions">
               <a class="btn primary" href="https://mongssill.github.io/ai-seed-kit-games/g1-copy/" target="_blank" rel="noopener">직접 해보기 ↗</a>
@@ -300,13 +305,13 @@
             </div>
           </div>
           <div class="info">
-            <p class="kicker">게임 2 · 큰 게임의 일부 · 원작 몬길: 스타다이브</p>
+            <p class="kicker">게임 2 · 인상적인 게임의 시스템 구현 · 원작 몬길: 스타다이브</p>
             <h3>태그 보스전</h3>
-            <p>보스 공격의 전조가 빛나는 순간 회피나 태그로 반격하고, 반격을 모아 보스를 그로기에 빠뜨려 3분 안에 쓰러뜨리는 세 캐릭터 태그 보스전입니다. 노란 전조는 회피 반격과 태그 반격이 모두 되고, 붉은 전조는 회피 반격만 됩니다.</p>
-            <p>원작은 몬길: 스타다이브(개발 넷마블몬스터, 배급 넷마블)로, 보스 전투의 교체 스킬 메커니즘 한 조각을 떼어 만들었습니다. 원작의 그림과 소리는 쓰지 않았고, 캐릭터는 콘셉만 살려 새로 그렸습니다.</p>
+            <p>보스 공격의 전조가 빛나는 순간 회피나 태그로 반격하고, 모은 게이지를 통해 보스를 그로기에 빠뜨려 3분 안에 쓰러뜨리는 태그 보스전입니다. 노란 전조는 회피 반격과 태그 반격이 모두 가능하지만, 붉은 전조는 회피 반격만 가능합니다.</p>
+            <p>원작은 몬길: 스타다이브(개발 넷마블몬스터, 배급 넷마블)로, 보스 전투의 교체 스킬 메커니즘을 모방하여 만들었습니다. 원작의 그림과 소리는 사용하지 않았지만, 캐릭터는 콘셉만 살려 새로 그려 창작 게임에서 사용할 에셋을 미리 시험해 보았습니다.</p>
             <dl class="split">
-              <div><dt>내가 한 것</dt><dd>게임의 전체 기획과 이후 수정, 자가 피드백. 피드백은 AI로 먼저 한 뒤 직접 플레이하며 다시 확인했습니다. 캐릭터 그림은 AI로 직접 만들었습니다.</dd></div>
-              <div><dt>AI(Claude Code)에게 맡긴 것</dt><dd>게임 코드 작성과 수정, 브라우저 없이 규칙을 검사하는 도구와 검사 281개, 난이도를 재는 봇 시뮬레이션, 문서 정리.</dd></div>
+              <div><dt>직접 수정 및 결정한 것</dt><dd>게임의 전체 기획과 이후 수정, 자가 피드백. 피드백은 AI로 먼저 한 뒤 직접 플레이하며 다시 확인했습니다. 캐릭터 그림은 AI로 직접 만들었습니다.</dd></div>
+              <div><dt>AI(Claude Code)에게 지시한 것</dt><dd>게임 코드 작성과 수정, 브라우저 없이 규칙을 검사하는 도구와 검사 281개, 난이도를 재는 봇 시뮬레이션, 문서 정리.</dd></div>
             </dl>
             <div class="actions">
               <a class="btn primary" href="https://mongssill.github.io/ai-seed-kit-games/g2-slice/" target="_blank" rel="noopener">직접 해보기 ↗</a>
@@ -425,11 +430,10 @@
         <li><strong>74<small>종</small></strong><span>플레이한 게임 · 메인 게임 포함, 중복 제외</span></li>
         <li><strong>4</strong><span>플랫폼 · PC · 모바일 · 닌텐도 · PlayStation</span></li>
         <li><strong>10<small>년</small></strong><span>가장 오래 한 게임 · 메이플스토리</span></li>
-        <li><strong>18</strong><span>장르 그룹 · 칸이나 칩을 누르면 그 장르만 보기</span></li>
+        <li><strong>18</strong><span>장르 그룹</span></li>
       </ul>
 
       <!-- 현재 상태 줄 -->
-      <p class="genre-status" aria-live="polite"><span data-genre-label>전체 74종 보는 중</span><button type="button" class="genre-clear" aria-label="필터 해제" hidden>✕</button></p>
 
       <!-- 장르 분포 바 (칸 = 필터) -->
       <div class="genre-bar reveal" role="group" aria-label="장르 분포 · 칸을 누르면 그 장르만 보기">
@@ -1596,7 +1600,6 @@
           <button type="button" class="stream-arrow next" aria-label="콘솔 줄 오른쪽으로" tabindex="-1">›</button>
         </div>
       </div>
-      <p class="foot-note">명칭 확인 중인 게임은 ※ 표시 · 커버는 공식 스토어·공식 사이트, 없으면 공식 해외 페이지·Wikipedia 박스아트 (출처는 README) · 타일을 누르면 자세히</p>
     </div>
   </section>
 
@@ -1766,8 +1769,8 @@
             <rect x="178" y="122" width="40" height="20" rx="5" fill="var(--bg-soft)" /><text x="198" y="136">지시</text>
             <rect x="455" y="100" width="40" height="20" rx="5" fill="var(--bg-soft)" /><text x="475" y="114">분배</text>
             <rect x="455" y="144" width="40" height="20" rx="5" fill="var(--bg-soft)" /><text x="475" y="158">분배</text>
-            <rect x="722" y="100" width="88" height="20" rx="5" fill="var(--bg-soft)" /><text x="766" y="114">구현 · 검사</text>
-            <rect x="722" y="170" width="88" height="20" rx="5" fill="var(--bg-soft)" /><text x="766" y="184">초안 · 리뷰</text>
+            <rect x="731" y="100" width="66" height="20" rx="5" fill="var(--bg-soft)" /><text x="766" y="114">구현 · 검사</text>
+            <rect x="731" y="170" width="66" height="20" rx="5" fill="var(--bg-soft)" /><text x="766" y="184">초안 · 리뷰</text>
             <rect x="412" y="294" width="136" height="20" rx="5" fill="var(--bg-soft)" /><text x="480" y="308" fill="var(--accent)">검수 (다시 지시)</text>
           </g>
 
@@ -1783,8 +1786,8 @@
           <!-- 노드: Orca (x 238~430) -->
           <g>
             <rect x="238" y="74" width="192" height="116" rx="14" fill="var(--card)" stroke="var(--accent)" stroke-width="1.5" />
-            <rect x="256" y="94" width="40" height="40" rx="10" fill="var(--accent)" />
-            <text x="276" y="121" text-anchor="middle" font-size="18" font-weight="800" fill="var(--on-accent)">O</text>
+            <rect x="256" y="94" width="40" height="40" rx="10" fill="#f4f5f7" stroke="var(--border)" />
+            <image class="orca-logo" href="assets/icons/orca.svg" x="264" y="102" width="24" height="24" />
             <text x="308" y="112" font-size="15" font-weight="800" fill="var(--text)">Orca</text>
             <text x="308" y="130" font-size="11.5" fill="var(--text-2)">작업 관리</text>
             <text x="334" y="157" text-anchor="middle" font-size="11" fill="var(--text-3)">봇·워커에게 일을 나누고</text>
@@ -1827,7 +1830,7 @@
         <ol class="wf-list" aria-hidden="true">
           <li class="wf-node me"><span class="wf-ico"><img src="assets/profile.webp" alt="" width="40" height="40" /></span><span><strong>나</strong><small>기획 · 판단 · 검수</small></span></li>
           <li class="wf-arrow">↓ 지시</li>
-          <li class="wf-node orca"><span class="wf-ico mark">O</span><span><strong>Orca</strong><small>작업 관리 — 봇·워커에게 일을 나누고 한곳에서 봄</small></span></li>
+          <li class="wf-node orca"><span class="wf-ico light"><img class="orca-logo" src="assets/icons/orca.svg" alt="" width="22" height="22" /></span><span><strong>Orca</strong><small>작업 관리 — 봇·워커에게 일을 나누고 한곳에서 봄</small></span></li>
           <li class="wf-arrow">↓ 분배</li>
           <li class="wf-pair">
             <div class="wf-node"><span class="wf-ico light"><img src="assets/icons/claude.svg" alt="" width="22" height="22" /></span><span><strong>Claude Code</strong><small>구현 · 규칙 검사 · 문서</small></span></div>
@@ -1847,7 +1850,7 @@
         <li class="skill-card reveal"><span class="ico"><img src="assets/icons/word.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>Word</strong><span>기획서 및 문서 작성</span></span></li>
         <li class="skill-card reveal"><span class="ico"><img src="assets/icons/openai-black.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>ChatGPT</strong><span>에셋 제작</span></span></li>
         <li class="skill-card reveal"><span class="ico"><img src="assets/icons/claude.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>Claude</strong><span>기획서 및 문서 작성 보조</span></span></li>
-        <li class="skill-card reveal"><span class="ico orca"><img src="assets/icons/orca.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>Orca</strong><span>작업 관리 · 봇·워커에게 일을 나누고 진행과 결과를 한곳에서 봄</span></span></li>
+        <li class="skill-card reveal"><span class="ico"><img class="orca-logo" src="assets/icons/orca.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>Orca</strong><span>작업 관리 · 봇·워커에게 일을 나누고 진행과 결과를 한곳에서 봄</span></span></li>
       </ul>
     </div>
   </section>
@@ -2249,31 +2252,24 @@
     dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); if (e.target.closest('a[href^="#"]')) dlg.close(); });
     dlg.addEventListener('close', function () { if (lastFocus) lastFocus.focus({ preventScroll: true }); });
 
-    // 장르 필터: 분포 바 칸 + 칩 + 상태 줄 (같은 장르를 가리킴)
+    // 장르 필터: 분포 바 칸 + 칩 (같은 장르를 가리킴)
     var segs = gamelog.querySelectorAll('.genre-bar .seg');
     var chips = gamelog.querySelectorAll('.gchip');
-    var statusLabel = gamelog.querySelector('[data-genre-label]');
-    var clearBtn = gamelog.querySelector('.genre-clear');
     var linkedCards = gamelog.querySelectorAll('.linked-card');
     var linkedRow = gamelog.querySelector('.linked-row');
-    var totalLabel = statusLabel.textContent;
     var current = '';
     function setFilter(genre) {
       current = genre || '';
       segs.forEach(function (s) { s.setAttribute('aria-pressed', s.dataset.genre === current ? 'true' : 'false'); });
-      var label = '', count = 0;
-      chips.forEach(function (c) { var on = c.dataset.genre === current; c.classList.toggle('is-on', on); c.setAttribute('aria-pressed', on ? 'true' : 'false'); if (on && current) { label = c.dataset.label; count = c.dataset.count; } });
+      chips.forEach(function (c) { var on = c.dataset.genre === current; c.classList.toggle('is-on', on); c.setAttribute('aria-pressed', on ? 'true' : 'false'); });
       gamelog.classList.toggle('is-filtering', !!current);
       var shownLinked = 0;
       linkedCards.forEach(function (li) { var hit = !current || li.getAttribute('data-genre') === current; li.hidden = !hit; if (hit) shownLinked++; });
       linkedRow.hidden = !!current && shownLinked === 0; // 작업으로 이어진 게임이 없으면 줄 전체 숨김
       streams.forEach(function (s) { s.filter(current); });
-      statusLabel.textContent = current ? label + ' · ' + count + '종 보는 중' : totalLabel;
-      clearBtn.hidden = !current;
     }
     segs.forEach(function (s) { s.addEventListener('click', function () { setFilter(current === s.dataset.genre ? '' : s.dataset.genre); }); });
     chips.forEach(function (c) { c.addEventListener('click', function () { setFilter(c.dataset.genre === current ? '' : c.dataset.genre); }); });
-    clearBtn.addEventListener('click', function () { setFilter(''); });
     function fitGenreBar() { segs.forEach(function (seg) { var i = seg.querySelector('i'); if (!i) return; i.style.visibility = 'visible'; if (i.scrollWidth + 8 > seg.clientWidth) i.style.visibility = 'hidden'; }); }
     fitGenreBar(); window.addEventListener('resize', fitGenreBar);
   }
