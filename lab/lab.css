@@ -1072,20 +1072,58 @@ html:not(.js) .platform-panel::before { content: attr(aria-labelledby); display:
 #ai-game .section-label .desc { max-width: none; }
 .ai-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px 24px; }
 .growth-link {
-  display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 8px 15px;
+  position: relative;
+  display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+  padding: 14px 22px;
   border: 1px solid var(--border-strong); border-radius: 999px; background: var(--bg-soft);
-  color: var(--text); text-decoration: none; font-weight: 700; font-size: 13px;
-  transition: border-color .2s ease, background-color .2s ease;
+  color: var(--text); text-decoration: none; font-weight: 700; font-size: 17px; line-height: 1.35;
+  transition: transform .18s ease, border-color .18s ease, background-color .18s ease;
 }
-.growth-link:hover, .growth-link:focus-visible { border-color: var(--accent); background: var(--accent-soft); color: var(--text); }
+@property --growth-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+.growth-link::before {
+  content: "";
+  position: absolute; inset: -1px; padding: 1px; border-radius: inherit; pointer-events: none;
+  background: conic-gradient(from var(--growth-angle), transparent 0deg 235deg, var(--accent) 298deg, transparent 360deg);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: growth-orbit 7s linear infinite;
+  opacity: .58;
+  transition: opacity .18s ease;
+}
+@keyframes growth-orbit { to { --growth-angle: 360deg; } }
+.growth-link:hover, .growth-link:focus-visible {
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--border-strong));
+  background: var(--accent-soft); color: var(--text);
+}
+.growth-link:hover { transform: translateY(-2px); }
+.growth-link:is(:hover, :focus-visible)::before { opacity: 1; }
+.growth-link:active { transform: scale(.98); }
 .growth-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-.growth-track { position: relative; display: inline-flex; gap: 4px; color: var(--accent); }
-.growth-track::before { content: ""; position: absolute; inset: 50% 3px auto; border-top: 1px solid currentColor; opacity: .55; }
-.growth-track i { z-index: 0; width: 6px; height: 6px; border: 1px solid currentColor; border-radius: 50%; background: var(--bg-soft); transition: background-color .12s ease; }
-.growth-link:is(:hover, :focus-visible) i { background: currentColor; }
-.growth-link:is(:hover, :focus-visible) i:nth-child(2) { transition-delay: .09s; }
-.growth-link:is(:hover, :focus-visible) i:nth-child(3) { transition-delay: .18s; }
-@media (max-width: 560px) { .ai-heading { flex-direction: column; } }
+.growth-track { position: relative; display: inline-flex; gap: 6px; color: var(--accent); flex: none; }
+.growth-track::before { content: ""; position: absolute; inset: 50% 4px auto; border-top: 1px solid currentColor; opacity: .55; }
+.growth-track i {
+  z-index: 0; width: 9px; height: 9px; border: 1px solid currentColor; border-radius: 50%;
+  background: var(--bg-soft);
+  animation: growth-pulse 2.4s ease-in-out infinite;
+}
+.growth-track i:nth-child(2) { animation-delay: .24s; }
+.growth-track i:nth-child(3) { animation-delay: .48s; }
+@keyframes growth-pulse {
+  0%, 38%, 100% { background: var(--bg-soft); }
+  16% { background: currentColor; }
+}
+.growth-arrow { display: inline-block; transition: transform .18s ease; }
+.growth-link:hover .growth-arrow { transform: translate(2px, -2px); }
+@media (max-width: 560px) {
+  .ai-heading { flex-direction: column; }
+  .growth-link { width: 100%; }
+}
 @media (prefers-reduced-motion: reduce) {
-  .growth-link, .growth-track i { transition: none; }
+  .growth-link, .growth-link::before, .growth-arrow { transition: none; }
+  .growth-link::before, .growth-track i { animation: none; }
+  .growth-link:is(:hover, :focus-visible) .growth-track i { background: currentColor; }
 }
