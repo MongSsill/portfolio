@@ -23,76 +23,71 @@
 </head>
 <body>
 
-<nav class="nav" id="nav" aria-label="주요 섹션">
+<nav class="nav" id="nav" aria-label="상단 바">
   <div class="wrap">
     <a class="brand" href="#top">박민규 · Portfolio</a>
-    <button class="nav-toggle" type="button" aria-controls="nav-menu" aria-expanded="false" aria-label="메뉴 열기"><span></span></button>
-    <ul id="nav-menu">
-      <li><a href="#experience">경력</a></li>
-      <li><a href="#projects">대표 프로젝트</a></li>
-      <li><a href="#portfolio">기획서 PDF</a></li>
-      <li><a href="#gamelog">게임 경험</a></li>
-      <li><a href="#skills">역량</a></li>
-      <li><a href="#education">학력</a></li>
+    <div class="nav-right">
+      <a class="btn primary sm" href="mailto:mjyb9853@naver.com">연락하기</a>
+      <button class="nav-toggle" type="button" aria-controls="nav-menu" aria-expanded="false" aria-label="메뉴 열기"><span></span></button>
+    </div>
+    <ul id="nav-menu" class="nav-menu">
+      <li><a href="#projects"><span class="num">01</span>대표 프로젝트</a></li>
+      <li><a href="#ai-game"><span class="num">02</span>AI로 만든 게임</a></li>
+      <li><a href="#portfolio"><span class="num">03</span>기획서 PDF</a></li>
+      <li><a href="#gamelog"><span class="num">04</span>플레이한 게임</a></li>
+      <li><a href="#experience"><span class="num">05</span>경력</a></li>
+      <li><a href="#skills"><span class="num">06</span>보유 역량</a></li>
+      <li><a href="#education"><span class="num">07</span>학력</a></li>
     </ul>
   </div>
 </nav>
 
-<header id="top">
-  <div class="hero-cover" role="img" aria-label="밤하늘 커버 이미지"></div>
-  <div class="wrap hero">
-    <img class="avatar" src="assets/profile.webp" width="152" height="152" alt="박민규 프로필 사진" />
-    <div class="hero-grid">
-      <div>
-        <p class="eyebrow">게임 기획자 · 스토리 연출 · 시스템 기획</p>
-        <h1><span class="accent">기대를 설계하는 기획자 박민규</span>입니다.</h1>
-        <p class="lead">게임 기획 프리랜서 1년차이며, 다방면의 기획에 있어 열려있는 사람입니다.</p>
-        <div class="cta">
-          <a class="btn primary lg" href="#portfolio">기획서 PDF 보기</a>
-          <a class="btn lg" href="mailto:mjyb9853@naver.com">연락하기</a>
-        </div>
-      </div>
-      <ul class="contact">
-        <li><span class="k">이름</span><span class="v">박민규</span></li>
-        <li><span class="k">연락처</span><span class="v"><a href="tel:010-6504-6524">010-6504-6524</a></span></li>
-        <li><span class="k">이메일</span><span class="v"><a href="mailto:mjyb9853@naver.com">mjyb9853@naver.com</a></span></li>
-      </ul>
+<!-- 우측 고정 섹션 내비 (1024px 이상) -->
+<nav class="side-nav" id="side-nav" aria-label="섹션 내비게이션">
+  <ol>
+    <li><a href="#projects"><span class="dot" aria-hidden="true"></span><span class="num">01</span><span class="label">대표 프로젝트</span></a></li>
+    <li><a href="#ai-game"><span class="dot" aria-hidden="true"></span><span class="num">02</span><span class="label">AI로 만든 게임</span></a></li>
+    <li><a href="#portfolio"><span class="dot" aria-hidden="true"></span><span class="num">03</span><span class="label">기획서 PDF</span></a></li>
+    <li><a href="#gamelog"><span class="dot" aria-hidden="true"></span><span class="num">04</span><span class="label">플레이한 게임</span></a></li>
+    <li><a href="#experience"><span class="dot" aria-hidden="true"></span><span class="num">05</span><span class="label">경력</span></a></li>
+    <li><a href="#skills"><span class="dot" aria-hidden="true"></span><span class="num">06</span><span class="label">보유 역량</span></a></li>
+    <li><a href="#education"><span class="dot" aria-hidden="true"></span><span class="num">07</span><span class="label">학력</span></a></li>
+  </ol>
+</nav>
+
+<header id="top" class="hero">
+  <div class="hero-bg" role="img" aria-label="밤하늘 커버 이미지"></div>
+  <div class="wrap hero-inner">
+    <img class="avatar" src="assets/profile.webp" width="128" height="128" alt="박민규 프로필 사진" />
+    <p class="eyebrow">게임 기획자 · 스토리 연출 · 시스템 기획</p>
+    <h1><span class="accent">기대를 설계하는 기획자 박민규</span>입니다.</h1>
+    <p class="lead">게임 기획 프리랜서 1년차이며, 다방면의 기획에 있어 열려있는 사람입니다.</p>
+    <div class="cta">
+      <a class="btn primary lg" href="#portfolio">기획서 PDF 보기</a>
+      <a class="btn ghost lg" href="mailto:mjyb9853@naver.com">연락하기</a>
     </div>
   </div>
 </header>
 
-<main class="wrap">
+<div class="wrap">
+  <ul class="contact-strip">
+    <li><span class="k">이름</span><span class="v">박민규</span></li>
+    <li><span class="k">연락처</span><span class="v"><a href="tel:010-6504-6524">010-6504-6524</a></span></li>
+    <li><span class="k">이메일</span><span class="v"><a href="mailto:mjyb9853@naver.com">mjyb9853@naver.com</a></span></li>
+  </ul>
+</div>
 
-  <!-- 경력 사항 -->
-  <section class="section" id="experience">
-    <div class="section-label">
-      <p class="en">Professional Experience</p>
-      <h2 class="ko">경력 사항</h2>
-    </div>
-    <div class="section-body">
-      <p class="muted small">프리랜서 업무 1년차 신입 기획자입니다.</p>
-      <div class="exp-head">
-        <span>케세라게임즈</span><span class="sep">|</span><span>프리랜서 기획자</span><span class="period">(2024 ~ 2025)</span>
-      </div>
-      <ul class="bullets">
-        <li>Unity Timeline을 활용한 스토리 컷신 연출 및 타이밍 설계</li>
-        <li>시나리오 검수 및 퇴고를 통한 대사와 연출 흐름 개선</li>
-        <li>캐릭터 기획 및 UI 수정 업무 참여</li>
-        <li>개발 리소스 및 제작 일정을 고려한 연출 대안 제시</li>
-        <li>소규모 QA 수행</li>
-      </ul>
-    </div>
-  </section>
+<main>
 
-  <!-- 대표 프로젝트 -->
-  <section class="section" id="projects">
+  <!-- 01 대표 프로젝트 -->
+  <section class="section wrap reveal" id="projects">
     <div class="section-label">
-      <p class="en">Representative Projects</p>
+      <p class="en"><span class="num">01</span>Representative Projects</p>
       <h2 class="ko">대표 프로젝트</h2>
     </div>
     <div class="section-body">
       <div class="cards">
-        <a class="card" href="../projects/kalpa-ch234.html">
+        <a class="card reveal" href="../projects/kalpa-ch234.html">
           <div class="thumb">
             <img src="assets/thumb-kalpa-ch234.webp" alt="칼파 스토리 연출 작업 화면" loading="lazy" />
             <span class="period">2024.11 ~ 2025.03</span>
@@ -103,7 +98,7 @@
             <p class="desc">캐릭터 배치, 배경 변화 등 전체 연출 작업과 FCG 기획. 프롤로그만 있던 칼파의 스토리를 PC로 확장.</p>
           </div>
         </a>
-        <a class="card" href="projects/kalpa-character.html">
+        <a class="card reveal" href="projects/kalpa-character.html">
           <div class="thumb">
             <img class="top" src="assets/thumb-kalpa-character.webp" alt="리뉴얼된 칼파 캐릭터 신 모델링" loading="lazy" />
             <span class="period">2025.03 ~ 2025.06</span>
@@ -114,7 +109,7 @@
             <p class="desc">캐릭터 내·외적 컨셉 및 감정 표현 기획, 구 모델링 리뉴얼, UI 일부 수정.</p>
           </div>
         </a>
-        <a class="card" href="../projects/kalpa-story-edit.html">
+        <a class="card reveal" href="../projects/kalpa-story-edit.html">
           <div class="thumb">
             <img src="assets/thumb-kalpa-story-edit.webp" alt="스토리 퇴고 작업 화면(블러 처리)" loading="lazy" />
             <span class="period">2025.06 ~ 2025.08</span>
@@ -125,7 +120,7 @@
             <p class="desc">기존 스토리 작가의 글을 다듬어 어투·대사·핵심 개념을 수정하는 퇴고 및 플롯 수정.</p>
           </div>
         </a>
-        <a class="card" href="../projects/kalpa-ch5.html">
+        <a class="card reveal" href="../projects/kalpa-ch5.html">
           <div class="thumb ph story">
             <span class="ph-word" aria-hidden="true">Story</span>
             <span class="period">2025.08 ~ 2025.11</span>
@@ -140,16 +135,71 @@
     </div>
   </section>
 
-  <!-- 포트폴리오 PDF -->
-  <section class="section" id="portfolio">
+  <!-- 02 AI로 만든 게임 (짙은 블록) -->
+  <div class="dark-block" id="ai-game">
+    <section class="section wrap reveal">
+      <div class="section-label">
+        <p class="en"><span class="num">02</span>Games Made with AI</p>
+        <h2 class="ko">AI로 만든 게임</h2>
+      </div>
+      <div class="section-body">
+        <article class="ai-card">
+          <div class="shots">
+            <div class="carousel" id="g2-carousel" aria-roledescription="carousel" aria-label="태그 보스전 인게임 화면">
+              <div class="track">
+                <figure class="slide is-active">
+                  <img src="assets/ai/g2-title.webp" alt="태그 보스전 시작 화면: 조작 안내와 게임 시작·랭킹 버튼" width="1440" height="960" />
+                  <figcaption>시작 화면</figcaption>
+                </figure>
+                <figure class="slide">
+                  <img src="assets/ai/g2-fight.webp" alt="태그 보스전 전투 중: 골렘 보스 앞에서 빨강 캐릭터가 특수 스킬로 용을 소환한 장면" width="1440" height="960" loading="lazy" />
+                  <figcaption>전투 중 · 특수 스킬</figcaption>
+                </figure>
+                <figure class="slide">
+                  <img src="assets/ai/g2-groggy.webp" alt="태그 보스전 그로기 연출: 캐릭터의 눈 클로즈업이 화면을 가로지르는 장면" width="1440" height="960" loading="lazy" />
+                  <figcaption>그로기 연출 · 눈 클로즈업</figcaption>
+                </figure>
+              </div>
+              <button class="car-btn prev" type="button" aria-label="이전 화면">‹</button>
+              <button class="car-btn next" type="button" aria-label="다음 화면">›</button>
+              <div class="dots" role="tablist" aria-label="화면 선택">
+                <button type="button" role="tab" aria-selected="true" aria-label="1번 화면"></button>
+                <button type="button" role="tab" aria-selected="false" aria-label="2번 화면"></button>
+                <button type="button" role="tab" aria-selected="false" aria-label="3번 화면"></button>
+              </div>
+            </div>
+          </div>
+          <div class="info">
+            <p class="kicker">게임 2 · 큰 게임의 일부 · 원작 몬길: 스타다이브</p>
+            <h3>태그 보스전</h3>
+            <p>보스 공격의 전조가 빛나는 순간 회피나 태그로 반격하고, 반격을 모아 보스를 그로기에 빠뜨려 3분 안에 쓰러뜨리는 세 캐릭터 태그 보스전입니다. 노란 전조는 회피 반격과 태그 반격이 모두 되고, 붉은 전조는 회피 반격만 됩니다.</p>
+            <p>원작은 몬길: 스타다이브(개발 넷마블몬스터, 배급 넷마블)로, 보스 전투의 교체 스킬 메커니즘 한 조각을 떼어 만들었습니다. 원작의 그림과 소리는 쓰지 않았고, 캐릭터는 콘셉만 살려 새로 그렸습니다.</p>
+            <dl class="split">
+              <div><dt>내가 한 것</dt><dd>게임의 전체 기획과 이후 수정, 자가 피드백. 피드백은 AI로 먼저 한 뒤 직접 플레이하며 다시 확인했습니다. 캐릭터 그림은 AI로 직접 만들었습니다.</dd></div>
+              <div><dt>AI(Claude Code)에게 맡긴 것</dt><dd>게임 코드 작성과 수정, 브라우저 없이 규칙을 검사하는 도구와 검사 281개, 난이도를 재는 봇 시뮬레이션, 문서 정리.</dd></div>
+            </dl>
+            <p class="controls"><strong>조작</strong> 방향키 이동 · A 기본 공격 · S 특수 스킬 · D 궁극 스킬 · Shift 회피 · Space 태그 · F 그로기 · Esc 일시정지</p>
+            <div class="actions">
+              <a class="btn primary" href="https://mongssill.github.io/ai-seed-kit-games/g2-slice/" target="_blank" rel="noopener">직접 해보기 ↗</a>
+              <a class="btn ghost" href="https://claude.ai/artifact/6vRRsLDfJVFFXFzDhv48gf" target="_blank" rel="noopener">아티팩트 문서 보기 ↗</a>
+            </div>
+            <p class="note">PC 키보드 전용</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <!-- 03 기획서 PDF -->
+  <section class="section wrap reveal" id="portfolio">
     <div class="section-label">
-      <p class="en">Portfolio</p>
+      <p class="en"><span class="num">03</span>Portfolio</p>
       <h2 class="ko">포트폴리오 PDF</h2>
     </div>
     <div class="section-body">
       <div class="pdf-grid">
 
-        <article class="pdf-card">
+        <article class="pdf-card reveal" id="pdf-maple-party">
           <div class="thumb">
             <img src="assets/pdf-maple-party.webp" alt="메이플스토리 파티 모집 게시판 썸네일" loading="lazy" />
             <span class="game">메이플스토리</span>
@@ -165,7 +215,7 @@
           </div>
         </article>
 
-        <article class="pdf-card">
+        <article class="pdf-card reveal" id="pdf-pubg">
           <div class="thumb">
             <img src="assets/pdf-pubg.webp" alt="배틀그라운드 전리품 상자 파츠 루팅 프리셋 썸네일" loading="lazy" />
             <span class="game">배틀그라운드</span>
@@ -181,7 +231,7 @@
           </div>
         </article>
 
-        <article class="pdf-card">
+        <article class="pdf-card reveal" id="pdf-reverse1999">
           <div class="thumb">
             <img src="assets/pdf-reverse1999.webp" alt="리버스:1999 계정 단위 신규 성장 시스템 잔향 썸네일" loading="lazy" />
             <span class="game">리버스:1999</span>
@@ -197,7 +247,7 @@
           </div>
         </article>
 
-        <article class="pdf-card">
+        <article class="pdf-card reveal" id="pdf-maple-observatory">
           <div class="thumb">
             <img src="assets/pdf-maple-observatory.webp" alt="월묘의 까막산 천문대 썸네일" loading="lazy" />
             <span class="game">메이플스토리</span>
@@ -217,53 +267,119 @@
     </div>
   </section>
 
-  <!-- 게임 경험 정리 -->
-  <section class="section" id="gamelog">
+  <!-- 04 플레이한 게임 -->
+  <section class="section wrap reveal" id="gamelog">
     <div class="section-label">
-      <p class="en">Game Log &amp; Insight</p>
-      <h2 class="ko">게임 경험 정리</h2>
+      <p class="en"><span class="num">04</span>Games I Play</p>
+      <h2 class="ko">플레이한 게임</h2>
+      <ul class="label-links">
+        <li><a href="../game/passion.html">5년의 플레이, 게임 안팎에서 이어온 열정 <span class="arrow">자세히 →</span></a></li>
+        <li><a href="../game/perspective.html">다양한 게임 경험에서 넓혀온 기획의 관점 <span class="arrow">자세히 →</span></a></li>
+      </ul>
     </div>
     <div class="section-body">
-      <div class="cards text-only">
-        <a class="card" href="../game/passion.html">
-          <div class="body">
-            <div class="title"><span>5년의 플레이, 게임 안팎에서 이어온 열정</span><span class="arrow">자세히 →</span></div>
-            <p class="desc">지속적인 플레이로 엔드 콘텐츠까지 도전해 왔고, 다양한 오프라인 행사에도 직접 참여하며 게임에 대한 애정을 이어왔습니다.</p>
-          </div>
-        </a>
-        <a class="card" href="../game/perspective.html">
-          <div class="body">
-            <div class="title"><span>다양한 게임 경험에서 넓혀온 기획의 관점</span><span class="arrow">자세히 →</span></div>
-            <p class="desc">배틀그라운드 540시간, 리버스:1999 700일, 리그 오브 레전드 290레벨. MOBA·수집형 RPG·배틀로얄 등 장르를 가리지 않고 즐기며 영감을 얻었습니다.</p>
-          </div>
-        </a>
+      <div class="filter" role="group" aria-label="장르 필터">
+        <button type="button" class="chip is-on" data-genre="all" aria-pressed="true">전체</button>
+        <button type="button" class="chip" data-genre="battle-royale" aria-pressed="false">배틀로얄</button>
+        <button type="button" class="chip" data-genre="gacha-rpg" aria-pressed="false">수집형 RPG</button>
+        <button type="button" class="chip" data-genre="moba" aria-pressed="false">MOBA</button>
+        <button type="button" class="chip" data-genre="mmorpg" aria-pressed="false">MMORPG</button>
+        <button type="button" class="chip" data-genre="action-rpg" aria-pressed="false">액션 RPG</button>
       </div>
+      <div class="games" id="games">
+        <article class="game-card reveal" data-genre="battle-royale">
+          <div class="art"><img src="assets/games/pubg.webp" alt="배틀그라운드 공식 키아트" loading="lazy" /></div>
+          <div class="body">
+            <h3>배틀그라운드</h3>
+            <div class="row"><span class="tag">배틀로얄</span><span class="record">540시간</span></div>
+            <p class="obs" data-observation=""><span class="hint">관찰 메모 추가 예정</span></p>
+            <p class="link"><span class="k">연결 기획서</span><a href="#pdf-pubg">전리품 상자 파츠 루팅 프리셋</a></p>
+          </div>
+        </article>
+        <article class="game-card reveal" data-genre="gacha-rpg">
+          <div class="art"><img src="assets/games/reverse1999.webp" alt="리버스:1999 공식 키아트" loading="lazy" /></div>
+          <div class="body">
+            <h3>리버스:1999</h3>
+            <div class="row"><span class="tag">수집형 RPG</span><span class="record">700일</span></div>
+            <p class="obs" data-observation=""><span class="hint">관찰 메모 추가 예정</span></p>
+            <p class="link"><span class="k">연결 기획서</span><a href="#pdf-reverse1999">계정 단위 신규 성장 시스템 ‘잔향’</a></p>
+          </div>
+        </article>
+        <article class="game-card reveal" data-genre="moba">
+          <div class="art"><img src="assets/games/lol.webp" alt="리그 오브 레전드 공식 키아트" loading="lazy" /></div>
+          <div class="body">
+            <h3>리그 오브 레전드</h3>
+            <div class="row"><span class="tag">MOBA</span><span class="record">290레벨</span></div>
+            <p class="obs" data-observation=""><span class="hint">관찰 메모 추가 예정</span></p>
+          </div>
+        </article>
+        <article class="game-card reveal" data-genre="mmorpg">
+          <div class="art"><img src="assets/games/maplestory.webp" alt="메이플스토리 공식 대표 이미지" loading="lazy" /></div>
+          <div class="body">
+            <h3>메이플스토리</h3>
+            <div class="row"><span class="tag">MMORPG</span></div>
+            <p class="obs" data-observation=""><span class="hint">관찰 메모 추가 예정</span></p>
+            <p class="link"><span class="k">연결 기획서</span><a href="#pdf-maple-party">파티 모집 게시판</a><a href="#pdf-maple-observatory">월묘의 까막산 천문대</a></p>
+          </div>
+        </article>
+        <article class="game-card reveal" data-genre="action-rpg">
+          <div class="art"><img src="assets/games/mongil-stardive.webp" alt="몬길: 스타다이브 공식 키아트" loading="lazy" /></div>
+          <div class="body">
+            <h3>몬길: 스타다이브</h3>
+            <div class="row"><span class="tag">액션 RPG</span></div>
+            <p class="obs" data-observation=""><span class="hint">관찰 메모 추가 예정</span></p>
+            <p class="link"><span class="k">연결</span><a href="#ai-game">AI 게임 ‘태그 보스전’의 원작</a></p>
+          </div>
+        </article>
+      </div>
+      <p class="empty" id="games-empty" hidden>이 장르의 게임이 없습니다.</p>
     </div>
   </section>
 
-  <!-- 보유 역량 -->
-  <section class="section" id="skills">
+  <!-- 05 경력 -->
+  <section class="section wrap reveal" id="experience">
     <div class="section-label">
-      <p class="en">Skills</p>
+      <p class="en"><span class="num">05</span>Professional Experience</p>
+      <h2 class="ko">경력 사항</h2>
+    </div>
+    <div class="section-body">
+      <p class="muted small">프리랜서 업무 1년차 신입 기획자입니다.</p>
+      <div class="exp-head">
+        <span>케세라게임즈</span><span class="sep">|</span><span>프리랜서 기획자</span><span class="period">(2024 ~ 2025)</span>
+      </div>
+      <ul class="bullets">
+        <li>Unity Timeline을 활용한 스토리 컷신 연출 및 타이밍 설계</li>
+        <li>시나리오 검수 및 퇴고를 통한 대사와 연출 흐름 개선</li>
+        <li>캐릭터 기획 및 UI 수정 업무 참여</li>
+        <li>개발 리소스 및 제작 일정을 고려한 연출 대안 제시</li>
+        <li>소규모 QA 수행</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 06 보유 역량 -->
+  <section class="section wrap compact reveal" id="skills">
+    <div class="section-label">
+      <p class="en"><span class="num">06</span>Skills</p>
       <h2 class="ko">보유 역량</h2>
     </div>
     <div class="section-body">
-      <div class="skills">
-        <div class="skill"><span class="name">Notion</span><span class="detail">프로젝트 관리, 문서화, 협업 워크스페이스 구축</span></div>
-        <div class="skill"><span class="name">PowerPoint</span><span class="detail">프레젠테이션 디자인, 문서 작성</span></div>
-        <div class="skill"><span class="name">Excel</span><span class="detail">스크립팅 및 데이터 정리</span></div>
-        <div class="skill"><span class="name">Unity</span><span class="detail">게임 내 스토리 연출</span></div>
-        <div class="skill"><span class="name">Word</span><span class="detail">기획서 및 문서 작성</span></div>
-        <div class="skill"><span class="name">ChatGPT</span><span class="detail">에셋 제작</span></div>
-        <div class="skill"><span class="name">Claude</span><span class="detail">기획서 및 문서 작성 보조</span></div>
-      </div>
+      <ul class="skill-chips">
+        <li><strong>Notion</strong><span>프로젝트 관리, 문서화, 협업 워크스페이스 구축</span></li>
+        <li><strong>PowerPoint</strong><span>프레젠테이션 디자인, 문서 작성</span></li>
+        <li><strong>Excel</strong><span>스크립팅 및 데이터 정리</span></li>
+        <li><strong>Unity</strong><span>게임 내 스토리 연출</span></li>
+        <li><strong>Word</strong><span>기획서 및 문서 작성</span></li>
+        <li><strong>ChatGPT</strong><span>에셋 제작</span></li>
+        <li><strong>Claude</strong><span>기획서 및 문서 작성 보조</span></li>
+      </ul>
     </div>
   </section>
 
-  <!-- 학력 사항 -->
-  <section class="section" id="education">
+  <!-- 07 학력 -->
+  <section class="section wrap compact reveal" id="education">
     <div class="section-label">
-      <p class="en">Education</p>
+      <p class="en"><span class="num">07</span>Education</p>
       <h2 class="ko">학력 사항</h2>
     </div>
     <div class="section-body">
@@ -279,35 +395,110 @@
 
 <script>
 (function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---- 상단 바: 햄버거 메뉴 (1024px 미만) ----
   var nav = document.getElementById('nav');
   var toggle = nav.querySelector('.nav-toggle');
-  var links = nav.querySelectorAll('ul a[href^="#"]');
-
-  // 모바일: 햄버거 버튼으로 메뉴 접기/펼치기
+  var menuLinks = nav.querySelectorAll('.nav-menu a[href^="#"]');
   function setOpen(open) {
     nav.classList.toggle('is-open', open);
     toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     toggle.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
   }
   toggle.addEventListener('click', function () { setOpen(!nav.classList.contains('is-open')); });
-  links.forEach(function (a) { a.addEventListener('click', function () { setOpen(false); }); });
+  menuLinks.forEach(function (a) { a.addEventListener('click', function () { setOpen(false); }); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
 
-  // 현재 보고 있는 섹션을 내비에 표시 (액센트 색)
+  // ---- 현재 섹션 표시: 우측 내비 + 햄버거 메뉴 ----
+  var sideLinks = document.querySelectorAll('#side-nav a[href^="#"]');
+  var allLinks = Array.prototype.slice.call(sideLinks).concat(Array.prototype.slice.call(menuLinks));
+  var ids = [];
+  sideLinks.forEach(function (a) { ids.push(a.getAttribute('href').slice(1)); });
   if ('IntersectionObserver' in window) {
-    var byId = {};
-    links.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
     var visible = {};
-    var io = new IntersectionObserver(function (entries) {
+    var spy = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) { visible[en.target.id] = en.isIntersecting; });
       var current = null;
-      Object.keys(byId).forEach(function (id) { if (visible[id] && !current) current = id; });
-      links.forEach(function (a) {
-        if (a === byId[current]) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+      ids.forEach(function (id) { if (visible[id] && !current) current = id; });
+      allLinks.forEach(function (a) {
+        var on = current && a.getAttribute('href') === '#' + current;
+        if (on) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
       });
-    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
-    Object.keys(byId).forEach(function (id) { var el = document.getElementById(id); if (el) io.observe(el); });
+    }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
+    ids.forEach(function (id) { var el = document.getElementById(id); if (el) spy.observe(el); });
+
+    // 우측 내비가 히어로·짙은 블록 위에 걸쳐 있으면 흰 톤으로 바꾼다
+    var sideNav = document.getElementById('side-nav');
+    var darkAreas = [document.getElementById('top'), document.getElementById('ai-game')];
+    function checkDark() {
+      var r = sideNav.getBoundingClientRect();
+      var mid = r.top + r.height / 2;
+      var onDark = darkAreas.some(function (el) { if (!el) return false; var b = el.getBoundingClientRect(); return b.top <= mid && b.bottom >= mid; });
+      sideNav.classList.toggle('on-dark', onDark);
+    }
+    window.addEventListener('scroll', checkDark, { passive: true });
+    window.addEventListener('resize', checkDark);
+    checkDark();
   }
+
+  // ---- 스크롤 등장 (prefers-reduced-motion 이면 끔) ----
+  var reveals = document.querySelectorAll('.reveal');
+  if (!reduce && 'IntersectionObserver' in window) {
+    document.documentElement.classList.add('js-reveal');
+    var ro = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('is-in'); ro.unobserve(en.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+    reveals.forEach(function (el) { ro.observe(el); });
+  }
+
+  // ---- AI 게임 스크린샷 캐러셀 ----
+  var car = document.getElementById('g2-carousel');
+  if (car) {
+    var slides = car.querySelectorAll('.slide');
+    var dots = car.querySelectorAll('.dots button');
+    var idx = 0;
+    function go(n) {
+      idx = (n + slides.length) % slides.length;
+      slides.forEach(function (s, i) { s.classList.toggle('is-active', i === idx); s.setAttribute('aria-hidden', i === idx ? 'false' : 'true'); });
+      dots.forEach(function (d, i) { d.setAttribute('aria-selected', i === idx ? 'true' : 'false'); });
+    }
+    car.querySelector('.prev').addEventListener('click', function () { go(idx - 1); });
+    car.querySelector('.next').addEventListener('click', function () { go(idx + 1); });
+    dots.forEach(function (d, i) { d.addEventListener('click', function () { go(i); }); });
+    car.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') { go(idx - 1); e.preventDefault(); }
+      if (e.key === 'ArrowRight') { go(idx + 1); e.preventDefault(); }
+    });
+    // 터치 스와이프
+    var sx = null;
+    car.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; }, { passive: true });
+    car.addEventListener('touchend', function (e) {
+      if (sx === null) return;
+      var dx = e.changedTouches[0].clientX - sx; sx = null;
+      if (Math.abs(dx) > 40) go(dx < 0 ? idx + 1 : idx - 1);
+    });
+    go(0);
+  }
+
+  // ---- 플레이한 게임: 장르 필터 ----
+  var chips = document.querySelectorAll('.filter .chip');
+  var gameCards = document.querySelectorAll('#games .game-card');
+  var empty = document.getElementById('games-empty');
+  chips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      var g = chip.getAttribute('data-genre');
+      chips.forEach(function (c) { var on = c === chip; c.classList.toggle('is-on', on); c.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+      var shown = 0;
+      gameCards.forEach(function (card) {
+        var show = g === 'all' || card.getAttribute('data-genre') === g;
+        card.hidden = !show; if (show) shown++;
+      });
+      empty.hidden = shown > 0;
+    });
+  });
 })();
 </script>
 </body>

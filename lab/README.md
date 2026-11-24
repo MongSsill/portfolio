@@ -28,3 +28,38 @@
 ## 확인 방법
 
 빌드 도구가 없으므로 정적 서버로 저장소 루트를 띄운 뒤 `/lab/` 로 접속하면 됩니다. 스크린샷은 Playwright(Chrome 채널)로 1440px·390px 뷰포트, 라이트·다크 색상 스킴에서 전체 페이지를 캡처한 것입니다.
+
+---
+
+## 2차 시안 (2026-11-24)
+
+1차 시안 위에 같은 브랜치(`lab/redesign`)로 쌓은 변경입니다. 기존 파일은 여전히 건드리지 않았습니다.
+
+### 바뀐 점
+
+- **섹션 순서 변경과 번호 부여.** 히어로 → 01 대표 프로젝트 → 02 AI로 만든 게임 → 03 기획서 PDF → 04 플레이한 게임 → 05 경력 → 06 보유 역량 → 07 학력. 경력은 그대로, 역량은 한 줄 칩 목록, 학력은 한 줄로 압축했습니다.
+- **우측 고정 섹션 내비(1024px 이상).** 번호 + 한글 이름 7개가 화면 오른쪽에 세로로 고정되고, IntersectionObserver 로 현재 섹션의 점이 커지고 글자가 진해집니다. 1280px 미만에서는 점과 번호만 보이고 라벨은 호버·포커스 때 나타납니다. 히어로·짙은 블록 위를 지날 때는 흰 톤으로 바뀝니다. 상단 바는 이름과 "연락하기" 버튼만 남겼고, 1024px 미만에서는 1차의 햄버거 메뉴를 유지합니다.
+- **AI로 만든 게임 섹션(신규).** 라이트 모드에서도 짙은 블록으로 톤을 구분합니다. 게임 1개(태그 보스전)를 가로형 카드 하나로 크게 두었고, 왼쪽은 인게임 스크린샷 3장 캐러셀(좌우 버튼, 점, 키보드 ←/→, 터치 스와이프), 오른쪽은 설명과 버튼 2개("직접 해보기 ↗" primary, "아티팩트 문서 보기 ↗")와 "PC 키보드 전용" 안내입니다. 설명은 `ai-seed-kit/games/g2-slice/README.md` 의 문장을 요약한 것으로, 새 사실을 더하지 않았습니다.
+  - 스크린샷은 공개 주소 https://mongssill.github.io/ai-seed-kit-games/g2-slice/ 를 Playwright(Chrome)로 1280×720 에서 열어 캔버스 영역만 2배 해상도로 찍었습니다. 시작 화면 → Enter 로 시작 → 방향키·A·S 입력 뒤 전투 중 → `?test` 로 열어 그로기 게이지가 찬 상태에서 F 를 눌러 그로기 연출(눈 클로즈업) 순입니다. 그로기 장면은 `?test` 모드의 "확인용" 워터마크 문구만 캡처 시점에 가렸고, 게임 파일은 수정하지 않았습니다.
+- **플레이한 게임 섹션(신규).** 공식 키아트 카드 5장(위 키아트 / 게임명 / 장르 칩 / 기록(있을 때만) / 관찰 한 줄 / 연결 기획서 링크). 장르 필터 칩(전체 / 배틀로얄 / 수집형 RPG / MOBA / MMORPG / 액션 RPG)은 작은 JS 로 동작하고 기본은 전체입니다. 기록은 현재 사이트에 있는 것만 썼습니다(배틀그라운드 540시간, 리버스:1999 700일, 리그 오브 레전드 290레벨). 연결 기획서는 `#portfolio` 의 해당 카드로 앵커되고, 몬길: 스타다이브는 AI 게임 섹션으로 연결됩니다. 섹션 머리에 기존 두 상세 페이지(`game/passion.html`, `game/perspective.html`) 링크를 "자세히"로 두었습니다.
+  - **관찰 메모는 비워 두었습니다.** 각 카드의 `<p class="obs" data-observation="">` 안에 주인이 직접 쓸 자리이며, 비어 있는 동안은 "관찰 메모 추가 예정" 안내가 흐리게 보입니다. 텍스트를 넣고 `data-observation` 값을 아무 문자열로 채우면 안내가 사라집니다.
+- **인터랙션.** 섹션과 카드가 뷰포트에 들어올 때 살짝 올라오며 나타납니다(`prefers-reduced-motion: reduce` 면 끔). 상세 페이지의 구/신 모델링 비교는 좌우로 끌어 비교하는 슬라이더(range input 기반, 키보드 ←/→ 가능, 모바일 터치 가능)로 바꿨습니다. 가로 슬라이드·탭 전환 같은 페이지 단위 인터랙션은 넣지 않았습니다.
+- **히어로.** 커버 위에 흰 글자 제목을 올리는 짙은 히어로로 바꾸고 아래 밝은 본문으로 이어지게 했습니다. 문구는 1차 것 그대로이고, 연락처는 히어로 아래 한 줄 스트립으로 내렸습니다.
+
+### 키아트 출처 (모두 공식 사이트의 공유용 대표 이미지, `og:image`)
+
+| 게임 | 파일 | 출처 |
+|---|---|---|
+| 배틀그라운드 | `lab/assets/games/pubg.webp` | https://pubg.com/ko 의 og:image → https://wstatic-prod.pubg.com/web/live/static/og/img-og-pubg.jpg |
+| 리버스:1999 | `lab/assets/games/reverse1999.webp` | https://re1999.bluepoch.com/ 의 og:image → https://webres-hw.bluepoch.com/shareCard/3-9en-banben.jpg |
+| 리그 오브 레전드 | `lab/assets/games/lol.webp` | https://www.leagueoflegends.com/ko-kr/ 의 og:image → https://cmsassets.rgpub.io/sanity/images/dsfx7636/content_organization_live/bdc123b2cae1ff76fea465b287240cab8f3208a7-1200x630.jpg |
+| 메이플스토리 | `lab/assets/games/maplestory.webp` | https://maplestory.nexon.com/ 의 og:image → https://lwi.nexon.com/maplestory/2026/1119_intro_EFA0504AEC2E9DE0/exception/meta.jpg (400×400 정사각, 카드에서는 가운데를 16:9 로 잘라 보여 줌) |
+| 몬길: 스타다이브 | `lab/assets/games/mongil-stardive.webp` | https://stardive.netmarble.com/ 의 og:image → https://sgimage.netmarble.com/images/netmarble/monster2/20260305/m3sm1772674620510.jpg |
+
+모두 가로 600px 이하 WebP 사본으로 저장했습니다(각 16~46KB). 공식 출처를 못 찾은 게임은 없습니다. 이미지 저작권은 각 게임사에 있으며, 포트폴리오 안에서 플레이 경험을 설명하기 위한 대표 이미지로만 사용합니다. 저작권자의 요청이 있으면 게임명 타이포 플레이스홀더로 바꿉니다.
+
+### 2차에서 새로 추가된 파일
+
+- `lab/assets/ai/g2-title.webp`, `g2-fight.webp`, `g2-groggy.webp` (태그 보스전 인게임 스크린샷)
+- `lab/assets/games/*.webp` (공식 키아트 사본 5장)
+- `lab/screenshots/index-desktop-1440-sections-ai-games.png` (AI 게임 + 플레이한 게임 섹션 캡처)
