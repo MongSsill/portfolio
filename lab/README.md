@@ -700,3 +700,13 @@ PR #2 브랜치(`lab/ai-game-3`, Chain Echo 포함)에서 분기한 **비교용 
 - 신규 사진과 이미지 4점은 주인 제공입니다. 행사 부스 사진과 경기장 사진은 긴 변 1400px WebP로 저장했습니다. 영상 썸네일 JPG와 글 캡처 PNG는 제공된 해상도를 유지했습니다.
 - 메이플스토리와 게임 밖 활동은 공용 확대 보기를 사용합니다. Playwright로 세로·가로·글 캡처의 원본 비율, 챕터 내 좌우 키, Esc·바깥 클릭, 모바일 스와이프를 확인했습니다.
 - [현장 1440px](screenshots/beyond-ch1-v17-1440.png), [생산자 1440px](screenshots/beyond-ch2-v17-1440.png), [메이플스토리 카드](screenshots/maple-card-v17-1440.png), [세로 사진 확대](screenshots/lightbox-v17-1440.png), [현장 390px](screenshots/beyond-ch1-v17-390.png), [생산자 390px](screenshots/beyond-ch2-v17-390.png).
+
+---
+
+## 18차 — 칼파 5장 썸네일과 게임 밖 활동 3챕터
+
+- 칼파 스토리 5장 카드는 주인 제공 WebP를 사용하고, 요청한 16:9 프레임에 `cover`로 표시합니다. 기존 기간 배지는 1440px에서 흰 글자와 반투명 어두운 배경으로 읽힙니다.
+- 데스크톱에서는 이미지 스테이지를 왼쪽에, 라벨·제목·문장·챕터 번호를 오른쪽에 표시합니다. 모바일은 위에서부터 설명과 이미지를 읽는 기존 순서를 유지합니다.
+- ‘경험의 확장’을 두 번째에 넣었습니다. 세로 사진 3장을 위에 놓고 9:16 사진 칸을 좁혔습니다. 가로 사진은 아래 행 중앙에 최대 450px 폭으로 표시합니다. 영화 사진 4장은 주인 제공이며 긴 변 1400px WebP로 변환했습니다.
+- ‘소비자를 넘어 생산자로’의 문장을 교체했습니다. Playwright에서 두 문장의 정확한 표기, 챕터 순서와 사진 수, 3개 점·번호·화살표·키보드·스와이프 및 확대 보기를 확인했습니다.
+- [현장 1440px](screenshots/beyond-ch1-v18-1440.png), [경험 1440px](screenshots/beyond-ch2-v18-1440.png), [생산자 1440px](screenshots/beyond-ch3-v18-1440.png), [대표 프로젝트 1440px](screenshots/projects-v18-1440.png), [경험 390px](screenshots/beyond-ch2-v18-390.png).

@@ -123,8 +123,8 @@
           </div>
         </a>
         <a class="card reveal" href="../projects/kalpa-ch5.html">
-          <div class="thumb ph story">
-            <span class="ph-word" aria-hidden="true">Story</span>
+          <div class="thumb ch5-thumb">
+            <img src="assets/thumb-kalpa-ch5.webp" alt="칼파 스토리 5장 연출 화면" width="443" height="249" loading="lazy" />
             <span class="period">2025.08 ~ 2025.11</span>
           </div>
           <div class="body">
@@ -1651,10 +1651,10 @@
           <p class="kicker">게임 밖에서</p>
           <h3 data-group-title>현장의 기록</h3>
           <p class="statement" data-group-statement>다양한 오프라인 행사에 직접 참여하며 게임에 대한 애정을 이어왔습니다.</p>
-          <p class="counter" aria-live="polite"><span data-current>1</span> / 2</p>
+          <p class="counter" aria-live="polite"><span data-current>1</span> / 3</p>
         </div>
         <div class="beyond-stage">
-          <div class="carousel big chapters" tabindex="0" aria-roledescription="carousel" aria-label="게임 밖 활동 · 챕터 2개">
+          <div class="carousel big chapters" tabindex="0" aria-roledescription="carousel" aria-label="게임 밖 활동 · 챕터 3개">
             <div class="track">
               <div class="slide is-active" aria-label="챕터 1 · 현장의 기록">
                 <div class="photo-grid ch1" data-photo-gallery>
@@ -1685,8 +1685,32 @@
                   </figure>
                 </div>
               </div>
-              <div class="slide" aria-label="챕터 2 · 소비자를 넘어 생산자로">
+              <div class="slide" aria-label="챕터 2 · 경험의 확장">
                 <div class="photo-grid ch2" data-photo-gallery>
+                  <figure data-caption="">
+                    <button type="button" class="photo-btn" aria-label="영화 프로젝트 헤일메리 포스터 크게 보기">
+                      <img src="assets/beyond/movie-1.webp" alt="영화 프로젝트 헤일메리 포스터" width="1050" height="1400" loading="lazy" decoding="async" />
+                    </button>
+                  </figure>
+                  <figure data-caption="">
+                    <button type="button" class="photo-btn" aria-label="영화 시사회 티켓 크게 보기">
+                      <img src="assets/beyond/movie-2.webp" alt="영화 시사회 티켓" width="1050" height="1400" loading="lazy" decoding="async" />
+                    </button>
+                  </figure>
+                  <figure data-caption="">
+                    <button type="button" class="photo-btn" aria-label="영화 오디세이 IMAX 포스터 크게 보기">
+                      <img src="assets/beyond/movie-3.webp" alt="영화 오디세이 IMAX 포스터" width="788" height="1400" loading="lazy" decoding="async" />
+                    </button>
+                  </figure>
+                  <figure data-caption="">
+                    <button type="button" class="photo-btn" aria-label="치이카와 입간판 크게 보기">
+                      <img src="assets/beyond/movie-4.webp" alt="치이카와 입간판" width="1400" height="788" loading="lazy" decoding="async" />
+                    </button>
+                  </figure>
+                </div>
+              </div>
+              <div class="slide" aria-label="챕터 3 · 소비자를 넘어 생산자로">
+                <div class="photo-grid ch3" data-photo-gallery>
                   <figure data-caption="">
                     <button type="button" class="photo-btn" aria-label="영상 썸네일 크게 보기">
                       <img src="assets/beyond/producer-1-catchcuk-episode02.jpg" alt="영상 썸네일" width="1079" height="599" loading="lazy" decoding="async" />
@@ -1704,7 +1728,8 @@
             <button class="car-btn next" type="button" aria-label="다음 챕터">›</button>
             <div class="dots" role="tablist" aria-label="챕터 선택">
               <button type="button" role="tab" aria-selected="true" aria-label="챕터 1 · 현장의 기록"></button>
-              <button type="button" role="tab" aria-selected="false" aria-label="챕터 2 · 소비자를 넘어 생산자로"></button>
+              <button type="button" role="tab" aria-selected="false" aria-label="챕터 2 · 경험의 확장"></button>
+              <button type="button" role="tab" aria-selected="false" aria-label="챕터 3 · 소비자를 넘어 생산자로"></button>
             </div>
           </div>
         </div>
@@ -2088,7 +2113,8 @@
   var beyond = document.getElementById('beyond-car');
   var groups = [
     { title: '현장의 기록', statement: '다양한 오프라인 행사에 직접 참여하며 게임에 대한 애정을 이어왔습니다.' },
-    { title: '소비자를 넘어 생산자로', statement: '보고 배운 것을 바탕으로 한 근거 있는 기획과 분석력으로 콘텐츠 생산자로서의 역할 또한 진행해 왔습니다.' }
+    { title: '경험의 확장', statement: '다양한 장르의 영화를 꾸준히 관람하여 서사와 연출을 경험하고, 문화 콘텐츠를 바라보는 시야를 넓혀왔습니다.' },
+    { title: '소비자를 넘어 생산자로', statement: '보고 배운 것을 바탕으로 한 근거 있는 기획과 분석으로 콘텐츠 생산자로서의 경험도 쌓아왔습니다.' }
   ];
   var tEl = beyond.querySelector('[data-group-title]');
   var sEl = beyond.querySelector('[data-group-statement]');
