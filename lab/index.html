@@ -442,7 +442,6 @@
             </div>
           </li>
         </ul>
-        <p class="linked-empty" hidden>이 장르에는 작업으로 이어진 게임이 없음</p>
       </div>
 
       <!-- 줄 B·C·D: 플랫폼별 커버 스트림 (드래그 · 화살표 · ←/→, 자동 흐름) -->
@@ -747,7 +746,6 @@
 </li>
           </ul>
           <button type="button" class="stream-arrow next" aria-label="PC 줄 오른쪽으로" tabindex="-1">›</button>
-          <p class="stream-empty" hidden>이 플랫폼에는 없음</p>
         </div>
       </div>
       <div class="stream reveal" data-dir="right" data-platform="mobile">
@@ -967,7 +965,6 @@
 </li>
           </ul>
           <button type="button" class="stream-arrow next" aria-label="모바일 줄 오른쪽으로" tabindex="-1">›</button>
-          <p class="stream-empty" hidden>이 플랫폼에는 없음</p>
         </div>
       </div>
       <div class="stream reveal" data-dir="left" data-platform="console">
@@ -1509,7 +1506,6 @@
 </li>
           </ul>
           <button type="button" class="stream-arrow next" aria-label="콘솔 줄 오른쪽으로" tabindex="-1">›</button>
-          <p class="stream-empty" hidden>이 플랫폼에는 없음</p>
         </div>
       </div>
       <p class="foot-note">명칭 확인 중인 게임은 ※ 표시 · 커버는 공식 스토어·공식 사이트, 없으면 공식 해외 페이지·Wikipedia 박스아트 (출처는 README) · 타일을 누르면 자세히</p>
@@ -1554,8 +1550,8 @@
           <div class="carousel big chapters" tabindex="0" aria-roledescription="carousel" aria-label="게임 안팎의 기록 · 챕터 2개">
             <div class="track">
               <div class="slide is-active" data-group="0" aria-label="챕터 1 · 게임 안에서">
-                <div class="photo-grid g3">
-                  <figure data-caption="" class="big">
+                <div class="photo-grid ch1">
+                  <figure data-caption="">
                     <button type="button" class="photo-btn" data-src="assets/beyond/maple-play-1.webp" data-alt="메이플스토리 플레이 스크린샷 1" aria-label="메이플스토리 플레이 스크린샷 1 크게 보기">
                       <img src="assets/beyond/maple-play-1.webp" alt="메이플스토리 플레이 스크린샷 1" width="1400" height="788" />
                     </button>
@@ -1567,7 +1563,7 @@
                     </button>
                     <figcaption><span class="hint">캡션 추가 예정</span></figcaption>
                   </figure>
-                  <figure data-caption="">
+                  <figure data-caption="" class="wide">
                     <button type="button" class="photo-btn" data-src="assets/beyond/maple-2000days.webp" data-alt="2000일 출석 기록" aria-label="2000일 출석 기록 크게 보기">
                       <img src="assets/beyond/maple-2000days.webp" alt="2000일 출석 기록" width="768" height="182" loading="lazy" />
                     </button>
@@ -1576,7 +1572,7 @@
                 </div>
               </div>
               <div class="slide" data-group="1" aria-label="챕터 2 · 게임 밖에서">
-                <div class="photo-grid g3">
+                <div class="photo-grid ch2">
                   <figure data-caption="" class="big">
                     <button type="button" class="photo-btn" data-src="assets/beyond/offline-1.webp" data-alt="오프라인 행사 참여 사진 1" aria-label="오프라인 행사 참여 사진 1 크게 보기">
                       <img src="assets/beyond/offline-1.webp" alt="오프라인 행사 참여 사진 1" width="1050" height="1400" loading="lazy" />
@@ -2014,8 +2010,7 @@
           if (!li.hidden && !isDup) shown++;
         });
         st.filtered = !!genre; st.x = 0; st.vel = 0; st.tween = null;
-        root.classList.toggle('is-empty', !!genre && shown === 0);
-        root.querySelector('.stream-empty').hidden = !(genre && shown === 0);
+        root.hidden = !!genre && shown === 0; // 해당 장르가 없는 줄은 통째로 숨김
         measure(); wrap(); apply();
       };
       st.measure = measure;
@@ -2059,7 +2054,7 @@
     var statusLabel = gamelog.querySelector('[data-genre-label]');
     var clearBtn = gamelog.querySelector('.genre-clear');
     var linkedCards = gamelog.querySelectorAll('.linked-card');
-    var linkedEmpty = gamelog.querySelector('.linked-empty');
+    var linkedRow = gamelog.querySelector('.linked-row');
     var totalLabel = statusLabel.textContent;
     var current = '';
     function setFilter(genre) {
@@ -2070,7 +2065,7 @@
       gamelog.classList.toggle('is-filtering', !!current);
       var shownLinked = 0;
       linkedCards.forEach(function (li) { var hit = !current || li.getAttribute('data-genre') === current; li.hidden = !hit; if (hit) shownLinked++; });
-      linkedEmpty.hidden = !(current && shownLinked === 0);
+      linkedRow.hidden = !!current && shownLinked === 0; // 작업으로 이어진 게임이 없으면 줄 전체 숨김
       streams.forEach(function (s) { s.filter(current); });
       statusLabel.textContent = current ? label + ' · ' + count + '종 보는 중' : totalLabel;
       clearBtn.hidden = !current;
