@@ -274,3 +274,132 @@
 
 - 19개 선반의 관찰 메모: `.shelf-head .obs[data-observation=""]`
 - 메인 카드 관찰 메모: `#game-maplestory .obs[data-observation=""]`
+
+---
+
+## 6차 (2026-11-24): 플레이한 게임을 가로로 흐르는 커버 스트림으로, 커버는 74종 전부
+
+같은 브랜치에 쌓은 여섯 번째 변경입니다. 기존 파일은 여전히 건드리지 않았습니다. 게임 이름은 5차에서 확인한 공식 표기 그대로이고, ※(공식 페이지 직접 확인 못 함) 표시도 그대로입니다.
+
+### 구조 (위에서 아래로)
+
+1. **메인 카드(메이플스토리)** — 4차 카드를 유지하되 높이를 줄였고(커버 16:10, 본문 여백 축소), 2000일 출석 썸네일은 그대로입니다. 연결 기획서 라벨은 "이 게임에서 만든 것"으로 통일.
+2. **요약 띠** — 74종 · 플랫폼 4 · 10년 · 장르 그룹 19. **장르 분포 바**는 칸이 버튼이 되어 누르면 아래 줄들에서 그 장르 타일만 밝아지고 나머지는 흐려집니다(다시 누르거나 "필터 해제"로 해제, 해제 전까지 줄은 멈춤). 호버 툴팁 "플랫폼 · 그룹 · N종" 유지.
+3. **줄 A "작업으로 이어진 게임"** — 연결 작업이 있는 5개(메이플스토리 → 기획서 2개, PUBG: 배틀그라운드 → 기획서, 리버스: 1999 → 기획서, 몬길: STAR DIVE → AI 게임 '태그 보스전'의 원작, 칼파: 코스믹 심포니 → 참여작·대표 프로젝트)를 가로 카드 5장으로 한 줄에. 자동 흐름 없음. 타일 배지는 "기획서" / "AI 게임" / "참여작".
+4. **줄 B·C·D 플랫폼별 커버 스트림** — PC(21) · 모바일(15) · 콘솔(38). 각 줄은 모든 커버가 좌우로 천천히 흐르는 무한 루프(CSS `@keyframes translateX`, 내용을 두 번 복제, 한 바퀴 60~90초, 줄마다 방향 교대). 마우스를 올리거나 포커스가 들어가면 멈춥니다. 왼쪽 끝에 플랫폼 이름과 종수 세로 라벨. 타일 순서: 연결 작업 있는 게임 → 기록 있는 게임 → 나머지(5차 그룹 순서). 타일 = 커버(3:4, 184px) + 이름(말줄임) + 기록 배지 + 연결 배지, 호버 시 살짝 확대.
+   - **타일 클릭 → 팝오버**(`<dialog>`): 커버 크게, 정식 명칭, 플랫폼, 장르 그룹, 기록, 관찰 메모 자리(`data-observation=""`), 연결 작업 링크. Esc·바깥 클릭·× 로 닫힘, 닫히면 원래 타일로 포커스 복귀. 네이티브 dialog 라 포커스 트랩은 브라우저가 처리합니다.
+   - **움직임 줄이기(`prefers-reduced-motion`)·터치 기기(`hover: none`)** 에서는 자동 흐름을 끄고 가로 스크롤 + 좌우 화살표로 같은 줄을 보여 줍니다. 화살표는 데스크톱에서도 항상 보이며, 누르면 그 줄은 수동 모드(흐름 정지 + 스크롤)가 됩니다. Tab 으로 타일에 들어와도 그 줄이 멈추고 타일이 보이도록 스크롤합니다. 탭이 비활성화되면 멈춥니다.
+5. 장르 선반·플랫폼 탭·"더 보기"는 없앴습니다. 장르 정보는 분포 바 필터와 팝오버에만 남습니다.
+6. 하단 작은 글씨(※ 안내 + 커버 출처 안내) 유지.
+
+세로 길이: 5차 2,550px(선반 하나 펼친 상태) → 6차 1,773px(1440px 기준). 절반에는 못 미쳤습니다. 메인 카드 + 요약 띠 + 분포 바 + 줄 A + 스트림 3줄을 모두 두면 이 정도가 하한이었고, 더 줄이려면 메인 카드를 빼거나 스트림을 2줄로 합쳐야 합니다.
+
+### 성능·접근성
+
+- 커버 74장 × 2(복제) = 148 `<img>`, 모두 `loading="lazy" decoding="async"`, 복제본 타일은 `aria-hidden="true"` + `tabindex="-1"`. 커버 폴더 총 1.7MB(74장, 평균 23KB). 5차 대비 추가분은 약 0.6MB.
+- 자동 흐름은 `transform` 만 애니메이션(레이아웃 변화 없음, `will-change: transform`).
+- 타일은 `<button>`, 팝오버는 `<dialog aria-labelledby>`.
+
+### 74종 이미지 출처 (①공식 스토어/사이트 ②공식 해외 페이지 ③Wikipedia 박스아트)
+
+집계: ① 50 · ② 10 · ③ 11 · 타일 3. 모두 `lab/assets/games/covers/<slug>.webp`, 360×480. 가로·정사각 원본은 흐린 배경 위 레터박스, 세로 원본은 3:4 크롭. 닌텐도 코리아 스토어 패키지 이미지 중 흰 여백이 큰 것은 여백을 잘라 썼습니다.
+
+| 플랫폼 | 게임 | 파일 | 구분 | 출처 | 비고 |
+|---|---|---|---|---|---|
+| 메인 | 메이플스토리 | `maplestory.webp` | ① | 메이플스토리 공식 사이트 og:image (2차에서 받음) https://maplestory.nexon.com/ | 가로/정사각 원본 → 레터박스 |
+| PC | 리그 오브 레전드 | `lol.webp` | ① | https://www.leagueoflegends.com/ko-kr/ og:image |  |
+| PC | Dota 2 | `dota2.webp` | ① | Steam 세로 캡슐 https://store.steampowered.com/app/570/ |  |
+| PC | 전략적 팀 전투 | `tft.webp` | ① | App Store KR 앱 아이콘 https://apps.apple.com/kr/app/id1480616748 | 가로/정사각 원본 → 레터박스 |
+| PC | PUBG: 배틀그라운드 | `pubg.webp` | ① | Steam 세로 캡슐 https://store.steampowered.com/app/578080/ |  |
+| PC | 오버워치 | `overwatch.webp` | ① | Steam 세로 캡슐 https://store.steampowered.com/app/2357570/ |  |
+| PC | Apex 레전드 | `apex-legends.webp` | ① | Steam KR 세로 캡슐 https://store.steampowered.com/app/1172470/ |  |
+| PC | Vampire Survivors | `vampire-survivors.webp` | ① | Steam 세로 캡슐 https://store.steampowered.com/app/1794680/ |  |
+| PC | Enter the Gungeon | `enter-the-gungeon.webp` | ① | Steam 세로 캡슐 https://store.steampowered.com/app/311690/ |  |
+| PC | Brotato | `brotato.webp` | ① | Steam KR 세로 캡슐 https://store.steampowered.com/app/1942280/ |  |
+| PC | Spelunky 2 | `spelunky-2.webp` | ① | Steam KR 세로 캡슐 https://store.steampowered.com/app/418530/ |  |
+| PC | Cult of the Lamb | `cult-of-the-lamb.webp` | ① | Steam KR 세로 캡슐 https://store.steampowered.com/app/1313140/ |  |
+| PC | Ship of Fools | `ship-of-fools.webp` | ① | Steam KR 세로 캡슐 https://store.steampowered.com/app/1286580/ |  |
+| PC | Hollow Knight: Silksong | `silksong.webp` | ① | Steam 세로 캡슐 https://store.steampowered.com/app/1030300/ |  |
+| PC | 산나비 | `sanabi.webp` | ① | Steam 세로 캡슐 https://store.steampowered.com/app/1562700/ |  |
+| PC | Baba Is You | `baba-is-you.webp` | ① | Steam 세로 캡슐 https://store.steampowered.com/app/736260/ |  |
+| PC | 팀파이트 매니저 | `teamfight-manager.webp` | ① | Steam KR 세로 캡슐 https://store.steampowered.com/app/1372810/ |  |
+| PC | 러브 딜리버리 | `love-delivery.webp` | ① | Steam 세로 캡슐 https://store.steampowered.com/app/1817940/ |  |
+| PC | 썸썸 편의점 | `sumsum-convenience.webp` | ① | Steam KR 세로 캡슐 https://store.steampowered.com/app/1217390/ |  |
+| PC | 기적의 분식집 | `miracle-snack-shop.webp` | ① | Steam KR 세로 캡슐 https://store.steampowered.com/app/995460/ |  |
+| PC | 방구석에 인어아가씨 | `mermaid-in-my-room.webp` | ① | App Store KR 앱 아이콘 https://apps.apple.com/kr/app/id904882274 | 가로/정사각 원본 → 레터박스 |
+| PC | 칼파: 코스믹 심포니 | `kalpa.webp` | ① | Steam 세로 캡슐 https://store.steampowered.com/app/2717010/ |  |
+| 모바일 | 리버스: 1999 | `reverse1999.webp` | ① | https://re1999.bluepoch.com/ og:image |  |
+| 모바일 | 승리의 여신: 니케 | `nikke.webp` | ① | https://nikke-kr.com/ og:image |  |
+| 모바일 | 블루 아카이브 | `blue-archive.webp` | ① | https://bluearchive.nexon.com/ og:image |  |
+| 모바일 | 원신 | `genshin.webp` | ① | https://genshin.hoyoverse.com/ko/home og:image |  |
+| 모바일 | 트릭컬 리바이브 | `trickcal-revive.webp` | ① | App Store KR 앱 아이콘 https://apps.apple.com/kr/app/id6443824730 | 가로/정사각 원본 → 레터박스 |
+| 모바일 | 젠레스 존 제로 | `zenless-zone-zero.webp` | ① | App Store KR 앱 아이콘 https://apps.apple.com/kr/app/id1606356401 | 가로/정사각 원본 → 레터박스 |
+| 모바일 | 스텔라 소라 | `stella-sora.webp` | ① | App Store KR 앱 아이콘 https://apps.apple.com/kr/app/id6738407268 | 가로/정사각 원본 → 레터박스 |
+| 모바일 | 헤븐 번즈 레드 | `heaven-burns-red.webp` | ① | App Store KR 앱 아이콘 https://apps.apple.com/kr/app/id1576831351 | 가로/정사각 원본 → 레터박스 |
+| 모바일 | 몬길: STAR DIVE | `mongil-stardive.webp` | ① | 몬길: STAR DIVE 공식 사이트 og:image https://stardive.netmarble.com/ | 가로/정사각 원본 → 레터박스 |
+| 모바일 | 쿠키런: 킹덤 | `cookierun-kingdom.webp` | ① | https://www.cookierun-kingdom.com/ko/ og:image |  |
+| 모바일 | 세븐나이츠 키우기 | `seven-knights-idle.webp` | ① | App Store KR 앱 아이콘 https://apps.apple.com/kr/app/id1658717149 | 가로/정사각 원본 → 레터박스 |
+| 모바일 | Mini Warriors ※ | `mini-warriors.webp` | 타일 | — | ①②③ 모두 실패: Google Play 스토어 페이지 og:image: HTTP 404 |
+| 모바일 | 브롤스타즈 | `brawl-stars.webp` | ① | https://supercell.com/en/games/brawlstars/ og:image |  |
+| 모바일 | Pokémon GO | `pokemon-go.webp` | ① | App Store KR 앱 아이콘 https://apps.apple.com/kr/app/id1094591345 | 가로/정사각 원본 → 레터박스 |
+| 콘솔 | 젤다의 전설 브레스 오브 더 와일드 | `zelda-botw.webp` | ① | 닌텐도 코리아 스토어 https://store.nintendo.co.kr/70010000009367 |  |
+| 콘솔 | 젤다의 전설 지혜의 투영 | `zelda-echoes-of-wisdom.webp` | ① | 닌텐도 코리아 스토어 제품 이미지 https://store.nintendo.co.kr/70010000084620 | 가로/정사각 원본 → 레터박스 |
+| 콘솔 | 젤다의 전설 몽환의 모래시계 ※ | `zelda-phantom-hourglass.webp` | ② | nintendo.co.jp DS 소프트 페이지 https://www.nintendo.co.jp/ds/azej/ | 가로/정사각 원본 → 레터박스 |
+| 콘솔 | 젤다의 전설 꿈꾸는 섬 | `zelda-links-awakening.webp` | ① | 닌텐도 코리아 스토어 제품 이미지 https://store.nintendo.co.kr/70010000022823 | 가로/정사각 원본 → 레터박스 |
+| 콘솔 | Pokémon LEGENDS 아르세우스 | `pokemon-legends-arceus.webp` | ① | 닌텐도 코리아 스토어 https://store.nintendo.co.kr/70010000039947 |  |
+| 콘솔 | 포켓몬스터DP 디아루가·펄기아 / 포켓몬스터Pt 기라티나 ※ | `pokemon-dp-pt.webp` | ② | nintendo.co.jp DS 소프트 페이지 https://www.nintendo.co.jp/ds/adaj/ | 가로/정사각 원본 → 레터박스 |
+| 콘솔 | 포켓몬스터소드 | `pokemon-sword.webp` | ① | 닌텐도 코리아 스토어 제품 이미지 https://store.nintendo.co.kr/70010000026251 | 가로/정사각 원본 → 레터박스 |
+| 콘솔 | 포켓몬스터바이올렛 | `pokemon-violet.webp` | ① | 닌텐도 코리아 스토어 제품 이미지 https://store.nintendo.co.kr/70010000053973 | 가로/정사각 원본 → 레터박스 |
+| 콘솔 | 슈퍼 마리오 오디세이 | `mario-odyssey.webp` | ① | 닌텐도 코리아 스토어 https://store.nintendo.co.kr/70010000009372 |  |
+| 콘솔 | 슈퍼 마리오 갤럭시 2 | `mario-galaxy-2.webp` | ① | 닌텐도 코리아 스토어 https://store.nintendo.co.kr/70010000104194 |  |
+| 콘솔 | 슈퍼 마리오 64 DS ※ | `super-mario-64-ds.webp` | ② | nintendo.co.jp DS 소프트 페이지 https://www.nintendo.co.jp/ds/asmj/ | 가로/정사각 원본 → 레터박스 |
+| 콘솔 | 마리오 카트 DS ※ | `mario-kart-ds.webp` | ② | nintendo.co.jp DS 소프트 페이지 https://www.nintendo.co.jp/ds/amcj/ | 가로/정사각 원본 → 레터박스 · 흰 여백 제거 |
+| 콘솔 | 마리오 카트 월드 | `mario-kart-world.webp` | ① | 닌텐도 코리아 스토어 제품 이미지 https://store.nintendo.co.kr/beepaaaaakor | 흰 여백 제거 |
+| 콘솔 | 뉴 슈퍼 마리오브라더스 ※ | `new-super-mario-bros.webp` | ③ | Wikipedia(en) 문서 infobox 박스아트 파일 https://en.wikipedia.org/wiki/New_Super_Mario_Bros. (파일: https://en.wikipedia.org/wiki/File%3ANewSuperMarioBrothers.jpg) | 가로/정사각 원본 → 레터박스 |
+| 콘솔 | 동키콩 바난자 | `donkey-kong-bananza.webp` | ① | 닌텐도 코리아 스토어 제품 이미지 https://store.nintendo.co.kr/7000200 | 흰 여백 제거 |
+| 콘솔 | 마리오 vs. 동키콩 | `mario-vs-donkey-kong.webp` | ① | 닌텐도 코리아 스토어 제품 이미지 https://store.nintendo.co.kr/70010000072193 | 가로/정사각 원본 → 레터박스 |
+| 콘솔 | 슈퍼 마리오 메이커 2 | `super-mario-maker-2.webp` | ① | 닌텐도 코리아 스토어 제품 이미지 https://store.nintendo.co.kr/70010000020843 | 가로/정사각 원본 → 레터박스 |
+| 콘솔 | 마리오 파티 ※ | `mario-party.webp` | 타일 | — | ①②③ 모두 실패:  |
+| 콘솔 | 요시 아일랜드 DS ※ | `yoshis-island-ds.webp` | ③ | Wikipedia(en) 문서 infobox 박스아트 파일 https://en.wikipedia.org/wiki/Yoshi's_Island_DS (파일: https://en.wikipedia.org/wiki/File%3AYoshi'sIslandDScover.PNG) | 가로/정사각 원본 → 레터박스 |
+| 콘솔 | 슈퍼 페이퍼 마리오 ※ | `super-paper-mario.webp` | ② | nintendo.co.jp Wii 소프트 페이지 https://www.nintendo.co.jp/wii/r8pj/ | 가로/정사각 원본 → 레터박스 |
+| 콘솔 | 페이퍼 마리오 1000년의 문 | `paper-mario-ttyd.webp` | ① | 닌텐도 코리아 스토어 제품 이미지 https://store.nintendo.co.kr/70010000079169 | 가로/정사각 원본 → 레터박스 |
+| 콘솔 | 마리오&루이지 RPG 시간의 파트너 ※ | `mario-luigi-partners-in-time.webp` | ② | nintendo.co.jp DS 소프트 페이지 https://www.nintendo.co.jp/ds/armj/ | 가로/정사각 원본 → 레터박스 |
+| 콘솔 | 별의 커비 디스커버리 | `kirby-forgotten-land.webp` | ① | 닌텐도 코리아 스토어 https://store.nintendo.co.kr/hacparzgakor |  |
+| 콘솔 | 별의 커비 도팡 일당의 습격 ※ | `kirby-squeak-squad.webp` | ③ | Wikipedia(en) 문서 infobox 박스아트 파일 https://en.wikipedia.org/wiki/Kirby%3A_Squeak_Squad (파일: https://en.wikipedia.org/wiki/File%3AKirby%20-%20Squeak%20Squad%20Coverart.png) | 가로/정사각 원본 → 레터박스 |
+| 콘솔 | 별의 커비 울트라 슈퍼 디럭스 ※ | `kirby-super-star-ultra.webp` | ③ | Wikipedia(en) 문서 infobox 박스아트 파일 https://en.wikipedia.org/wiki/Kirby_Super_Star_Ultra (파일: https://en.wikipedia.org/wiki/File%3AKirbySuperStarUltra.png) | 가로/정사각 원본 → 레터박스 |
+| 콘솔 | 털실 커비 이야기 ※ | `kirbys-epic-yarn.webp` | ② | nintendo.co.jp Wii 소프트 페이지 https://www.nintendo.co.jp/wii/rk5j/ | 가로/정사각 원본 → 레터박스 |
+| 콘솔 | 레이튼 교수와 이상한 마을 ※ | `layton-curious-village.webp` | ② | Level-5 레이튼 시리즈 공식 페이지 https://www.layton.jp/fushigi/ | 가로/정사각 원본 → 레터박스 |
+| 콘솔 | 레이튼 교수와 악마의 상자 ※ | `layton-diabolical-box.webp` | ② | Level-5 레이튼 시리즈 공식 페이지 https://www.layton.jp/akuma/ | 가로/정사각 원본 → 레터박스 |
+| 콘솔 | 레이튼 교수와 최후의 시간여행 ※ | `layton-unwound-future.webp` | ③ | Wikipedia(en) 문서 infobox 박스아트 파일 https://en.wikipedia.org/wiki/Professor_Layton_and_the_Unwound_Future (파일: https://en.wikipedia.org/wiki/File%3AProfessor%20Layton%20and%20the%20Unwound%20Future.png) | 가로/정사각 원본 → 레터박스 |
+| 콘솔 | 리듬 세상 ※ | `rhythm-heaven-ds.webp` | ③ | Wikipedia(en) 문서 대표 이미지(박스아트) https://en.wikipedia.org/wiki/Rhythm_Heaven | 가로/정사각 원본 → 레터박스 |
+| 콘솔 | 리듬 천국 미라클 스타즈 | `rhythm-heaven-megamix.webp` | ① | 닌텐도 코리아 스토어 제품 이미지 https://store.nintendo.co.kr/hacpbfltakor | 흰 여백 제거 |
+| 콘솔 | 도와줘! 리듬 히어로 ※ | `rhythm-heaven-fever.webp` | ② | nintendo.co.jp Wii 소프트 페이지 https://www.nintendo.co.jp/wii/somj/ | 가로/정사각 원본 → 레터박스 |
+| 콘솔 | 놀러오세요 동물의 숲 ※ | `animal-crossing-wild-world.webp` | ③ | Wikipedia(en) 문서 박스아트 파일 https://en.wikipedia.org/wiki/Animal_Crossing:_Wild_World (파일: https://en.wikipedia.org/wiki/File:Animal_Crossing_Wild_World_cover.png) | 가로/정사각 원본 → 레터박스 |
+| 콘솔 | 엘레비츠: 카이와 제로의 신비한 모험 ※ | `elebits-ds.webp` | ③ | Wikipedia(en) 문서 infobox 박스아트 파일 https://en.wikipedia.org/wiki/Elebits%3A_The_Adventures_of_Kai_and_Zero (파일: https://en.wikipedia.org/wiki/File%3AElebits%20-%20The%20Adventures%20of%20Kai%20and%20Zero%20-%20cover.png) | 가로/정사각 원본 → 레터박스 |
+| 콘솔 | 메이플스토리DS ※ | `maplestory-ds.webp` | ③ | Wikipedia(en) 문서 infobox 박스아트 파일 https://en.wikipedia.org/wiki/MapleStory_DS (파일: https://en.wikipedia.org/wiki/File%3AMapleStoryDS.jpg) | 가로/정사각 원본 → 레터박스 |
+| 콘솔 | 그려라 터치! 내가 만드는 세상 ※ | `drawn-to-life.webp` | ③ | Wikipedia(en) 문서 infobox 박스아트 파일 https://en.wikipedia.org/wiki/Drawn_to_Life (파일: https://en.wikipedia.org/wiki/File%3ADrawn%20to%20Life%20coverart.jpg) | 가로/정사각 원본 → 레터박스 |
+| 콘솔 | 짱구는 못말려 DS 알쏭달쏭 크레용 대작전! ※ | `shin-chan-ds.webp` | 타일 | — | ①②③ 모두 실패: Wikipedia(ja) 문서 대표 이미지(박스아트): Unexpected end of JSON input | Wikipedia(en) 문서 대표 이미지(박스아트): Unexpected end of JSON input | wiki infobox: Unexpected token 'Y',  |
+| 콘솔 | 라쳇 & 클랭크 ※ | `ratchet-clank-ps2.webp` | ③ | Wikipedia(en) 문서 infobox 박스아트 파일 https://en.wikipedia.org/wiki/Ratchet_%26_Clank_(2002_video_game) (파일: https://en.wikipedia.org/wiki/File%3ARaCbox.jpg) |  |
+
+### 끝내 못 구한 3종 (타이포 타일)
+
+- **Mini Warriors** — App Store 에는 후속판 "Mini Warriors Reborn!"만 남아 있고(다른 제품), Google Play 원작 페이지는 찾지 못함, Wikipedia 문서 없음.
+- **마리오 파티** — 시리즈 중 어느 작품인지 미확정이라 특정 작품의 이미지를 붙일 수 없음.
+- **짱구는 못말려 DS 알쏭달쏭 크레용 대작전!** — 한국닌텐도/닌텐도 공식 페이지 없음, ja·en Wikipedia 문서에 박스아트 없음.
+
+5차의 타일 4장 중 레이튼 교수와 이상한 마을(Level-5 공식 페이지 ②), 리듬 세상(Wikipedia ③), 놀러오세요 동물의 숲(Wikipedia ③), 라쳇 & 클랭크(Wikipedia ③, 2002년 PS2 원작 박스아트)는 모두 이미지로 바꿨습니다.
+
+### 연결 작업 매핑
+
+| 게임 | 배지 | 연결 |
+|---|---|---|
+| 메이플스토리 | 기획서 | `#pdf-maple-party` 파티 모집 게시판 · `#pdf-maple-observatory` 월묘의 까막산 천문대 |
+| PUBG: 배틀그라운드 | 기획서 | `#pdf-pubg` 전리품 상자 파츠 루팅 프리셋 |
+| 리버스: 1999 | 기획서 | `#pdf-reverse1999` 계정 단위 신규 성장 시스템 ‘잔향’ |
+| 몬길: STAR DIVE | AI 게임 | `#ai-game` AI 게임 ‘태그 보스전’의 원작 |
+| 칼파: 코스믹 심포니 | 참여작 | `#projects` 대표 프로젝트 · 스토리 연출·FCG 기획 |
+
+### 6차에서 비워 둔 자리
+
+- 메인 카드 관찰 메모: `#game-maplestory .obs[data-observation=""]`
+- 팝오버 관찰 메모: `#gd-obs[data-observation=""]` (현재는 모든 게임이 같은 자리를 공유합니다. 게임별 메모가 생기면 타일의 `data-*` 로 옮기면 됩니다.)
