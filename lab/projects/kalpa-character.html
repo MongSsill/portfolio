@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>칼파 캐릭터 기획 및 UI 수정 관여 · 박민규 포트폴리오</title>
+  <meta name="description" content="칼파 내 캐릭터들의 연출을 풍부하게 만들기 위한 표정 모델 추가와 캐릭터 리뉴얼, UI 일부 수정." />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="칼파 캐릭터 기획 및 UI 수정 관여 · 박민규 포트폴리오" />
+  <meta property="og:description" content="칼파 내 캐릭터들의 연출을 풍부하게 만들기 위한 표정 모델 추가와 캐릭터 리뉴얼, UI 일부 수정." />
+  <meta property="og:url" content="https://mongssill.github.io/portfolio/lab/projects/kalpa-character.html" />
+  <meta property="og:image" content="https://mongssill.github.io/portfolio/lab/assets/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="../assets/profile.webp" />
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <link rel="stylesheet" href="../lab.css" />
+</head>
+<body>
+
+<nav class="nav" id="nav" aria-label="상단 바">
+  <div class="wrap">
+    <a class="brand" href="../index.html">박민규 · Portfolio</a>
+    <div class="nav-right">
+      <a class="btn primary sm" href="mailto:mjyb9853@naver.com">연락하기</a>
+      <button class="nav-toggle" type="button" aria-controls="nav-menu" aria-expanded="false" aria-label="메뉴 열기"><span></span></button>
+    </div>
+    <ul id="nav-menu" class="nav-menu">
+      <li><a href="../index.html#projects"><span class="num">01</span>대표 프로젝트</a></li>
+      <li><a href="../index.html#ai-game"><span class="num">02</span>AI로 만든 게임</a></li>
+      <li><a href="../index.html#portfolio"><span class="num">03</span>기획서 PDF</a></li>
+      <li><a href="../index.html#gamelog"><span class="num">04</span>플레이한 게임</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="detail-page">
+  <header class="detail-head">
+    <a class="back" href="../index.html#projects">← 대표 프로젝트로 돌아가기</a>
+    <h1>칼파 캐릭터 기획 및 UI 수정 관여</h1>
+    <div class="meta">
+      <span>2025.03 ~ 2025.06</span>
+      <span class="tags"><span class="tag production">Production</span><span class="tag ui">UI</span></span>
+    </div>
+    <div class="attach">
+      <p class="lbl">예시 자료</p>
+      <a class="file" href="../../assets/files/kalpa-character-expression-plan.docx" download>
+        <span class="icon">DOCX</span>
+        <span><span class="fname">칼파_PC_다크_칼파_캐릭터_표정_기획서-수정.docx</span><br /><span class="fsize">Word 문서 · 5.2 MB</span></span>
+      </a>
+    </div>
+  </header>
+
+  <div class="steps">
+    <h2>프로젝트 개요</h2>
+    <p>칼파 내의 캐릭터들의 연출을 풍부하게 만들기 위하여 여러 바리에이션의 표정 모델을 추가하기로 결정함.</p>
+    <p>또한 낡은 비주얼의 캐릭터를 새로 리뉴얼함.</p>
+
+    <figure class="cmp-wrap">
+      <div class="cmp" id="cmp" style="--pos: 50%">
+        <img class="cmp-before" src="../../assets/img/kalpa-character-old.png" alt="구 모델링" />
+        <img class="cmp-after" src="../../assets/img/kalpa-character-new.png" alt="신 모델링" />
+        <span class="cmp-tag a" aria-hidden="true">구 모델링</span>
+        <span class="cmp-tag b" aria-hidden="true">신 모델링</span>
+        <input class="cmp-range" type="range" min="0" max="100" value="50" step="1" aria-label="구 모델링과 신 모델링 비교 위치 (왼쪽 구, 오른쪽 신)" />
+        <div class="cmp-handle" aria-hidden="true"></div>
+      </div>
+      <figcaption class="cmp-hint">가운데 손잡이를 좌우로 끌거나, 선택한 뒤 ←/→ 키로 구 모델링(왼쪽)과 신 모델링(오른쪽)을 비교할 수 있습니다.</figcaption>
+    </figure>
+
+    <h2>주요 작업</h2>
+    <ul>
+      <li>캐릭터의 내, 외적 컨셉 기획</li>
+      <li>캐릭터의 감정 표현 기획</li>
+      <li>UI 일부 수정</li>
+    </ul>
+
+    <h2>핵심 성과</h2>
+    <ul>
+      <li>작중 핵심 인물을 매력적으로 등장시켜 스토리적 호평을 이끌어냄.</li>
+      <li>유저들의 스토리적 기대감 향상</li>
+    </ul>
+  </div>
+</main>
+
+<footer class="footer"><div class="wrap">© 박민규 · 기획자 포트폴리오</div></footer>
+
+<script>
+(function () {
+  var nav = document.getElementById('nav');
+  var toggle = nav.querySelector('.nav-toggle');
+  function setOpen(open) {
+    nav.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+  }
+  toggle.addEventListener('click', function () { setOpen(!nav.classList.contains('is-open')); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+
+  // 구/신 모델링 비교 슬라이더: range input 이 값을 들고, CSS 변수 --pos 로 클립과 손잡이를 움직인다
+  var cmp = document.getElementById('cmp');
+  if (cmp) {
+    var range = cmp.querySelector('.cmp-range');
+    function apply(v) { cmp.style.setProperty('--pos', v + '%'); range.value = v; range.setAttribute('aria-valuetext', '신 모델링 ' + v + '%'); }
+    range.addEventListener('input', function () { apply(Number(range.value)); });
+    apply(50);
+  }
+})();
+</script>
+</body>
+</html>

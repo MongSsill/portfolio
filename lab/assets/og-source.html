@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <title>OG image source (1200×630)</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <style>
+    /* og.png 를 만들기 위한 원본. 1200×630 뷰포트로 캡처한다. */
+    html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+    body {
+      position: relative; color: #fff;
+      font-family: "Pretendard Variable", Pretendard, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      background: #0b1a33 url("cover.webp") center / cover no-repeat;
+      word-break: keep-all; -webkit-font-smoothing: antialiased;
+    }
+    .shade { position: absolute; inset: 0; background: linear-gradient(to top, rgba(6, 10, 20, .92) 0%, rgba(6, 10, 20, .55) 55%, rgba(6, 10, 20, .25) 100%); }
+    .inner { position: absolute; left: 72px; right: 72px; bottom: 72px; display: flex; align-items: flex-end; gap: 36px; }
+    .avatar { width: 168px; height: 168px; border-radius: 50%; object-fit: cover; border: 6px solid rgba(255,255,255,.9); flex: none; }
+    .eyebrow { margin: 0 0 14px; font-size: 20px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.72); }
+    h1 { margin: 0 0 14px; font-size: 64px; line-height: 1.15; font-weight: 800; letter-spacing: -.03em; }
+    h1 .accent { color: #9dbbff; }
+    p { margin: 0; font-size: 26px; color: rgba(255,255,255,.82); }
+  </style>
+</head>
+<body>
+  <div class="shade"></div>
+  <div class="inner">
+    <img class="avatar" src="profile.webp" alt="" />
+    <div>
+      <p class="eyebrow">Game Designer Portfolio</p>
+      <h1><span class="accent">기대를 설계하는 기획자</span><br />박민규</h1>
+      <p>경력 · 대표 프로젝트 · 기획서 PDF · 게임 경험 · 보유 역량</p>
+    </div>
+  </div>
+</body>
+</html>
