@@ -35,9 +35,10 @@
       <li><a href="#ai-game"><span class="num">02</span>AI로 만든 게임</a></li>
       <li><a href="#portfolio"><span class="num">03</span>기획서 PDF</a></li>
       <li><a href="#gamelog"><span class="num">04</span>플레이한 게임</a></li>
-      <li><a href="#experience"><span class="num">05</span>경력</a></li>
-      <li><a href="#skills"><span class="num">06</span>보유 역량</a></li>
-      <li><a href="#education"><span class="num">07</span>학력</a></li>
+      <li><a href="#beyond"><span class="num">05</span>게임 밖 활동</a></li>
+      <li><a href="#experience"><span class="num">06</span>경력</a></li>
+      <li><a href="#skills"><span class="num">07</span>보유 역량</a></li>
+      <li><a href="#education"><span class="num">08</span>학력</a></li>
     </ul>
   </div>
 </nav>
@@ -49,9 +50,10 @@
     <li><a href="#ai-game"><span class="dot" aria-hidden="true"></span><span class="num">02</span><span class="label">AI로 만든 게임</span></a></li>
     <li><a href="#portfolio"><span class="dot" aria-hidden="true"></span><span class="num">03</span><span class="label">기획서 PDF</span></a></li>
     <li><a href="#gamelog"><span class="dot" aria-hidden="true"></span><span class="num">04</span><span class="label">플레이한 게임</span></a></li>
-    <li><a href="#experience"><span class="dot" aria-hidden="true"></span><span class="num">05</span><span class="label">경력</span></a></li>
-    <li><a href="#skills"><span class="dot" aria-hidden="true"></span><span class="num">06</span><span class="label">보유 역량</span></a></li>
-    <li><a href="#education"><span class="dot" aria-hidden="true"></span><span class="num">07</span><span class="label">학력</span></a></li>
+    <li><a href="#beyond"><span class="dot" aria-hidden="true"></span><span class="num">05</span><span class="label">게임 밖 활동</span></a></li>
+    <li><a href="#experience"><span class="dot" aria-hidden="true"></span><span class="num">06</span><span class="label">경력</span></a></li>
+    <li><a href="#skills"><span class="dot" aria-hidden="true"></span><span class="num">07</span><span class="label">보유 역량</span></a></li>
+    <li><a href="#education"><span class="dot" aria-hidden="true"></span><span class="num">08</span><span class="label">학력</span></a></li>
   </ol>
 </nav>
 
@@ -142,22 +144,23 @@
         <p class="en"><span class="num">02</span>Games Made with AI</p>
         <h2 class="ko">AI로 만든 게임</h2>
       </div>
-      <div class="section-body">
-        <article class="ai-card">
+      <div class="section-body ai-list">
+
+        <article class="ai-card reveal">
           <div class="shots">
-            <div class="carousel" id="g2-carousel" aria-roledescription="carousel" aria-label="태그 보스전 인게임 화면">
+            <div class="carousel" id="g2-carousel" aria-roledescription="carousel" aria-label="태그 보스전 인게임 화면" tabindex="0">
               <div class="track">
                 <figure class="slide is-active">
-                  <img src="assets/ai/g2-title.webp" alt="태그 보스전 시작 화면: 조작 안내와 게임 시작·랭킹 버튼" width="1440" height="960" />
-                  <figcaption>시작 화면</figcaption>
+                  <img src="assets/ai/g2-groggy-bind.webp" alt="태그 보스전 그로기 연출: 빛 고리에 묶인 골렘 보스 앞에 빨강 캐릭터가 서 있는 장면" width="1440" height="962" />
+                  <figcaption>그로기 연출 · 보스 구속</figcaption>
                 </figure>
                 <figure class="slide">
-                  <img src="assets/ai/g2-fight.webp" alt="태그 보스전 전투 중: 골렘 보스 앞에서 빨강 캐릭터가 특수 스킬로 용을 소환한 장면" width="1440" height="960" loading="lazy" />
-                  <figcaption>전투 중 · 특수 스킬</figcaption>
+                  <img src="assets/ai/g2-telegraph.webp" alt="태그 보스전 전투 중: 보스 위 노란 마름모와 바닥의 공격 범위가 빛나는 전조 순간" width="1440" height="962" loading="lazy" />
+                  <figcaption>전투 중 · 전조가 빛나는 순간</figcaption>
                 </figure>
                 <figure class="slide">
-                  <img src="assets/ai/g2-groggy.webp" alt="태그 보스전 그로기 연출: 캐릭터의 눈 클로즈업이 화면을 가로지르는 장면" width="1440" height="960" loading="lazy" />
-                  <figcaption>그로기 연출 · 눈 클로즈업</figcaption>
+                  <img src="assets/ai/g2-counter.webp" alt="태그 보스전 회피 반격 순간: 화면이 번쩍이며 '회피 반격!' 문구가 뜬 장면" width="1440" height="962" loading="lazy" />
+                  <figcaption>반격 순간 · 회피 반격</figcaption>
                 </figure>
               </div>
               <button class="car-btn prev" type="button" aria-label="이전 화면">‹</button>
@@ -178,7 +181,6 @@
               <div><dt>내가 한 것</dt><dd>게임의 전체 기획과 이후 수정, 자가 피드백. 피드백은 AI로 먼저 한 뒤 직접 플레이하며 다시 확인했습니다. 캐릭터 그림은 AI로 직접 만들었습니다.</dd></div>
               <div><dt>AI(Claude Code)에게 맡긴 것</dt><dd>게임 코드 작성과 수정, 브라우저 없이 규칙을 검사하는 도구와 검사 281개, 난이도를 재는 봇 시뮬레이션, 문서 정리.</dd></div>
             </dl>
-            <p class="controls"><strong>조작</strong> 방향키 이동 · A 기본 공격 · S 특수 스킬 · D 궁극 스킬 · Shift 회피 · Space 태그 · F 그로기 · Esc 일시정지</p>
             <div class="actions">
               <a class="btn primary" href="https://mongssill.github.io/ai-seed-kit-games/g2-slice/" target="_blank" rel="noopener">직접 해보기 ↗</a>
               <a class="btn ghost" href="https://claude.ai/artifact/6vRRsLDfJVFFXFzDhv48gf" target="_blank" rel="noopener">아티팩트 문서 보기 ↗</a>
@@ -186,6 +188,50 @@
             <p class="note">PC 키보드 전용</p>
           </div>
         </article>
+
+        <article class="ai-card portrait reveal">
+          <div class="shots">
+            <div class="carousel" id="g1-carousel" aria-roledescription="carousel" aria-label="길 건너기 인게임 화면" tabindex="0">
+              <div class="track">
+                <figure class="slide is-active">
+                  <img src="assets/ai/g1-play.webp" alt="길 건너기 플레이 중: 찻길, 강의 통나무, 열차 선로가 함께 보이는 장면" width="864" height="1346" loading="lazy" />
+                  <figcaption>플레이 중 · 찻길 · 강 · 선로</figcaption>
+                </figure>
+                <figure class="slide">
+                  <img src="assets/ai/g1-terrain.webp" alt="길 건너기 플레이 중: 풀밭과 나무, 찻길, 통나무가 떠 있는 강을 건너는 장면" width="864" height="1346" loading="lazy" />
+                  <figcaption>플레이 중 · 풀밭과 강 구간</figcaption>
+                </figure>
+                <figure class="slide">
+                  <img src="assets/ai/g1-over.webp" alt="길 건너기 게임 오버 화면: 이번 기록 103과 새 최고 기록, 해금 과제 진행도가 표시된 결과창" width="864" height="1346" loading="lazy" />
+                  <figcaption>게임 오버 · 결과창</figcaption>
+                </figure>
+              </div>
+              <button class="car-btn prev" type="button" aria-label="이전 화면">‹</button>
+              <button class="car-btn next" type="button" aria-label="다음 화면">›</button>
+              <div class="dots" role="tablist" aria-label="화면 선택">
+                <button type="button" role="tab" aria-selected="true" aria-label="1번 화면"></button>
+                <button type="button" role="tab" aria-selected="false" aria-label="2번 화면"></button>
+                <button type="button" role="tab" aria-selected="false" aria-label="3번 화면"></button>
+              </div>
+            </div>
+          </div>
+          <div class="info">
+            <p class="kicker">게임 1 · 완전 카피 · 원작 길건너친구들</p>
+            <h3>길 건너기</h3>
+            <p>방향키나 WASD로 한 칸씩 움직여 자동차·열차·강 같은 장애물을 피하며 최대한 멀리 전진하는 게임입니다. 가만히 있으면 뒤에서 붉은 선이 따라오고, 뒤로 4번 연속 가도 끝납니다.</p>
+            <p>원작은 길건너친구들(Crossy Road)로, 규칙을 따라 만들되 원작의 그림과 소리는 쓰지 않았습니다. 그림은 모두 도형으로 그렸고, 소리는 파일 없이 브라우저가 직접 만듭니다.</p>
+            <dl class="split">
+              <div><dt>내가 한 것</dt><dd>원작을 분석해 출발점을 정하고, 규칙을 정의하며 reviewer 로 반복 검토해 잘못된 게임 오버 규칙을 바로잡았습니다. 빌드된 게임을 직접 플레이해 설계대로인지 확인하고, 테스터 피드백을 받아 수정했습니다.</dd></div>
+              <div><dt>AI(Claude Code)에게 맡긴 것</dt><dd>게임 코드 작성과 수정, 브라우저 없이 규칙을 검사하는 도구와 검사, 문서 정리.</dd></div>
+            </dl>
+            <div class="actions">
+              <a class="btn primary" href="https://mongssill.github.io/ai-seed-kit-games/g1-copy/" target="_blank" rel="noopener">직접 해보기 ↗</a>
+              <a class="btn ghost" href="https://claude.ai/artifact/CvtTfN8UTTp4RPsn2Bvaht" target="_blank" rel="noopener">아티팩트 문서 보기 ↗</a>
+            </div>
+            <p class="note">PC 키보드 전용</p>
+          </div>
+        </article>
+
       </div>
     </section>
   </div>
@@ -272,10 +318,6 @@
     <div class="section-label">
       <p class="en"><span class="num">04</span>Games I Play</p>
       <h2 class="ko">플레이한 게임</h2>
-      <ul class="label-links">
-        <li><a href="../game/passion.html">5년의 플레이, 게임 안팎에서 이어온 열정 <span class="arrow">자세히 →</span></a></li>
-        <li><a href="../game/perspective.html">다양한 게임 경험에서 넓혀온 기획의 관점 <span class="arrow">자세히 →</span></a></li>
-      </ul>
     </div>
     <div class="section-body">
       <div class="filter" role="group" aria-label="장르 필터">
@@ -336,10 +378,62 @@
     </div>
   </section>
 
-  <!-- 05 경력 -->
+  <!-- 05 게임 밖 활동 -->
+  <section class="section wrap reveal" id="beyond">
+    <div class="section-label">
+      <p class="en"><span class="num">05</span>Beyond the Screen</p>
+      <h2 class="ko">게임 밖 활동</h2>
+    </div>
+    <div class="section-body">
+      <div class="beyond">
+        <div class="beyond-col reveal">
+          <h3><span class="k">게임 안에서</span>5년의 기록</h3>
+          <div class="gallery in-game">
+            <figure data-caption="">
+              <img src="assets/beyond/maple-play-1.webp" alt="메이플스토리 플레이 스크린샷 1" loading="lazy" width="1200" height="675" />
+              <figcaption><span class="hint">캡션 추가 예정</span></figcaption>
+            </figure>
+            <figure data-caption="">
+              <img src="assets/beyond/maple-play-2.webp" alt="메이플스토리 플레이 스크린샷 2" loading="lazy" width="1200" height="675" />
+              <figcaption><span class="hint">캡션 추가 예정</span></figcaption>
+            </figure>
+            <figure class="wide" data-caption="">
+              <img src="assets/beyond/maple-2000days.webp" alt="2000일 출석 기록" loading="lazy" width="768" height="182" />
+              <figcaption><span class="hint">캡션 추가 예정</span></figcaption>
+            </figure>
+          </div>
+          <p class="statement">지속적인 플레이로 엔드 콘텐츠까지 도전해 왔습니다.</p>
+        </div>
+        <div class="beyond-col reveal">
+          <h3><span class="k">게임 밖에서</span>현장의 기록</h3>
+          <div class="gallery offline">
+            <figure data-caption="">
+              <img src="assets/beyond/offline-1.webp" alt="오프라인 행사 참여 사진 1" loading="lazy" width="1200" height="1600" />
+              <figcaption><span class="hint">캡션 추가 예정</span></figcaption>
+            </figure>
+            <figure data-caption="">
+              <img src="assets/beyond/offline-2.webp" alt="오프라인 행사 참여 사진 2" loading="lazy" width="1081" height="1440" />
+              <figcaption><span class="hint">캡션 추가 예정</span></figcaption>
+            </figure>
+            <figure data-caption="">
+              <img src="assets/beyond/offline-3.webp" alt="오프라인 행사 참여 사진 3" loading="lazy" width="1200" height="1600" />
+              <figcaption><span class="hint">캡션 추가 예정</span></figcaption>
+            </figure>
+          </div>
+          <p class="statement">다양한 오프라인 행사에 직접 참여하며 게임에 대한 애정을 이어왔습니다.</p>
+        </div>
+      </div>
+      <ul class="more-links">
+        <li><a href="../game/passion.html">5년의 플레이, 게임 안팎에서 이어온 열정 <span class="arrow">자세히 →</span></a></li>
+        <li><a href="../game/perspective.html">다양한 게임 경험에서 넓혀온 기획의 관점 <span class="arrow">자세히 →</span></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 06 경력 -->
   <section class="section wrap reveal" id="experience">
     <div class="section-label">
-      <p class="en"><span class="num">05</span>Professional Experience</p>
+      <p class="en"><span class="num">06</span>Professional Experience</p>
       <h2 class="ko">경력 사항</h2>
     </div>
     <div class="section-body">
@@ -357,29 +451,135 @@
     </div>
   </section>
 
-  <!-- 06 보유 역량 -->
-  <section class="section wrap compact reveal" id="skills">
+  <!-- 07 보유 역량 -->
+  <section class="section wrap reveal" id="skills">
     <div class="section-label">
-      <p class="en"><span class="num">06</span>Skills</p>
+      <p class="en"><span class="num">07</span>Skills</p>
       <h2 class="ko">보유 역량</h2>
     </div>
     <div class="section-body">
-      <ul class="skill-chips">
-        <li><strong>Notion</strong><span>프로젝트 관리, 문서화, 협업 워크스페이스 구축</span></li>
-        <li><strong>PowerPoint</strong><span>프레젠테이션 디자인, 문서 작성</span></li>
-        <li><strong>Excel</strong><span>스크립팅 및 데이터 정리</span></li>
-        <li><strong>Unity</strong><span>게임 내 스토리 연출</span></li>
-        <li><strong>Word</strong><span>기획서 및 문서 작성</span></li>
-        <li><strong>ChatGPT</strong><span>에셋 제작</span></li>
-        <li><strong>Claude</strong><span>기획서 및 문서 작성 보조</span></li>
+      <ul class="skill-cards">
+        <li class="skill-card reveal"><span class="ico"><img src="assets/icons/notion.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>Notion</strong><span>프로젝트 관리, 문서화, 협업 워크스페이스 구축</span></span></li>
+        <li class="skill-card reveal"><span class="ico"><img src="assets/icons/powerpoint.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>PowerPoint</strong><span>프레젠테이션 디자인, 문서 작성</span></span></li>
+        <li class="skill-card reveal"><span class="ico"><img src="assets/icons/excel.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>Excel</strong><span>스크립팅 및 데이터 정리</span></span></li>
+        <li class="skill-card reveal"><span class="ico"><img src="assets/icons/unity.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>Unity</strong><span>게임 내 스토리 연출</span></span></li>
+        <li class="skill-card reveal"><span class="ico"><img src="assets/icons/word.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>Word</strong><span>기획서 및 문서 작성</span></span></li>
+        <li class="skill-card reveal"><span class="ico"><img src="assets/icons/openai-black.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>ChatGPT</strong><span>에셋 제작</span></span></li>
+        <li class="skill-card reveal"><span class="ico"><img src="assets/icons/claude.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>Claude</strong><span>기획서 및 문서 작성 보조</span></span></li>
       </ul>
+
+      <!-- 작업 방식 도식 -->
+      <figure class="workflow reveal" aria-labelledby="workflow-title">
+        <figcaption>
+          <p class="kicker">How I Work</p>
+          <h3 id="workflow-title">Orca로 Claude와 Codex를 묶어 일합니다</h3>
+          <p class="sub">지시 → 분배 → 구현/검토 → 결과 → 내 검수로 되돌아오는 흐름입니다.</p>
+        </figcaption>
+
+        <!-- 데스크톱: 가로 흐름 (인라인 SVG) -->
+        <svg class="wf-svg" viewBox="0 0 960 330" role="img" aria-label="작업 방식 도식: 나 → Orca → Claude Code 와 Codex → 결과물 → 내 검수로 되돌아옴">
+          <defs>
+            <marker id="wf-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0 0 L10 5 L0 10 z" fill="var(--text-3)" />
+            </marker>
+            <marker id="wf-arrow-accent" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0 0 L10 5 L0 10 z" fill="var(--accent)" />
+            </marker>
+            <clipPath id="wf-avatar"><circle cx="90" cy="118" r="26" /></clipPath>
+          </defs>
+
+          <!-- 연결선 -->
+          <g fill="none" stroke="var(--text-3)" stroke-width="1.6" marker-end="url(#wf-arrow)">
+            <path d="M158 150 H250" />
+            <path d="M420 150 C470 150 480 86 530 86" />
+            <path d="M420 150 C470 150 480 214 530 214" />
+            <path d="M700 86 C740 86 750 150 790 150" />
+            <path d="M700 214 C740 214 750 150 790 150" />
+          </g>
+          <!-- 되돌아가는 화살표: 결과 → 내 검수 -->
+          <path d="M870 200 V290 H90 V190" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-dasharray="5 5" marker-end="url(#wf-arrow-accent)" />
+
+          <!-- 화살표 라벨 -->
+          <g font-size="13" font-weight="600" fill="var(--text-3)" text-anchor="middle">
+            <text x="204" y="140">지시</text>
+            <text x="474" y="108">분배</text>
+            <text x="474" y="204">분배</text>
+            <text x="745" y="100">구현 · 검사</text>
+            <text x="745" y="214">초안 · 리뷰</text>
+            <text x="480" y="283" fill="var(--accent)">내 검수 (다시 지시)</text>
+          </g>
+
+          <!-- 노드: 나 -->
+          <g>
+            <rect x="30" y="66" width="128" height="124" rx="14" fill="var(--card)" stroke="var(--border)" />
+            <circle cx="90" cy="118" r="26" fill="var(--bg-soft)" />
+            <image href="assets/profile.webp" x="64" y="92" width="52" height="52" clip-path="url(#wf-avatar)" preserveAspectRatio="xMidYMid slice" />
+            <text x="94" y="166" text-anchor="middle" font-size="14" font-weight="800" fill="var(--text)">나</text>
+            <text x="94" y="183" text-anchor="middle" font-size="12" fill="var(--text-2)">기획 · 판단 · 검수</text>
+          </g>
+
+          <!-- 노드: Orca -->
+          <g>
+            <rect x="250" y="76" width="170" height="104" rx="14" fill="var(--card)" stroke="var(--accent)" stroke-width="1.5" />
+            <rect x="268" y="100" width="40" height="40" rx="10" fill="var(--accent)" />
+            <text x="288" y="127" text-anchor="middle" font-size="18" font-weight="800" fill="var(--on-accent)">O</text>
+            <text x="320" y="118" font-size="15" font-weight="800" fill="var(--text)">Orca</text>
+            <text x="320" y="137" font-size="12" fill="var(--text-2)">작업 관리</text>
+            <text x="335" y="164" text-anchor="middle" font-size="12" fill="var(--text-3)">봇·워커에게 일을 나누고 한곳에서 봄</text>
+          </g>
+
+          <!-- 노드: Claude Code -->
+          <g>
+            <rect x="530" y="46" width="170" height="80" rx="14" fill="var(--card)" stroke="var(--border)" />
+            <rect x="546" y="66" width="40" height="40" rx="10" fill="#fff" stroke="var(--border)" />
+            <image href="assets/icons/claude.svg" x="554" y="74" width="24" height="24" />
+            <text x="598" y="82" font-size="14" font-weight="800" fill="var(--text)">Claude Code</text>
+            <text x="598" y="100" font-size="12" fill="var(--text-2)">구현 · 규칙 검사 · 문서</text>
+          </g>
+
+          <!-- 노드: Codex -->
+          <g>
+            <rect x="530" y="174" width="170" height="80" rx="14" fill="var(--card)" stroke="var(--border)" />
+            <rect x="546" y="194" width="40" height="40" rx="10" fill="#fff" stroke="var(--border)" />
+            <image href="assets/icons/openai-black.svg" x="554" y="202" width="24" height="24" />
+            <text x="598" y="210" font-size="14" font-weight="800" fill="var(--text)">Codex</text>
+            <text x="598" y="228" font-size="12" fill="var(--text-2)">초안 · 검토 · 리뷰어 역할</text>
+          </g>
+
+          <!-- 노드: 결과물 -->
+          <g>
+            <rect x="790" y="84" width="150" height="116" rx="14" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5" />
+            <text x="865" y="112" text-anchor="middle" font-size="14" font-weight="800" fill="var(--text)">결과물</text>
+            <g font-size="11.5" fill="var(--text-2)" text-anchor="middle">
+              <text x="865" y="136">AI 게임</text>
+              <text x="865" y="155">기획서</text>
+              <text x="865" y="174">이 포트폴리오</text>
+            </g>
+          </g>
+        </svg>
+
+        <!-- 모바일: 세로 흐름 -->
+        <ol class="wf-list" aria-hidden="true">
+          <li class="wf-node me"><span class="wf-ico"><img src="assets/profile.webp" alt="" width="40" height="40" /></span><span><strong>나</strong><small>기획 · 판단 · 검수</small></span></li>
+          <li class="wf-arrow">↓ 지시</li>
+          <li class="wf-node orca"><span class="wf-ico mark">O</span><span><strong>Orca</strong><small>작업 관리 — 봇·워커에게 일을 나누고 한곳에서 봄</small></span></li>
+          <li class="wf-arrow">↓ 분배</li>
+          <li class="wf-pair">
+            <div class="wf-node"><span class="wf-ico light"><img src="assets/icons/claude.svg" alt="" width="22" height="22" /></span><span><strong>Claude Code</strong><small>구현 · 규칙 검사 · 문서</small></span></div>
+            <div class="wf-node"><span class="wf-ico light"><img src="assets/icons/openai-black.svg" alt="" width="22" height="22" /></span><span><strong>Codex</strong><small>초안 · 검토 · 리뷰어 역할</small></span></div>
+          </li>
+          <li class="wf-arrow">↓ 구현 · 검토</li>
+          <li class="wf-node result"><span><strong>결과물</strong><small>AI 게임 · 기획서 · 이 포트폴리오</small></span></li>
+          <li class="wf-arrow back">↺ 내 검수로 되돌아가 다시 지시</li>
+        </ol>
+      </figure>
     </div>
   </section>
 
-  <!-- 07 학력 -->
+  <!-- 08 학력 -->
   <section class="section wrap compact reveal" id="education">
     <div class="section-label">
-      <p class="en"><span class="num">07</span>Education</p>
+      <p class="en"><span class="num">08</span>Education</p>
       <h2 class="ko">학력 사항</h2>
     </div>
     <div class="section-body">
@@ -454,9 +654,8 @@
     reveals.forEach(function (el) { ro.observe(el); });
   }
 
-  // ---- AI 게임 스크린샷 캐러셀 ----
-  var car = document.getElementById('g2-carousel');
-  if (car) {
+  // ---- AI 게임 스크린샷 캐러셀 (카드마다 하나씩) ----
+  document.querySelectorAll('.carousel').forEach(function (car) {
     var slides = car.querySelectorAll('.slide');
     var dots = car.querySelectorAll('.dots button');
     var idx = 0;
@@ -472,7 +671,6 @@
       if (e.key === 'ArrowLeft') { go(idx - 1); e.preventDefault(); }
       if (e.key === 'ArrowRight') { go(idx + 1); e.preventDefault(); }
     });
-    // 터치 스와이프
     var sx = null;
     car.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; }, { passive: true });
     car.addEventListener('touchend', function (e) {
@@ -481,7 +679,7 @@
       if (Math.abs(dx) > 40) go(dx < 0 ? idx + 1 : idx - 1);
     });
     go(0);
-  }
+  });
 
   // ---- 플레이한 게임: 장르 필터 ----
   var chips = document.querySelectorAll('.filter .chip');

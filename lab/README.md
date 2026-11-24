@@ -63,3 +63,54 @@
 - `lab/assets/ai/g2-title.webp`, `g2-fight.webp`, `g2-groggy.webp` (태그 보스전 인게임 스크린샷)
 - `lab/assets/games/*.webp` (공식 키아트 사본 5장)
 - `lab/screenshots/index-desktop-1440-sections-ai-games.png` (AI 게임 + 플레이한 게임 섹션 캡처)
+
+---
+
+## 3차 시안 (2026-11-24)
+
+같은 브랜치에 쌓은 세 번째 변경입니다. 기존 파일은 여전히 건드리지 않았고, "플레이한 게임" 섹션의 게임 목록·카드 내용과 구조(필터 칩, 카드 CSS)는 주인이 직접 채울 예정이라 손대지 않았습니다.
+
+### 바뀐 점
+
+- **AI로 만든 게임 · 태그 보스전(게임 2) 수정.** 캐러셀에서 시작 화면을 빼고 연출 장면으로 바꿨습니다. 첫 장은 그로기 연출 중 **보스가 빛 고리에 묶인 순간**(눈 클로즈업보다 무대 전체가 보여 "장면"으로 읽힘), 둘째 장은 **노란 전조가 빛나는 순간**, 셋째 장은 **회피 반격 순간**("회피 반격!" 문구와 화면 번쩍임)입니다. 설명 아래의 "조작" 한 줄은 뺐고 "PC 키보드 전용"은 유지했습니다.
+- **AI로 만든 게임 · 길 건너기(게임 1) 추가.** 같은 형식의 카드를 태그 보스전 아래에 세로로 배치했습니다(순서: 게임 2 → 게임 1). 설명은 `ai-seed-kit/games/g1-copy/README.md` 의 문장을 요약한 것이고, "내가 한 것"은 README 의 A~F 중 원작 분석 · 규칙 정의와 reviewer 반복 검토 · 직접 플레이 확인 · 테스터 피드백 반영만 추렸습니다. 세로 캔버스(432×672)라 카드 안에서 캐러셀 폭을 줄이고 세로 비율로 두었습니다. 카드 머리 라벨은 "게임 2 · 큰 게임의 일부 · 원작 몬길: 스타다이브", "게임 1 · 완전 카피 · 원작 길건너친구들"로 통일했습니다.
+  - 스크린샷은 공개 주소를 Playwright(Chrome) 1280×720 에서 열어 캔버스 영역만 2배로 찍었습니다. 태그 보스전은 `?test`(게이지 찬 상태) → F → 연출 단계(`bind`)에서 1장, 일반 판에서 보스에게 붙은 뒤 보스 상태가 `telegraph` 인 순간 1장, 그 전조 범위 안에서 Shift 를 눌러 반격이 터진 순간(줌 발생 시점) 1장입니다. 2차처럼 `?test` 의 "확인용" 워터마크 문구만 캡처 시점에 가렸고 게임 파일은 수정하지 않았습니다. 길 건너기는 `?far`(100칸 앞 시작)로 열어 방향키를 보내며 진행한 뒤 찻길·강·선로가 함께 보이는 장면, 다른 지형 구간, 게임 오버 결과창을 찍었습니다.
+- **보유 역량: 공식 아이콘 카드 + 작업 방식 도식.** 역량 7개를 아이콘(좌) / 이름 + 기존 한 줄 설명(우) 카드로 바꿨습니다. 아이콘 타일은 브랜드 원색이 살도록 라이트·다크 모두 연한 톤입니다. 카드 아래에 인라인 SVG 도식을 넣었고, 720px 이하에서는 세로 흐름의 HTML 목록으로 바뀝니다.
+- **새 섹션 05 게임 밖 활동.** "플레이한 게임" 머리에 있던 "자세히" 링크 두 개로는 게임 외 활동이 눈에 띄지 않아 별도 섹션으로 뺐습니다. 2단: 왼쪽 "게임 안에서 — 5년의 기록"(메이플 스크린샷 2장 + 2000일 출석 이미지), 오른쪽 "게임 밖에서 — 현장의 기록"(오프라인 사진 3장). 문장은 기존 `game/passion.html` 의 것을 다듬은 한 줄씩만 두었고, "자세히" 링크 두 개는 섹션 하단의 작은 링크로 옮겼습니다. 섹션 번호는 05 게임 밖 활동, 06 경력, 07 보유 역량, 08 학력로 다시 매겼고 우측 내비와 햄버거 메뉴에도 반영했습니다.
+
+### 아이콘 출처
+
+| 역량 | 파일 | 출처 | 구분 |
+|---|---|---|---|
+| ChatGPT | `lab/assets/icons/openai-black.svg` | OpenAI Brand Guidelines https://openai.com/brand/ 의 로고 패키지 https://cdn.openai.com/brand/openai-logos.zip 안의 `OAI_OpenAI-Blossom_Black.svg` | **공식** |
+| Word | `lab/assets/icons/word.svg` | Microsoft Fluent UI 브랜드 아이콘 CDN https://res-1.cdn.office.net/files/fabric-cdn-prod_20230815.002/assets/brand-icons/product/svg/word_48x1.svg | **공식**(Microsoft 가 배포하는 제품 아이콘) |
+| Excel | `lab/assets/icons/excel.svg` | 같은 CDN 의 `excel_48x1.svg` | **공식** |
+| PowerPoint | `lab/assets/icons/powerpoint.svg` | 같은 CDN 의 `powerpoint_48x1.svg` | **공식** |
+| Notion | `lab/assets/icons/notion.svg` | Simple Icons https://simpleicons.org/?q=notion (https://cdn.simpleicons.org/notion). 공식 브랜드 페이지 https://www.notion.com/brand 는 다운로드 링크가 스크립트로 렌더링되어 직접 받지 못함 | Simple Icons |
+| Unity | `lab/assets/icons/unity.svg` | Simple Icons https://simpleicons.org/?q=unity (https://cdn.simpleicons.org/unity). 공식 페이지 https://unity.com/legal/branding_trademarks 에서는 워드마크 SVG 만 직접 받을 수 있어 심볼은 Simple Icons 를 씀. 색은 Unity 로고 기본색(검정 계열 `#222C37`) | Simple Icons |
+| Claude | `lab/assets/icons/claude.svg` | Simple Icons https://simpleicons.org/?q=claude (https://cdn.simpleicons.org/claude, 브랜드색 `#D97757`). 공식 페이지 https://www.anthropic.com/brand 는 스크립트 렌더링이라 직접 받지 못함 | Simple Icons |
+
+도식의 Claude Code · Codex(OpenAI) 아이콘은 위 파일을 재사용했고, Orca 는 공식 아이콘을 찾기 어려워 글자 마크 "O"로 두었습니다. 나(왼쪽 노드)는 프로필 사진입니다.
+
+### 작업 방식 도식 문구 (주인 확인용)
+
+- 제목: **Orca로 Claude와 Codex를 묶어 일합니다**
+- 부제: 지시 → 분배 → 구현/검토 → 결과 → 내 검수로 되돌아오는 흐름입니다.
+- 노드: 나(기획 · 판단 · 검수) → Orca(작업 관리 — 봇·워커에게 일을 나누고 한곳에서 봄) → Claude Code(구현 · 규칙 검사 · 문서) / Codex(초안 · 검토 · 리뷰어 역할) → 결과물(AI 게임 · 기획서 · 이 포트폴리오)
+- 화살표 라벨: 지시 / 분배 / 구현 · 검사 / 초안 · 리뷰 / 내 검수 (다시 지시)
+
+### 비워 둔 캡션 자리 (주인이 채울 곳)
+
+`lab/index.html` 의 `#beyond` 섹션, 각 `<figure data-caption="">` 안 `<figcaption>` 입니다. 캡션을 쓰고 `data-caption` 값을 아무 문자열로 채우면 "캡션 추가 예정" 안내가 사라집니다.
+
+1. `assets/beyond/maple-play-1.webp` — 메이플스토리 플레이 스크린샷 1
+2. `assets/beyond/maple-play-2.webp` — 메이플스토리 플레이 스크린샷 2
+3. `assets/beyond/maple-2000days.webp` — 2000일 출석 기록
+4. `assets/beyond/offline-1.webp` — 오프라인 행사 사진 1
+5. `assets/beyond/offline-2.webp` — 오프라인 행사 사진 2
+6. `assets/beyond/offline-3.webp` — 오프라인 행사 사진 3
+
+### 3차에서 새로 추가·삭제된 파일
+
+- 추가: `lab/assets/ai/g2-groggy-bind.webp`, `g2-telegraph.webp`, `g2-counter.webp`, `g1-play.webp`, `g1-terrain.webp`, `g1-over.webp` / `lab/assets/icons/*.svg` 7개 / `lab/assets/beyond/*.webp` 6장 / `lab/screenshots/index-desktop-1440-sections-v3.png`
+- 삭제: 2차의 `lab/assets/ai/g2-title.webp`, `g2-fight.webp`, `g2-groggy.webp` (더 쓰지 않음)
