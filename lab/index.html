@@ -162,32 +162,34 @@
               <span class="demo-credit">직접 플레이한 영상</span>
             </button>
           </div>
-          <details class="demo-scenes">
-            <summary>장면 보기</summary>
-            <div class="fg-visual">
-              <figure class="fg-main">
-                <img src="assets/ai/chain-echo/play-1.webp" alt="Chain Echo 플레이 화면: 스테이지 1-1 에서 캐릭터가 이동하며 태그하는 장면" width="1440" height="816" loading="lazy" decoding="async" />
-                <figcaption>스테이지 1-1 · 이동 · 태그</figcaption>
-              </figure>
-              <figure class="fg-sub">
-                <img src="assets/ai/chain-echo/play-2.webp" alt="Chain Echo 플레이 화면: 스테이지 1-2 에서 플레아가 용 돌진으로 적을 공격하는 장면" width="1440" height="816" loading="lazy" decoding="async" />
-                <figcaption>스테이지 1-2 · 전투 · 용 돌진</figcaption>
-              </figure>
+          <div class="fg-visual">
+            <figure class="ultimate-viewer">
+              <div class="ultimate-stage">
+                <button type="button" class="ultimate-frame" aria-label="합동 필살기 1 · 시작" aria-describedby="ultimate-caption">
+                  <img src="assets/ai/chain-echo/ult-1-start.webp" alt="" width="480" height="272" decoding="async" />
+                </button>
+                <button type="button" class="ultimate-zoom" aria-label="크게 보기"><span aria-hidden="true">⤢</span></button>
+              </div>
+              <figcaption id="ultimate-caption"><span>3인 합동 필살기 · 8장면<span class="ultimate-hover-hint"> · 마우스를 올리면 재생</span></span> <span class="ultimate-name">1 시작</span></figcaption>
+            </figure>
+            <div class="carousel chain-carousel" aria-roledescription="carousel" aria-label="Chain Echo 인게임 화면" tabindex="0">
+              <div class="track">
+                <figure class="slide is-active">
+                  <img src="assets/ai/chain-echo/play-1.webp" alt="Chain Echo 플레이 화면: 스테이지 1-1 에서 캐릭터가 이동하며 태그하는 장면" width="1440" height="816" loading="lazy" decoding="async" />
+                  <figcaption>스테이지 1-1 · 이동 · 태그</figcaption>
+                </figure>
+                <figure class="slide">
+                  <img src="assets/ai/chain-echo/play-2.webp" alt="Chain Echo 플레이 화면: 스테이지 1-2 에서 플레아가 용 돌진으로 적을 공격하는 장면" width="1440" height="816" loading="lazy" decoding="async" />
+                  <figcaption>스테이지 1-2 · 전투 · 용 돌진</figcaption>
+                </figure>
+              </div>
+              <button class="car-btn prev" type="button" aria-label="이전 화면">‹</button>
+              <button class="car-btn next" type="button" aria-label="다음 화면">›</button>
+              <div class="dots" role="tablist" aria-label="화면 선택">
+                <button type="button" role="tab" aria-selected="true" aria-label="이동 · 태그"></button>
+                <button type="button" role="tab" aria-selected="false" aria-label="전투 · 용 돌진"></button>
+              </div>
             </div>
-          </details>
-
-          <div class="fg-strip-wrap">
-            <p class="fg-label"><span class="en">3인 합동 필살기 · 8장면</span><span class="hint">마우스를 올리면 차례로 재생 · 클릭하면 크게</span></p>
-            <ol class="ult-strip" aria-label="합동 필살기 연출 8장면">
-              <li><button type="button" class="photo-btn" data-src="assets/ai/chain-echo/ult-1-start.webp" data-alt="합동 필살기 1 · 시작"><img src="assets/ai/chain-echo/ult-1-start.webp" alt="" width="480" height="272" loading="lazy" decoding="async" /></button><span class="cap"><b>1</b> 시작</span></li>
-              <li><button type="button" class="photo-btn" data-src="assets/ai/chain-echo/ult-2-dragon.webp" data-alt="합동 필살기 2 · 용"><img src="assets/ai/chain-echo/ult-2-dragon.webp" alt="" width="480" height="272" loading="lazy" decoding="async" /></button><span class="cap"><b>2</b> 용</span></li>
-              <li><button type="button" class="photo-btn" data-src="assets/ai/chain-echo/ult-3-ice-rain.webp" data-alt="합동 필살기 3 · 얼음비"><img src="assets/ai/chain-echo/ult-3-ice-rain.webp" alt="" width="480" height="272" loading="lazy" decoding="async" /></button><span class="cap"><b>3</b> 얼음비</span></li>
-              <li><button type="button" class="photo-btn" data-src="assets/ai/chain-echo/ult-4-storm.webp" data-alt="합동 필살기 4 · 폭풍"><img src="assets/ai/chain-echo/ult-4-storm.webp" alt="" width="480" height="272" loading="lazy" decoding="async" /></button><span class="cap"><b>4</b> 폭풍</span></li>
-              <li><button type="button" class="photo-btn" data-src="assets/ai/chain-echo/ult-5-cutscene.webp" data-alt="합동 필살기 5 · 컷신"><img src="assets/ai/chain-echo/ult-5-cutscene.webp" alt="" width="480" height="272" loading="lazy" decoding="async" /></button><span class="cap"><b>5</b> 컷신</span></li>
-              <li><button type="button" class="photo-btn" data-src="assets/ai/chain-echo/ult-6-gather.webp" data-alt="합동 필살기 6 · 집결"><img src="assets/ai/chain-echo/ult-6-gather.webp" alt="" width="480" height="272" loading="lazy" decoding="async" /></button><span class="cap"><b>6</b> 집결</span></li>
-              <li><button type="button" class="photo-btn" data-src="assets/ai/chain-echo/ult-7-joint-strike.webp" data-alt="합동 필살기 7 · 합동 타격"><img src="assets/ai/chain-echo/ult-7-joint-strike.webp" alt="" width="480" height="272" loading="lazy" decoding="async" /></button><span class="cap"><b>7</b> 합동 타격</span></li>
-              <li><button type="button" class="photo-btn" data-src="assets/ai/chain-echo/ult-8-explosion.webp" data-alt="합동 필살기 8 · 폭발"><img src="assets/ai/chain-echo/ult-8-explosion.webp" alt="" width="480" height="272" loading="lazy" decoding="async" /></button><span class="cap"><b>8</b> 폭발</span></li>
-            </ol>
           </div>
 
           <div class="fg-body">
@@ -216,40 +218,40 @@
 
         <article class="ai-card portrait reveal">
           <div class="shots">
-            <div class="demo-player demo-player-portrait" id="g1-demo" style="--demo-ratio: 1280 / 1968">
-              <video src="assets/video/g1-demo.mp4" poster="assets/video/g1-demo-poster.webp" aria-label="길 건너기 시연 영상" controls controlslist="nodownload" playsinline preload="metadata"></video>
-              <button type="button" class="demo-overlay" aria-label="길 건너기 시연 영상 재생" hidden>
-                <span class="demo-play-icon" aria-hidden="true"></span>
-                <span class="demo-caption">시연 영상 · 0:25 · 소리 있음</span>
-                <span class="demo-credit">직접 플레이한 영상</span>
-              </button>
-            </div>
-            <details class="demo-scenes">
-              <summary>장면 보기</summary>
-              <div class="carousel" id="g1-carousel" aria-roledescription="carousel" aria-label="길 건너기 인게임 화면" tabindex="0">
-                <div class="track">
-                  <figure class="slide is-active">
-                    <img src="assets/ai/g1-play.webp" alt="길 건너기 플레이 중: 찻길, 강의 통나무, 열차 선로가 함께 보이는 장면" width="864" height="1346" />
-                    <figcaption>플레이 중 · 찻길 · 강 · 선로</figcaption>
-                  </figure>
-                  <figure class="slide">
-                    <img src="assets/ai/g1-terrain.webp" alt="길 건너기 플레이 중: 풀밭과 나무, 찻길, 통나무가 떠 있는 강을 건너는 장면" width="864" height="1346" loading="lazy" />
-                    <figcaption>플레이 중 · 풀밭과 강 구간</figcaption>
-                  </figure>
-                  <figure class="slide">
-                    <img src="assets/ai/g1-over.webp" alt="길 건너기 게임 오버 화면: 이번 기록 103과 새 최고 기록, 해금 과제 진행도가 표시된 결과창" width="864" height="1346" loading="lazy" />
-                    <figcaption>게임 오버 · 결과창</figcaption>
-                  </figure>
+            <div class="carousel road-carousel" id="g1-carousel" aria-roledescription="carousel" aria-label="길 건너기 시연 영상 및 인게임 화면" tabindex="0">
+              <div class="track">
+                <div class="slide is-active">
+                  <div class="demo-player demo-player-portrait" id="g1-demo" style="--demo-ratio: 1280 / 1968">
+                    <video src="assets/video/g1-demo.mp4" poster="assets/video/g1-demo-poster.webp" aria-label="길 건너기 시연 영상" controls controlslist="nodownload" playsinline preload="metadata"></video>
+                    <button type="button" class="demo-overlay" aria-label="길 건너기 시연 영상 재생" hidden>
+                      <span class="demo-play-icon" aria-hidden="true"></span>
+                      <span class="demo-caption">시연 영상 · 0:25 · 소리 있음</span>
+                      <span class="demo-credit">직접 플레이한 영상</span>
+                    </button>
+                  </div>
                 </div>
-                <button class="car-btn prev" type="button" aria-label="이전 화면">‹</button>
-                <button class="car-btn next" type="button" aria-label="다음 화면">›</button>
-                <div class="dots" role="tablist" aria-label="화면 선택">
-                  <button type="button" role="tab" aria-selected="true" aria-label="1번 화면"></button>
-                  <button type="button" role="tab" aria-selected="false" aria-label="2번 화면"></button>
-                  <button type="button" role="tab" aria-selected="false" aria-label="3번 화면"></button>
-                </div>
+                <figure class="slide">
+                  <img src="assets/ai/g1-play.webp" alt="길 건너기 플레이 중: 찻길, 강의 통나무, 열차 선로가 함께 보이는 장면" width="864" height="1346" />
+                  <figcaption>플레이 중 · 찻길 · 강 · 선로</figcaption>
+                </figure>
+                <figure class="slide">
+                  <img src="assets/ai/g1-terrain.webp" alt="길 건너기 플레이 중: 풀밭과 나무, 찻길, 통나무가 떠 있는 강을 건너는 장면" width="864" height="1346" loading="lazy" />
+                  <figcaption>플레이 중 · 풀밭과 강 구간</figcaption>
+                </figure>
+                <figure class="slide">
+                  <img src="assets/ai/g1-over.webp" alt="길 건너기 게임 오버 화면: 이번 기록 103과 새 최고 기록, 해금 과제 진행도가 표시된 결과창" width="864" height="1346" loading="lazy" />
+                  <figcaption>게임 오버 · 결과창</figcaption>
+                </figure>
               </div>
-            </details>
+              <button class="car-btn prev" type="button" aria-label="이전 화면">‹</button>
+              <button class="car-btn next" type="button" aria-label="다음 화면">›</button>
+              <div class="dots" role="tablist" aria-label="화면 선택">
+                <button type="button" role="tab" class="video-dot" aria-selected="true" aria-label="시연 영상"></button>
+                <button type="button" role="tab" aria-selected="false" aria-label="플레이 중"></button>
+                <button type="button" role="tab" aria-selected="false" aria-label="지형"></button>
+                <button type="button" role="tab" aria-selected="false" aria-label="게임 오버"></button>
+              </div>
+            </div>
           </div>
           <div class="info">
             <p class="kicker">게임 1 · 완전 카피 · 원작 길건너친구들</p>
@@ -278,27 +280,24 @@
                 <span class="demo-credit">직접 플레이한 영상</span>
               </button>
             </div>
-            <details class="demo-scenes">
-              <summary>장면 보기</summary>
-              <div class="carousel" id="g2-carousel" aria-roledescription="carousel" aria-label="태그 보스전 인게임 화면" tabindex="0">
-                <div class="track">
-                  <figure class="slide is-active">
-                    <img src="assets/ai/g2-groggy.webp" alt="태그 보스전 그로기 연출: 캐릭터의 눈 클로즈업이 화면을 가로지르는 장면" width="1440" height="962" loading="lazy" />
-                    <figcaption>그로기 연출 · 눈 클로즈업</figcaption>
-                  </figure>
-                  <figure class="slide">
-                    <img src="assets/ai/g2-fight.webp" alt="태그 보스전 전투 중: 골렘 보스 앞에서 빨강 캐릭터가 특수 스킬로 용을 소환한 장면" width="1440" height="962" loading="lazy" />
-                    <figcaption>전투 중 · 특수 스킬</figcaption>
-                  </figure>
-                </div>
-                <button class="car-btn prev" type="button" aria-label="이전 화면">‹</button>
-                <button class="car-btn next" type="button" aria-label="다음 화면">›</button>
-                <div class="dots" role="tablist" aria-label="화면 선택">
-                  <button type="button" role="tab" aria-selected="true" aria-label="1번 화면"></button>
-                  <button type="button" role="tab" aria-selected="false" aria-label="2번 화면"></button>
-                </div>
+            <div class="carousel boss-carousel" id="g2-carousel" aria-roledescription="carousel" aria-label="태그 보스전 인게임 화면" tabindex="0">
+              <div class="track">
+                <figure class="slide is-active">
+                  <img src="assets/ai/g2-groggy.webp" alt="태그 보스전 그로기 연출: 캐릭터의 눈 클로즈업이 화면을 가로지르는 장면" width="1440" height="962" loading="lazy" />
+                  <figcaption>그로기 연출 · 눈 클로즈업</figcaption>
+                </figure>
+                <figure class="slide">
+                  <img src="assets/ai/g2-fight.webp" alt="태그 보스전 전투 중: 골렘 보스 앞에서 빨강 캐릭터가 특수 스킬로 용을 소환한 장면" width="1440" height="962" loading="lazy" />
+                  <figcaption>전투 중 · 특수 스킬</figcaption>
+                </figure>
               </div>
-            </details>
+              <button class="car-btn prev" type="button" aria-label="이전 화면">‹</button>
+              <button class="car-btn next" type="button" aria-label="다음 화면">›</button>
+              <div class="dots" role="tablist" aria-label="화면 선택">
+                <button type="button" role="tab" aria-selected="true" aria-label="1번 화면"></button>
+                <button type="button" role="tab" aria-selected="false" aria-label="2번 화면"></button>
+              </div>
+            </div>
           </div>
           <div class="info">
             <p class="kicker">게임 2 · 큰 게임의 일부 · 원작 몬길: 스타다이브</p>
@@ -413,7 +412,6 @@
           <p class="kicker">가장 오래 한 게임</p>
           <h3>메이플스토리</h3>
           <div class="row"><span class="tag">MMORPG</span><span class="record">플레이 기간 10년</span></div>
-          <p class="obs" data-observation=""><span class="hint">관찰 메모 추가 예정</span></p>
           <figure class="proof">
             <img src="assets/beyond/maple-2000days.webp" alt="2000일 출석 기록" loading="lazy" width="768" height="182" />
             <figcaption>2000일 출석 기록</figcaption>
@@ -1615,7 +1613,6 @@
           <div><dt>장르 그룹</dt><dd id="gd-group"></dd></div>
           <div id="gd-rec-row"><dt>기록</dt><dd id="gd-rec"></dd></div>
         </dl>
-        <p class="obs" id="gd-obs" data-observation=""><span class="hint">관찰 메모 추가 예정</span></p>
         <p class="gd-links" id="gd-links" hidden></p>
         <p class="gd-note" id="gd-note" hidden></p>
       </div>
@@ -1733,26 +1730,16 @@
       <h2 class="ko">보유 역량</h2>
     </div>
     <div class="section-body">
-      <ul class="skill-cards">
-        <li class="skill-card reveal"><span class="ico"><img src="assets/icons/notion.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>Notion</strong><span>프로젝트 관리, 문서화, 협업 워크스페이스 구축</span></span></li>
-        <li class="skill-card reveal"><span class="ico"><img src="assets/icons/powerpoint.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>PowerPoint</strong><span>프레젠테이션 디자인, 문서 작성</span></span></li>
-        <li class="skill-card reveal"><span class="ico"><img src="assets/icons/excel.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>Excel</strong><span>스크립팅 및 데이터 정리</span></span></li>
-        <li class="skill-card reveal"><span class="ico"><img src="assets/icons/unity.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>Unity</strong><span>게임 내 스토리 연출</span></span></li>
-        <li class="skill-card reveal"><span class="ico"><img src="assets/icons/word.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>Word</strong><span>기획서 및 문서 작성</span></span></li>
-        <li class="skill-card reveal"><span class="ico"><img src="assets/icons/openai-black.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>ChatGPT</strong><span>에셋 제작</span></span></li>
-        <li class="skill-card reveal"><span class="ico"><img src="assets/icons/claude.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>Claude</strong><span>기획서 및 문서 작성 보조</span></span></li>
-      </ul>
-
       <!-- 작업 방식 도식 -->
       <figure class="workflow reveal" aria-labelledby="workflow-title">
         <figcaption>
           <p class="kicker">How I Work</p>
           <h3 id="workflow-title">Orca로 Claude와 Codex를 묶어 일합니다</h3>
-          <p class="sub">지시 → 분배 → 구현/검토 → 결과 → 내 검수로 되돌아오는 흐름입니다.</p>
+          <p class="sub">지시 → 분배 → 구현/검토 → 결과 → 검수로 되돌아오는 흐름입니다.</p>
         </figcaption>
 
         <!-- 데스크톱: 가로 흐름 (인라인 SVG) -->
-        <svg class="wf-svg" viewBox="0 0 960 340" role="img" aria-label="작업 방식 도식: 나 → Orca → Claude Code 와 Codex → 결과물 → 내 검수로 되돌아옴">
+        <svg class="wf-svg" viewBox="0 0 960 340" role="img" aria-label="작업 방식 도식: 나 → Orca → Claude Code 와 Codex → 결과물 → 검수로 되돌아옴">
           <defs>
             <marker id="wf-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
               <path d="M0 0 L10 5 L0 10 z" fill="var(--text-3)" />
@@ -1771,7 +1758,7 @@
             <path d="M730 88 C766 88 766 132 798 132" />
             <path d="M730 228 C766 228 766 132 798 132" />
           </g>
-          <!-- 되돌아가는 화살표: 결과 → 내 검수 -->
+          <!-- 되돌아가는 화살표: 결과 → 검수 -->
           <path d="M870 190 V304 H94 V196" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-dasharray="5 5" marker-end="url(#wf-arrow-accent)" />
 
           <!-- 화살표 라벨: 배경 패드 + 글자 (선 위에 올려도 겹쳐 보이지 않게) -->
@@ -1781,7 +1768,7 @@
             <rect x="455" y="144" width="40" height="20" rx="5" fill="var(--bg-soft)" /><text x="475" y="158">분배</text>
             <rect x="722" y="100" width="88" height="20" rx="5" fill="var(--bg-soft)" /><text x="766" y="114">구현 · 검사</text>
             <rect x="722" y="170" width="88" height="20" rx="5" fill="var(--bg-soft)" /><text x="766" y="184">초안 · 리뷰</text>
-            <rect x="412" y="294" width="136" height="20" rx="5" fill="var(--bg-soft)" /><text x="480" y="308" fill="var(--accent)">내 검수 (다시 지시)</text>
+            <rect x="412" y="294" width="136" height="20" rx="5" fill="var(--bg-soft)" /><text x="480" y="308" fill="var(--accent)">검수 (다시 지시)</text>
           </g>
 
           <!-- 노드: 나 (x 30~158) -->
@@ -1848,9 +1835,20 @@
           </li>
           <li class="wf-arrow">↓ 구현 · 검토</li>
           <li class="wf-node result"><span><strong>결과물</strong><small>AI 게임 · 기획서 · 이 포트폴리오</small></span></li>
-          <li class="wf-arrow back">↺ 내 검수로 되돌아가 다시 지시</li>
+          <li class="wf-arrow back">↺ 검수로 되돌아가 다시 지시</li>
         </ol>
       </figure>
+
+      <ul class="skill-cards">
+        <li class="skill-card reveal"><span class="ico"><img src="assets/icons/notion.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>Notion</strong><span>프로젝트 관리, 문서화, 협업 워크스페이스 구축</span></span></li>
+        <li class="skill-card reveal"><span class="ico"><img src="assets/icons/powerpoint.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>PowerPoint</strong><span>프레젠테이션 디자인, 문서 작성</span></span></li>
+        <li class="skill-card reveal"><span class="ico"><img src="assets/icons/excel.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>Excel</strong><span>스크립팅 및 데이터 정리</span></span></li>
+        <li class="skill-card reveal"><span class="ico"><img src="assets/icons/unity.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>Unity</strong><span>게임 내 스토리 연출</span></span></li>
+        <li class="skill-card reveal"><span class="ico"><img src="assets/icons/word.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>Word</strong><span>기획서 및 문서 작성</span></span></li>
+        <li class="skill-card reveal"><span class="ico"><img src="assets/icons/openai-black.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>ChatGPT</strong><span>에셋 제작</span></span></li>
+        <li class="skill-card reveal"><span class="ico"><img src="assets/icons/claude.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>Claude</strong><span>기획서 및 문서 작성 보조</span></span></li>
+        <li class="skill-card reveal"><span class="ico orca"><img src="assets/icons/orca.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>Orca</strong><span>작업 관리 · 봇·워커에게 일을 나누고 진행과 결과를 한곳에서 봄</span></span></li>
+      </ul>
     </div>
   </section>
 
@@ -1970,9 +1968,21 @@
     var slides = car.querySelectorAll('.slide');
     var dots = car.querySelectorAll('.dots button');
     var idx = 0;
+    var road = car.querySelector('.demo-player video');
+    var paired = car.classList.contains('boss-carousel');
     function go(n) {
       idx = (n + slides.length) % slides.length;
-      slides.forEach(function (s, i) { s.classList.toggle('is-active', i === idx); s.setAttribute('aria-hidden', i === idx ? 'false' : 'true'); });
+      var showPair = car.classList.contains('is-paired');
+      if (road && idx !== 0) {
+        if (slides[0].contains(document.activeElement)) car.focus({ preventScroll: true });
+        road.pause();
+      }
+      slides.forEach(function (s, i) {
+        var active = i === idx;
+        s.classList.toggle('is-active', active);
+        s.setAttribute('aria-hidden', String(!active && !showPair));
+        s.inert = !active && !showPair;
+      });
       dots.forEach(function (d, i) { d.setAttribute('aria-selected', i === idx ? 'true' : 'false'); });
       car.dispatchEvent(new CustomEvent('slidechange', { detail: { index: idx, slide: slides[idx] } }));
     }
@@ -1980,20 +1990,45 @@
     car.querySelector('.next').addEventListener('click', function () { go(idx + 1); });
     dots.forEach(function (d, i) { d.addEventListener('click', function () { go(i); }); });
     car.addEventListener('keydown', function (e) {
+      if (e.target.closest('video') || car.classList.contains('is-paired') || e.defaultPrevented) return;
       if (e.key === 'ArrowLeft') { go(idx - 1); e.preventDefault(); }
       if (e.key === 'ArrowRight') { go(idx + 1); e.preventDefault(); }
     });
     var sx = null;
     car.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; }, { passive: true });
     car.addEventListener('touchend', function (e) {
-      if (sx === null) return;
+      if (sx === null || e.target.closest('video') || car.classList.contains('is-paired')) { sx = null; return; }
       var dx = e.changedTouches[0].clientX - sx; sx = null;
       if (Math.abs(dx) > 40) go(dx < 0 ? idx + 1 : idx - 1);
     });
     go(0);
+    if (paired) {
+      function resizePair() {
+        var show = car.clientWidth >= 380;
+        car.classList.toggle('is-paired', show);
+        car.tabIndex = show ? -1 : 0;
+        go(idx);
+      }
+      resizePair();
+      new ResizeObserver(resizePair).observe(car);
+    }
   });
 
   // ---- 게임 밖 활동: 챕터(슬라이드)에 따라 왼쪽 글과 n / 2 갱신 + 사진 확대 보기 ----
+  var pd = document.getElementById('photo-dialog');
+  var pdLast = null;
+  function openPhoto(trigger, source, alt, caption) {
+    var image = document.getElementById('pd-img');
+    var label = document.getElementById('pd-cap');
+    image.src = source;
+    image.alt = alt;
+    label.textContent = caption || '캡션 추가 예정';
+    label.classList.toggle('hint', !caption);
+    pdLast = trigger;
+    if (typeof pd.showModal === 'function') pd.showModal(); else pd.setAttribute('open', '');
+  }
+  pd.addEventListener('click', function (e) { if (e.target === pd) pd.close(); });
+  pd.addEventListener('close', function () { if (pdLast) pdLast.focus({ preventScroll: true }); });
   var beyond = document.getElementById('beyond-car');
   if (beyond) {
     var groups = [
@@ -2013,41 +2048,65 @@
       cEl.textContent = e.detail.index + 1;
     });
     cEl.textContent = '1';
-    var pd = document.getElementById('photo-dialog');
-    var pdLast = null;
     beyond.addEventListener('click', function (e) {
-      var btn = e.target.closest('.photo-btn'); if (!btn) return;
+      var btn = e.target.closest('.photo-btn');
+      if (!btn) return;
       var fig = btn.closest('figure');
-      document.getElementById('pd-img').src = btn.getAttribute('data-src');
-      document.getElementById('pd-img').alt = btn.getAttribute('data-alt') || '';
-      var cap = fig.getAttribute('data-caption');
-      document.getElementById('pd-cap').innerHTML = cap ? '' : '<span class="hint">캡션 추가 예정</span>';
-      if (cap) document.getElementById('pd-cap').textContent = fig.querySelector('figcaption').textContent;
-      pdLast = btn;
-      if (typeof pd.showModal === 'function') pd.showModal(); else pd.setAttribute('open', '');
+      openPhoto(btn, btn.dataset.src, btn.dataset.alt || '', fig.dataset.caption && fig.querySelector('figcaption').textContent);
     });
-    pd.addEventListener('click', function (e) { if (e.target === pd) pd.close(); });
-    pd.addEventListener('close', function () { if (pdLast) pdLast.focus({ preventScroll: true }); });
   }
 
-  // ---- Chain Echo: 합동 필살기 스트립 (호버 시 1→8 순차 강조, 클릭 시 확대) ----
-  document.querySelectorAll('.ult-strip').forEach(function (strip) {
-    var items = strip.querySelectorAll('li'); var timer = null, idx = -1;
-    function mark(i) { items.forEach(function (li, k) { li.classList.toggle('is-on', k === i); }); }
-    function play() { if (reduce || timer) return; idx = -1; step(); timer = setInterval(step, 650); }
-    function step() { idx = (idx + 1) % items.length; mark(idx); }
-    function stop() { clearInterval(timer); timer = null; mark(-1); }
-    strip.addEventListener('mouseenter', play); strip.addEventListener('mouseleave', stop);
-    strip.addEventListener('focusin', function () { stop(); }); // 키보드 탐색 중에는 포커스 강조만
-    var pd = document.getElementById('photo-dialog');
-    if (pd) strip.addEventListener('click', function (e) {
-      var btn = e.target.closest('.photo-btn'); if (!btn) return;
-      document.getElementById('pd-img').src = btn.getAttribute('data-src'); document.getElementById('pd-img').alt = btn.getAttribute('data-alt') || '';
-      document.getElementById('pd-cap').textContent = btn.getAttribute('data-alt') || '';
-      if (typeof pd.showModal === 'function') pd.showModal(); else pd.setAttribute('open', '');
-      pd.addEventListener('close', function once() { btn.focus({ preventScroll: true }); pd.removeEventListener('close', once); });
-    });
+  // ---- Chain Echo 합동 필살기 ----
+  var viewer = document.querySelector('.ultimate-viewer');
+  var frameButton = viewer.querySelector('.ultimate-frame');
+  var zoomButton = viewer.querySelector('.ultimate-zoom');
+  var frameImage = frameButton.querySelector('img');
+  var frameName = viewer.querySelector('.ultimate-name');
+  var noMouse = matchMedia('(hover: none)').matches;
+  var frames = [
+    ["assets/ai/chain-echo/ult-1-start.webp","합동 필살기 1 · 시작","1 시작"],
+    ["assets/ai/chain-echo/ult-2-dragon.webp","합동 필살기 2 · 용","2 용"],
+    ["assets/ai/chain-echo/ult-3-ice-rain.webp","합동 필살기 3 · 얼음비","3 얼음비"],
+    ["assets/ai/chain-echo/ult-4-storm.webp","합동 필살기 4 · 폭풍","4 폭풍"],
+    ["assets/ai/chain-echo/ult-5-cutscene.webp","합동 필살기 5 · 컷신","5 컷신"],
+    ["assets/ai/chain-echo/ult-6-gather.webp","합동 필살기 6 · 집결","6 집결"],
+    ["assets/ai/chain-echo/ult-7-joint-strike.webp","합동 필살기 7 · 합동 타격","7 합동 타격"],
+    ["assets/ai/chain-echo/ult-8-explosion.webp","합동 필살기 8 · 폭발","8 폭발"],
+  ];
+  var frameIndex = 0;
+  var frameTimer = null;
+  var frameHovered = false;
+  var frameFocused = false;
+  function nextFrame() {
+    frameIndex = (frameIndex + 1) % frames.length;
+    var frame = frames[frameIndex];
+    frameImage.src = frame[0];
+    frameButton.setAttribute('aria-label', frame[1]);
+    frameName.textContent = frame[2];
+  }
+  function syncFrames() {
+    if (!reduce && !noMouse && !pd.open && (frameHovered || frameFocused)) {
+      if (frameTimer === null) frameTimer = setInterval(nextFrame, 450);
+    } else {
+      clearInterval(frameTimer);
+      frameTimer = null;
+    }
+  }
+  viewer.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { frameHovered = true; syncFrames(); } });
+  viewer.addEventListener('pointerleave', function () { frameHovered = false; syncFrames(); });
+  frameButton.addEventListener('focus', function () { frameFocused = frameButton.matches(':focus-visible'); syncFrames(); });
+  frameButton.addEventListener('blur', function () { frameFocused = false; syncFrames(); });
+  function zoomFrame(trigger) {
+    var frame = frames[frameIndex];
+    openPhoto(trigger, frame[0], frame[1], frame[1]);
+    syncFrames();
+  }
+  frameButton.addEventListener('click', function (e) {
+    if (reduce || noMouse || e.pointerType === 'touch') nextFrame();
+    else zoomFrame(frameButton);
   });
+  zoomButton.addEventListener('click', function () { zoomFrame(zoomButton); });
+  pd.addEventListener('close', syncFrames);
 
   // ---- 플레이한 게임: 스트림(드래그·관성·화살표·자동 흐름) · 팝오버 · 장르 필터 ----
   var gamelog = document.getElementById('gamelog');
