@@ -986,3 +986,69 @@ html:not(.js) .platform-panel::before { content: attr(aria-labelledby); display:
 .spec-page .ult-strip li.is-on img { box-shadow: 0 0 0 2px var(--accent); }
 .spec-page .dark-note { padding: 12px 14px; border-radius: var(--radius-sm); background: var(--bg-soft); border: 1px solid var(--border); font-size: 13px; color: var(--text-2); margin: 16px 0 0; }
 @media (max-width: 560px) { .spec-page .spec-head h1 { font-size: 48px; } .spec-page .tbd-list { columns: 1; } .spec-page table { font-size: 13px; } .spec-page td:first-child { white-space: normal; } }
+
+/* 12차: AI 게임 시연 영상 */
+.demo-player {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: var(--demo-ratio);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #0a0d12;
+  scroll-margin-top: 84px;
+}
+.demo-player-portrait { aspect-ratio: auto; height: clamp(295px, 42vw, 440px); }
+.demo-player video { display: block; width: 100%; height: 100%; min-height: 0; object-fit: contain; }
+.demo-player-portrait video { width: auto; max-width: 100%; aspect-ratio: var(--demo-ratio); }
+.demo-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  color: #fff;
+  background: transparent;
+  cursor: pointer;
+}
+.demo-overlay[hidden] { display: none; }
+.demo-overlay:focus-visible, .demo-player video:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -3px;
+}
+.demo-play-icon {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent) 56%, #131e38);
+  box-shadow: 0 2px 12px #0009;
+  transition: transform .18s ease;
+}
+.demo-play-icon::after {
+  content: "";
+  margin-left: 4px;
+  border-block: 11px solid transparent;
+  border-left: 17px solid #fff;
+}
+.demo-overlay:hover .demo-play-icon { transform: scale(1.08); }
+.demo-caption, .demo-credit {
+  position: absolute;
+  padding: 4px 9px;
+  border-radius: 6px;
+  background: #090d16e8;
+  font-size: 12px;
+  font-weight: 700;
+}
+.demo-caption { left: 10px; bottom: 10px; }
+.demo-credit { right: 10px; top: 10px; }
+.demo-scenes { margin-top: 8px; }
+.demo-scenes summary { width: fit-content; padding: 4px 0; color: var(--accent); font-size: 13px; cursor: pointer; }
+.demo-scenes[open] > :not(summary) { margin-top: 6px; }
+@media (prefers-reduced-motion: reduce) {
+  .demo-play-icon { transition: none; }
+}

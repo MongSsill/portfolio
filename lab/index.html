@@ -154,16 +154,27 @@
             <p class="fg-pitch">세 캐릭터의 이동·전투 기술을 태그로 연결하고, 적중 직후의 PERFECT 태그로 에코 공격과 연계 보상을 얻는 2D 도트 액션 플랫포머.</p>
           </header>
 
-          <div class="fg-visual">
-            <figure class="fg-main">
-              <img src="assets/ai/chain-echo/play-1.webp" alt="Chain Echo 플레이 화면: 스테이지 1-1 에서 캐릭터가 이동하며 태그하는 장면" width="1440" height="816" loading="lazy" decoding="async" />
-              <figcaption>스테이지 1-1 · 이동 · 태그</figcaption>
-            </figure>
-            <figure class="fg-sub">
-              <img src="assets/ai/chain-echo/play-2.webp" alt="Chain Echo 플레이 화면: 스테이지 1-2 에서 플레아가 용 돌진으로 적을 공격하는 장면" width="1440" height="816" loading="lazy" decoding="async" />
-              <figcaption>스테이지 1-2 · 전투 · 용 돌진</figcaption>
-            </figure>
+          <div class="demo-player" id="g3-demo" style="--demo-ratio: 1280 / 720">
+            <video src="assets/video/g3-demo.mp4" poster="assets/video/g3-demo-poster.webp" aria-label="Chain Echo 시연 영상" controls controlslist="nodownload" playsinline preload="metadata"></video>
+            <button type="button" class="demo-overlay" aria-label="Chain Echo 시연 영상 재생" hidden>
+              <span class="demo-play-icon" aria-hidden="true"></span>
+              <span class="demo-caption">시연 영상 · 1:05 · 소리 있음</span>
+              <span class="demo-credit">직접 플레이한 영상</span>
+            </button>
           </div>
+          <details class="demo-scenes">
+            <summary>장면 보기</summary>
+            <div class="fg-visual">
+              <figure class="fg-main">
+                <img src="assets/ai/chain-echo/play-1.webp" alt="Chain Echo 플레이 화면: 스테이지 1-1 에서 캐릭터가 이동하며 태그하는 장면" width="1440" height="816" loading="lazy" decoding="async" />
+                <figcaption>스테이지 1-1 · 이동 · 태그</figcaption>
+              </figure>
+              <figure class="fg-sub">
+                <img src="assets/ai/chain-echo/play-2.webp" alt="Chain Echo 플레이 화면: 스테이지 1-2 에서 플레아가 용 돌진으로 적을 공격하는 장면" width="1440" height="816" loading="lazy" decoding="async" />
+                <figcaption>스테이지 1-2 · 전투 · 용 돌진</figcaption>
+              </figure>
+            </div>
+          </details>
 
           <div class="fg-strip-wrap">
             <p class="fg-label"><span class="en">3인 합동 필살기 · 8장면</span><span class="hint">마우스를 올리면 차례로 재생 · 클릭하면 크게</span></p>
@@ -205,29 +216,40 @@
 
         <article class="ai-card portrait reveal">
           <div class="shots">
-            <div class="carousel" id="g1-carousel" aria-roledescription="carousel" aria-label="길 건너기 인게임 화면" tabindex="0">
-              <div class="track">
-                <figure class="slide is-active">
-                  <img src="assets/ai/g1-play.webp" alt="길 건너기 플레이 중: 찻길, 강의 통나무, 열차 선로가 함께 보이는 장면" width="864" height="1346" />
-                  <figcaption>플레이 중 · 찻길 · 강 · 선로</figcaption>
-                </figure>
-                <figure class="slide">
-                  <img src="assets/ai/g1-terrain.webp" alt="길 건너기 플레이 중: 풀밭과 나무, 찻길, 통나무가 떠 있는 강을 건너는 장면" width="864" height="1346" loading="lazy" />
-                  <figcaption>플레이 중 · 풀밭과 강 구간</figcaption>
-                </figure>
-                <figure class="slide">
-                  <img src="assets/ai/g1-over.webp" alt="길 건너기 게임 오버 화면: 이번 기록 103과 새 최고 기록, 해금 과제 진행도가 표시된 결과창" width="864" height="1346" loading="lazy" />
-                  <figcaption>게임 오버 · 결과창</figcaption>
-                </figure>
-              </div>
-              <button class="car-btn prev" type="button" aria-label="이전 화면">‹</button>
-              <button class="car-btn next" type="button" aria-label="다음 화면">›</button>
-              <div class="dots" role="tablist" aria-label="화면 선택">
-                <button type="button" role="tab" aria-selected="true" aria-label="1번 화면"></button>
-                <button type="button" role="tab" aria-selected="false" aria-label="2번 화면"></button>
-                <button type="button" role="tab" aria-selected="false" aria-label="3번 화면"></button>
-              </div>
+            <div class="demo-player demo-player-portrait" id="g1-demo" style="--demo-ratio: 1280 / 1968">
+              <video src="assets/video/g1-demo.mp4" poster="assets/video/g1-demo-poster.webp" aria-label="길 건너기 시연 영상" controls controlslist="nodownload" playsinline preload="metadata"></video>
+              <button type="button" class="demo-overlay" aria-label="길 건너기 시연 영상 재생" hidden>
+                <span class="demo-play-icon" aria-hidden="true"></span>
+                <span class="demo-caption">시연 영상 · 0:25 · 소리 있음</span>
+                <span class="demo-credit">직접 플레이한 영상</span>
+              </button>
             </div>
+            <details class="demo-scenes">
+              <summary>장면 보기</summary>
+              <div class="carousel" id="g1-carousel" aria-roledescription="carousel" aria-label="길 건너기 인게임 화면" tabindex="0">
+                <div class="track">
+                  <figure class="slide is-active">
+                    <img src="assets/ai/g1-play.webp" alt="길 건너기 플레이 중: 찻길, 강의 통나무, 열차 선로가 함께 보이는 장면" width="864" height="1346" />
+                    <figcaption>플레이 중 · 찻길 · 강 · 선로</figcaption>
+                  </figure>
+                  <figure class="slide">
+                    <img src="assets/ai/g1-terrain.webp" alt="길 건너기 플레이 중: 풀밭과 나무, 찻길, 통나무가 떠 있는 강을 건너는 장면" width="864" height="1346" loading="lazy" />
+                    <figcaption>플레이 중 · 풀밭과 강 구간</figcaption>
+                  </figure>
+                  <figure class="slide">
+                    <img src="assets/ai/g1-over.webp" alt="길 건너기 게임 오버 화면: 이번 기록 103과 새 최고 기록, 해금 과제 진행도가 표시된 결과창" width="864" height="1346" loading="lazy" />
+                    <figcaption>게임 오버 · 결과창</figcaption>
+                  </figure>
+                </div>
+                <button class="car-btn prev" type="button" aria-label="이전 화면">‹</button>
+                <button class="car-btn next" type="button" aria-label="다음 화면">›</button>
+                <div class="dots" role="tablist" aria-label="화면 선택">
+                  <button type="button" role="tab" aria-selected="true" aria-label="1번 화면"></button>
+                  <button type="button" role="tab" aria-selected="false" aria-label="2번 화면"></button>
+                  <button type="button" role="tab" aria-selected="false" aria-label="3번 화면"></button>
+                </div>
+              </div>
+            </details>
           </div>
           <div class="info">
             <p class="kicker">게임 1 · 완전 카피 · 원작 길건너친구들</p>
@@ -248,24 +270,35 @@
 
         <article class="ai-card reveal">
           <div class="shots">
-            <div class="carousel" id="g2-carousel" aria-roledescription="carousel" aria-label="태그 보스전 인게임 화면" tabindex="0">
-              <div class="track">
-                <figure class="slide is-active">
-                  <img src="assets/ai/g2-groggy.webp" alt="태그 보스전 그로기 연출: 캐릭터의 눈 클로즈업이 화면을 가로지르는 장면" width="1440" height="962" loading="lazy" />
-                  <figcaption>그로기 연출 · 눈 클로즈업</figcaption>
-                </figure>
-                <figure class="slide">
-                  <img src="assets/ai/g2-fight.webp" alt="태그 보스전 전투 중: 골렘 보스 앞에서 빨강 캐릭터가 특수 스킬로 용을 소환한 장면" width="1440" height="962" loading="lazy" />
-                  <figcaption>전투 중 · 특수 스킬</figcaption>
-                </figure>
-              </div>
-              <button class="car-btn prev" type="button" aria-label="이전 화면">‹</button>
-              <button class="car-btn next" type="button" aria-label="다음 화면">›</button>
-              <div class="dots" role="tablist" aria-label="화면 선택">
-                <button type="button" role="tab" aria-selected="true" aria-label="1번 화면"></button>
-                <button type="button" role="tab" aria-selected="false" aria-label="2번 화면"></button>
-              </div>
+            <div class="demo-player" id="g2-demo" style="--demo-ratio: 1280 / 842">
+              <video src="assets/video/g2-demo.mp4" poster="assets/video/g2-demo-poster.webp" aria-label="태그 보스전 시연 영상" controls controlslist="nodownload" playsinline preload="metadata"></video>
+              <button type="button" class="demo-overlay" aria-label="태그 보스전 시연 영상 재생" hidden>
+                <span class="demo-play-icon" aria-hidden="true"></span>
+                <span class="demo-caption">시연 영상 · 1:12 · 소리 있음</span>
+                <span class="demo-credit">직접 플레이한 영상</span>
+              </button>
             </div>
+            <details class="demo-scenes">
+              <summary>장면 보기</summary>
+              <div class="carousel" id="g2-carousel" aria-roledescription="carousel" aria-label="태그 보스전 인게임 화면" tabindex="0">
+                <div class="track">
+                  <figure class="slide is-active">
+                    <img src="assets/ai/g2-groggy.webp" alt="태그 보스전 그로기 연출: 캐릭터의 눈 클로즈업이 화면을 가로지르는 장면" width="1440" height="962" loading="lazy" />
+                    <figcaption>그로기 연출 · 눈 클로즈업</figcaption>
+                  </figure>
+                  <figure class="slide">
+                    <img src="assets/ai/g2-fight.webp" alt="태그 보스전 전투 중: 골렘 보스 앞에서 빨강 캐릭터가 특수 스킬로 용을 소환한 장면" width="1440" height="962" loading="lazy" />
+                    <figcaption>전투 중 · 특수 스킬</figcaption>
+                  </figure>
+                </div>
+                <button class="car-btn prev" type="button" aria-label="이전 화면">‹</button>
+                <button class="car-btn next" type="button" aria-label="다음 화면">›</button>
+                <div class="dots" role="tablist" aria-label="화면 선택">
+                  <button type="button" role="tab" aria-selected="true" aria-label="1번 화면"></button>
+                  <button type="button" role="tab" aria-selected="false" aria-label="2번 화면"></button>
+                </div>
+              </div>
+            </details>
           </div>
           <div class="info">
             <p class="kicker">게임 2 · 큰 게임의 일부 · 원작 몬길: 스타다이브</p>
@@ -1841,6 +1874,39 @@
 <script>
 (function () {
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---- AI 게임 시연 영상 ----
+  var demoVideos = document.querySelectorAll('.demo-player video');
+  demoVideos.forEach(function (video) {
+    var overlay = video.nextElementSibling;
+    video.controls = false;
+    overlay.hidden = false;
+
+    overlay.addEventListener('click', function () {
+      var moveFocus = document.activeElement === overlay;
+      video.play().then(function () {
+        if (moveFocus && document.activeElement === document.body) {
+          video.focus({ preventScroll: true });
+        }
+      }, function () {
+        // Leave the poster available so the viewer can retry.
+      });
+    });
+    video.addEventListener('play', function () {
+      demoVideos.forEach(function (other) {
+        if (other !== video) other.pause();
+      });
+      video.controls = true;
+      overlay.hidden = true;
+    });
+    video.addEventListener('ended', function () {
+      var returnFocus = document.activeElement === video;
+      video.controls = false;
+      video.load();
+      overlay.hidden = false;
+      if (returnFocus) overlay.focus({ preventScroll: true });
+    });
+  });
 
   // ---- 상단 바: 햄버거 메뉴 (1024px 미만) ----
   var nav = document.getElementById('nav');
