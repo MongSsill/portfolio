@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko">
+<html lang="ko" data-deco="line">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -61,7 +61,7 @@
   <div class="hero-bg" role="img" aria-label="밤하늘 커버 이미지"></div>
   <div class="wrap hero-inner">
     <img class="avatar" src="assets/profile.webp" width="128" height="128" alt="박민규 프로필 사진" />
-    <p class="eyebrow">게임 기획자 · 스토리 연출 · 시스템 기획</p>
+    <p class="eyebrow">시스템 / 콘텐츠 기획</p>
     <h1><span class="accent">기대를 설계하는 기획자 박민규</span>입니다.</h1>
     <p class="lead">게임 기획 프리랜서 1년차이며, 다방면의 기획에 있어 열려있는 사람입니다.</p>
     <div class="cta">
@@ -142,62 +142,80 @@
     <section class="section wrap reveal">
       <div class="section-label">
         <p class="en"><span class="num">02</span>Games Made with AI</p>
-        <h2 class="ko">AI로 만든 게임</h2>
+        <div class="ai-heading">
+          <h2 class="ko">AI로 만든 게임</h2>
+          <a class="growth-link" href="https://claude.ai/artifact/Q7hrUpb6ytYvDwqR7nPa7R" target="_blank" rel="noopener" aria-label="AI와의 성장 과정 보기 (새 탭)">
+            <span class="growth-track" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span>AI와의 성장 과정 보기 <span class="growth-arrow" aria-hidden="true">↗</span></span>
+          </a>
+        </div>
+        <p class="desc">카피 게임(길 건너기) → 인상적인 게임의 시스템(태그 보스전) → 창작 게임(Chain Echo) 순서로 만든 세 종류의 게임입니다.</p>
       </div>
       <div class="section-body ai-list">
-        <p class="ai-intro"><b>완전 카피</b>(길 건너기) → <b>큰 게임의 일부</b>(태그 보스전) → <b>창작</b>(Chain Echo) 순서로, 같은 방식(기획은 내가, 코드는 AI)으로 만든 세 게임입니다.</p>
-        <!-- 게임 3: 창작 데모 (피처드) -->
+        <!-- 게임 3: 창작 게임 (피처드) -->
         <article class="ai-card featured-game reveal" id="chain-echo">
           <header class="fg-head">
-            <p class="kicker">게임 3 · 창작 데모 · 몬길: 스타다이브 캐릭터 콘셉트 차용 · 비영리 <span class="badge-original">창작</span></p>
+            <p class="kicker">게임 3 · 창작 게임 · 몬길: 스타다이브 캐릭터 콘셉트 차용 · 비영리 <span class="badge-original">창작</span></p>
             <h3 class="fg-title">Chain Echo</h3>
-            <p class="fg-pitch">세 캐릭터의 이동·전투 기술을 태그로 연결하고, 적중 직후의 PERFECT 태그로 에코 공격과 연계 보상을 얻는 2D 도트 액션 플랫포머.</p>
+            <p class="fg-pitch">세 캐릭터의 기술을 태그로 연결하고, PERFECT 태그로 에코 공격과 연계 보상을 얻는 2D 도트 액션 플랫포머.</p>
           </header>
 
-          <div class="fg-visual">
-            <figure class="fg-main">
-              <img src="assets/ai/chain-echo/play-1.webp" alt="Chain Echo 플레이 화면: 스테이지 1-1 에서 캐릭터가 이동하며 태그하는 장면" width="1440" height="816" loading="lazy" decoding="async" />
-              <figcaption>스테이지 1-1 · 이동 · 태그</figcaption>
-            </figure>
-            <figure class="fg-sub">
-              <img src="assets/ai/chain-echo/play-2.webp" alt="Chain Echo 플레이 화면: 스테이지 1-2 에서 플레아가 용 돌진으로 적을 공격하는 장면" width="1440" height="816" loading="lazy" decoding="async" />
-              <figcaption>스테이지 1-2 · 전투 · 용 돌진</figcaption>
-            </figure>
+          <div class="demo-player" id="g3-demo" style="--demo-ratio: 1280 / 720">
+            <video src="assets/video/g3-demo.mp4" poster="assets/video/g3-demo-poster.webp" aria-label="Chain Echo 시연 영상" controls controlslist="nodownload" playsinline preload="metadata"></video>
+            <button type="button" class="demo-overlay" aria-label="Chain Echo 시연 영상 재생" hidden>
+              <span class="demo-play-icon" aria-hidden="true"></span>
+              <span class="demo-caption">시연 영상 · 1:05 · 소리 있음</span>
+              <span class="demo-credit">직접 플레이한 영상</span>
+            </button>
           </div>
-
-          <div class="fg-strip-wrap">
-            <p class="fg-label"><span class="en">3인 합동 필살기 · 8장면</span><span class="hint">마우스를 올리면 차례로 재생 · 클릭하면 크게</span></p>
-            <ol class="ult-strip" aria-label="합동 필살기 연출 8장면">
-              <li><button type="button" class="photo-btn" data-src="assets/ai/chain-echo/ult-1-start.webp" data-alt="합동 필살기 1 · 시작"><img src="assets/ai/chain-echo/ult-1-start.webp" alt="" width="480" height="272" loading="lazy" decoding="async" /></button><span class="cap"><b>1</b> 시작</span></li>
-              <li><button type="button" class="photo-btn" data-src="assets/ai/chain-echo/ult-2-dragon.webp" data-alt="합동 필살기 2 · 용"><img src="assets/ai/chain-echo/ult-2-dragon.webp" alt="" width="480" height="272" loading="lazy" decoding="async" /></button><span class="cap"><b>2</b> 용</span></li>
-              <li><button type="button" class="photo-btn" data-src="assets/ai/chain-echo/ult-3-ice-rain.webp" data-alt="합동 필살기 3 · 얼음비"><img src="assets/ai/chain-echo/ult-3-ice-rain.webp" alt="" width="480" height="272" loading="lazy" decoding="async" /></button><span class="cap"><b>3</b> 얼음비</span></li>
-              <li><button type="button" class="photo-btn" data-src="assets/ai/chain-echo/ult-4-storm.webp" data-alt="합동 필살기 4 · 폭풍"><img src="assets/ai/chain-echo/ult-4-storm.webp" alt="" width="480" height="272" loading="lazy" decoding="async" /></button><span class="cap"><b>4</b> 폭풍</span></li>
-              <li><button type="button" class="photo-btn" data-src="assets/ai/chain-echo/ult-5-cutscene.webp" data-alt="합동 필살기 5 · 컷신"><img src="assets/ai/chain-echo/ult-5-cutscene.webp" alt="" width="480" height="272" loading="lazy" decoding="async" /></button><span class="cap"><b>5</b> 컷신</span></li>
-              <li><button type="button" class="photo-btn" data-src="assets/ai/chain-echo/ult-6-gather.webp" data-alt="합동 필살기 6 · 집결"><img src="assets/ai/chain-echo/ult-6-gather.webp" alt="" width="480" height="272" loading="lazy" decoding="async" /></button><span class="cap"><b>6</b> 집결</span></li>
-              <li><button type="button" class="photo-btn" data-src="assets/ai/chain-echo/ult-7-joint-strike.webp" data-alt="합동 필살기 7 · 합동 타격"><img src="assets/ai/chain-echo/ult-7-joint-strike.webp" alt="" width="480" height="272" loading="lazy" decoding="async" /></button><span class="cap"><b>7</b> 합동 타격</span></li>
-              <li><button type="button" class="photo-btn" data-src="assets/ai/chain-echo/ult-8-explosion.webp" data-alt="합동 필살기 8 · 폭발"><img src="assets/ai/chain-echo/ult-8-explosion.webp" alt="" width="480" height="272" loading="lazy" decoding="async" /></button><span class="cap"><b>8</b> 폭발</span></li>
-            </ol>
+          <div class="fg-visual">
+            <figure class="ultimate-viewer">
+              <div class="ultimate-stage">
+                <button type="button" class="ultimate-frame" aria-label="합동 필살기 1 · 시작" aria-describedby="ultimate-caption">
+                  <img src="assets/ai/chain-echo/ult-1-start.webp" alt="" width="480" height="272" decoding="async" />
+                </button>
+                <button type="button" class="ultimate-zoom" aria-label="크게 보기"><span aria-hidden="true">⤢</span></button>
+              </div>
+              <figcaption id="ultimate-caption"><span>3인 합동 필살기 · 8장면<span class="ultimate-hover-hint"> · 마우스를 올리면 재생</span></span> <span class="ultimate-name">1 시작</span></figcaption>
+            </figure>
+            <div class="carousel chain-carousel" aria-roledescription="carousel" aria-label="Chain Echo 인게임 화면" tabindex="0">
+              <div class="track">
+                <figure class="slide is-active">
+                  <img src="assets/ai/chain-echo/play-1.webp" alt="Chain Echo 플레이 화면: 스테이지 1-1 에서 캐릭터가 이동하며 태그하는 장면" width="1440" height="816" loading="lazy" decoding="async" />
+                  <figcaption>스테이지 1-1 · 이동 · 태그</figcaption>
+                </figure>
+                <figure class="slide">
+                  <img src="assets/ai/chain-echo/play-2.webp" alt="Chain Echo 플레이 화면: 스테이지 1-2 에서 플레아가 용 돌진으로 적을 공격하는 장면" width="1440" height="816" loading="lazy" decoding="async" />
+                  <figcaption>스테이지 1-2 · 전투 · 용 돌진</figcaption>
+                </figure>
+              </div>
+              <button class="car-btn prev" type="button" aria-label="이전 화면">‹</button>
+              <button class="car-btn next" type="button" aria-label="다음 화면">›</button>
+              <div class="dots" role="tablist" aria-label="화면 선택">
+                <button type="button" role="tab" aria-selected="true" aria-label="이동 · 태그"></button>
+                <button type="button" role="tab" aria-selected="false" aria-label="전투 · 용 돌진"></button>
+              </div>
+            </div>
           </div>
 
           <div class="fg-body">
             <div class="fg-text">
-              <p>몬길: 스타다이브 캐릭터 콘셉트를 차용한 IP 활용 게임, 비영리 창작 게임입니다. 원작 게임의 그림과 소리는 넣지 않았고, 그림·효과음은 레퍼런스를 확보한 뒤 AI로 재가공하고 게임에 맞게 잘라 도트로 다시 칠했습니다. 제목 글꼴은 Jersey 10(SIL Open Font License).</p>
               <p>한 판은 스테이지 하나(1-1 ~ 1-5, 앞 스테이지를 깨야 다음이 열림. 1-5 는 보스)입니다.</p>
               <ol class="fg-keys">
-                <li><span class="k">[확정]</span><strong>태그는 교체가 아니라 연계.</strong> 태그 한 번으로 캐릭터가 교체되고 다음 캐릭터의 고유 기술이 자동 발동해 이전 행동과 이어집니다.</li>
-                <li><span class="k">[확정]</span><strong>적중 직후 PERFECT 태그.</strong> 이전 캐릭터의 에코 공격이 남고 태그 자원이 반환됩니다. 순수 이동에는 PERFECT 보상이 없습니다.</li>
-                <li><span class="k">[확정]</span><strong>5개 스테이지로 단계 학습 → 보스.</strong> 같은 기술을 여러 맥락에서 익히고, 보스전에서는 파티 공용 연계 게이지로 3인 합동 필살기를 씁니다.</li>
+                <li><strong>태그는 교체가 아니라 연계.</strong> 태그 한 번으로 캐릭터가 교체되고 다음 캐릭터의 고유 기술이 자동 발동해 이전 행동과 이어집니다.</li>
+                <li><strong>적중 직후 PERFECT 태그.</strong> 이전 캐릭터의 에코 공격이 남고 태그 자원이 반환됩니다. 순수 이동에는 PERFECT 보상이 없습니다.</li>
+                <li><strong>5개 스테이지로 단계 학습 → 보스.</strong> 같은 기술을 여러 맥락에서 익히고, 보스전에서는 파티 공용 연계 게이지로 3인 합동 필살기를 씁니다.</li>
               </ol>
               <dl class="split">
-                <div><dt>내가 한 것</dt><dd>우선순위·규칙 결정, 플레이 테스트, 난이도 평가, 수정 사항 제시. 캐릭터 리소스와 연출의 품질 검토. 그림·효과음은 레퍼런스 확보 후 AI로 재가공하고 실제 확인을 통해 수정.</dd></div>
-                <div><dt>AI(Claude Code · Codex)에게 맡긴 것</dt><dd>이동/점프/태그/스택/전투/에코/게이지 시스템 구현, 적/보스, 스테이지 데이터, HUD, 기술 애니메이션 연동, 오류 수정과 테스트용 디버그 도구.</dd></div>
+                <div><dt>직접 수정 및 결정한 것</dt><dd>우선순위·규칙 결정, 플레이 테스트, 난이도 평가, 수정 사항 제시. 캐릭터 리소스와 연출의 품질 검토. 그림·효과음은 레퍼런스 확보 후 AI로 재가공하고 실제 확인을 통해 수정.</dd></div>
+                <div><dt>AI(Claude Code · Codex)에게 지시한 것</dt><dd>이동/점프/태그/스택/전투/에코/게이지 시스템 구현, 적/보스, 스테이지 데이터, HUD, 기술 애니메이션 연동, 오류 수정과 테스트용 디버그 도구.</dd></div>
               </dl>
               <div class="actions">
                 <a class="btn primary" href="https://mongssill.github.io/ai-seed-kit-games/g3-original/" target="_blank" rel="noopener">직접 해보기 ↗</a>
                 <a class="btn ghost" href="https://claude.ai/artifact/QQgNLu9UE5DxC6NVqHAgeE" target="_blank" rel="noopener">작업 방식 보기 ↗</a>
                 <a class="btn ghost" href="projects/chain-echo-spec.html">기획서 보기</a>
               </div>
-              <p class="note">PC 키보드 전용 · ← → 이동, Space 점프, A S D 태그, F 기본 공격, Shift 이동폼 ↔ 공격폼, E 체인 에코</p>
+              <p class="note">PC 키보드 전용</p>
             </div>
           </div>
         </article>
@@ -205,9 +223,19 @@
 
         <article class="ai-card portrait reveal">
           <div class="shots">
-            <div class="carousel" id="g1-carousel" aria-roledescription="carousel" aria-label="길 건너기 인게임 화면" tabindex="0">
+            <div class="carousel road-carousel" id="g1-carousel" aria-roledescription="carousel" aria-label="길 건너기 시연 영상 및 인게임 화면" tabindex="0">
               <div class="track">
-                <figure class="slide is-active">
+                <div class="slide is-active">
+                  <div class="demo-player demo-player-portrait" id="g1-demo" style="--demo-ratio: 1280 / 1968">
+                    <video src="assets/video/g1-demo.mp4" poster="assets/video/g1-demo-poster.webp" aria-label="길 건너기 시연 영상" controls controlslist="nodownload" playsinline preload="metadata"></video>
+                    <button type="button" class="demo-overlay" aria-label="길 건너기 시연 영상 재생" hidden>
+                      <span class="demo-play-icon" aria-hidden="true"></span>
+                      <span class="demo-caption">시연 영상 · 0:25 · 소리 있음</span>
+                      <span class="demo-credit">직접 플레이한 영상</span>
+                    </button>
+                  </div>
+                </div>
+                <figure class="slide">
                   <img src="assets/ai/g1-play.webp" alt="길 건너기 플레이 중: 찻길, 강의 통나무, 열차 선로가 함께 보이는 장면" width="864" height="1346" />
                   <figcaption>플레이 중 · 찻길 · 강 · 선로</figcaption>
                 </figure>
@@ -223,20 +251,21 @@
               <button class="car-btn prev" type="button" aria-label="이전 화면">‹</button>
               <button class="car-btn next" type="button" aria-label="다음 화면">›</button>
               <div class="dots" role="tablist" aria-label="화면 선택">
-                <button type="button" role="tab" aria-selected="true" aria-label="1번 화면"></button>
-                <button type="button" role="tab" aria-selected="false" aria-label="2번 화면"></button>
-                <button type="button" role="tab" aria-selected="false" aria-label="3번 화면"></button>
+                <button type="button" role="tab" class="video-dot" aria-selected="true" aria-label="시연 영상"></button>
+                <button type="button" role="tab" aria-selected="false" aria-label="플레이 중"></button>
+                <button type="button" role="tab" aria-selected="false" aria-label="지형"></button>
+                <button type="button" role="tab" aria-selected="false" aria-label="게임 오버"></button>
               </div>
             </div>
           </div>
           <div class="info">
-            <p class="kicker">게임 1 · 완전 카피 · 원작 길건너친구들</p>
+            <p class="kicker">게임 1 · 카피 게임 · 원작 길건너친구들</p>
             <h3>길 건너기</h3>
-            <p>방향키나 WASD로 한 칸씩 움직여 자동차·열차·강 같은 장애물을 피하며 최대한 멀리 전진하는 게임입니다. 가만히 있으면 뒤에서 붉은 선이 따라오고, 뒤로 4번 연속 가도 끝납니다.</p>
-            <p>원작은 길건너친구들(Crossy Road)로, 규칙을 따라 만들되 원작의 그림과 소리는 쓰지 않았습니다. 그림은 모두 도형으로 그렸고, 소리는 파일 없이 브라우저가 직접 만듭니다.</p>
+            <p>방향키 혹은 WASD로 한 칸씩 움직여 자동차·열차·강과 같은 장애물을 피하며 최대한 멀리 전진하는 게임입니다. 정지해 있으면 뒤에서 붉은 선이 다가와 게임이 끝나게 되고, 뒤로 4번 연속 간다면...? 어떤 일이 생길지 모릅니다</p>
+            <p>원작은 길건너친구들(Crossy Road)의 규칙을 따라 만들되 일정 부분 추가 및 수정한 부분들이 존재합니다. 또한 원작의 그림과 소리는 사용하지 않았습니다. 그림과 소리는 모두 자체 에셋으로 구현되었습니다.</p>
             <dl class="split">
-              <div><dt>내가 한 것</dt><dd>원작을 분석해 출발점을 정하고, 규칙을 정의하며 reviewer 로 반복 검토해 잘못된 게임 오버 규칙을 바로잡았습니다. 빌드된 게임을 직접 플레이해 설계대로인지 확인하고, 테스터 피드백을 받아 수정했습니다.</dd></div>
-              <div><dt>AI(Claude Code)에게 맡긴 것</dt><dd>게임 코드 작성과 수정, 브라우저 없이 규칙을 검사하는 도구와 검사, 문서 정리.</dd></div>
+              <div><dt>직접 수정 및 결정한 것</dt><dd>원작을 분석해 출발점을 정하고, 규칙을 정의하며 reviewer 로 반복 검토해 잘못된 게임 오버 규칙을 바로잡았습니다. 빌드된 게임을 직접 플레이해 설계대로인지 확인하고, 테스터 피드백을 받아 수정했습니다.</dd></div>
+              <div><dt>AI(Claude Code)에게 지시한 것</dt><dd>게임 코드 작성과 수정, 브라우저 없이 규칙을 검사하는 도구와 검사, 문서 정리.</dd></div>
             </dl>
             <div class="actions">
               <a class="btn primary" href="https://mongssill.github.io/ai-seed-kit-games/g1-copy/" target="_blank" rel="noopener">직접 해보기 ↗</a>
@@ -248,7 +277,15 @@
 
         <article class="ai-card reveal">
           <div class="shots">
-            <div class="carousel" id="g2-carousel" aria-roledescription="carousel" aria-label="태그 보스전 인게임 화면" tabindex="0">
+            <div class="demo-player" id="g2-demo" style="--demo-ratio: 1280 / 842">
+              <video src="assets/video/g2-demo.mp4" poster="assets/video/g2-demo-poster.webp" aria-label="태그 보스전 시연 영상" controls controlslist="nodownload" playsinline preload="metadata"></video>
+              <button type="button" class="demo-overlay" aria-label="태그 보스전 시연 영상 재생" hidden>
+                <span class="demo-play-icon" aria-hidden="true"></span>
+                <span class="demo-caption">시연 영상 · 1:12 · 소리 있음</span>
+                <span class="demo-credit">직접 플레이한 영상</span>
+              </button>
+            </div>
+            <div class="carousel boss-carousel" id="g2-carousel" aria-roledescription="carousel" aria-label="태그 보스전 인게임 화면" tabindex="0">
               <div class="track">
                 <figure class="slide is-active">
                   <img src="assets/ai/g2-groggy.webp" alt="태그 보스전 그로기 연출: 캐릭터의 눈 클로즈업이 화면을 가로지르는 장면" width="1440" height="962" loading="lazy" />
@@ -268,13 +305,13 @@
             </div>
           </div>
           <div class="info">
-            <p class="kicker">게임 2 · 큰 게임의 일부 · 원작 몬길: 스타다이브</p>
+            <p class="kicker">게임 2 · 인상적인 게임의 시스템 구현 · 원작 몬길: 스타다이브</p>
             <h3>태그 보스전</h3>
-            <p>보스 공격의 전조가 빛나는 순간 회피나 태그로 반격하고, 반격을 모아 보스를 그로기에 빠뜨려 3분 안에 쓰러뜨리는 세 캐릭터 태그 보스전입니다. 노란 전조는 회피 반격과 태그 반격이 모두 되고, 붉은 전조는 회피 반격만 됩니다.</p>
-            <p>원작은 몬길: 스타다이브(개발 넷마블몬스터, 배급 넷마블)로, 보스 전투의 교체 스킬 메커니즘 한 조각을 떼어 만들었습니다. 원작의 그림과 소리는 쓰지 않았고, 캐릭터는 콘셉만 살려 새로 그렸습니다.</p>
+            <p>보스 공격의 전조가 빛나는 순간 회피나 태그로 반격하고, 모은 게이지를 통해 보스를 그로기에 빠뜨려 3분 안에 쓰러뜨리는 태그 보스전입니다. 노란 전조는 회피 반격과 태그 반격이 모두 가능하지만, 붉은 전조는 회피 반격만 가능합니다.</p>
+            <p>원작은 몬길: 스타다이브(개발 넷마블몬스터, 배급 넷마블)로, 보스 전투의 교체 스킬 메커니즘을 모방하여 만들었습니다. 원작의 그림과 소리는 사용하지 않았지만, 캐릭터는 콘셉만 살려 새로 그려 창작 게임에서 사용할 에셋을 미리 시험해 보았습니다.</p>
             <dl class="split">
-              <div><dt>내가 한 것</dt><dd>게임의 전체 기획과 이후 수정, 자가 피드백. 피드백은 AI로 먼저 한 뒤 직접 플레이하며 다시 확인했습니다. 캐릭터 그림은 AI로 직접 만들었습니다.</dd></div>
-              <div><dt>AI(Claude Code)에게 맡긴 것</dt><dd>게임 코드 작성과 수정, 브라우저 없이 규칙을 검사하는 도구와 검사 281개, 난이도를 재는 봇 시뮬레이션, 문서 정리.</dd></div>
+              <div><dt>직접 수정 및 결정한 것</dt><dd>게임의 전체 기획과 이후 수정, 자가 피드백. 피드백은 AI로 먼저 한 뒤 직접 플레이하며 다시 확인했습니다. 캐릭터 그림은 AI로 직접 만들었습니다.</dd></div>
+              <div><dt>AI(Claude Code)에게 지시한 것</dt><dd>게임 코드 작성과 수정, 브라우저 없이 규칙을 검사하는 도구와 검사 281개, 난이도를 재는 봇 시뮬레이션, 문서 정리.</dd></div>
             </dl>
             <div class="actions">
               <a class="btn primary" href="https://mongssill.github.io/ai-seed-kit-games/g2-slice/" target="_blank" rel="noopener">직접 해보기 ↗</a>
@@ -380,7 +417,6 @@
           <p class="kicker">가장 오래 한 게임</p>
           <h3>메이플스토리</h3>
           <div class="row"><span class="tag">MMORPG</span><span class="record">플레이 기간 10년</span></div>
-          <p class="obs" data-observation=""><span class="hint">관찰 메모 추가 예정</span></p>
           <figure class="proof">
             <img src="assets/beyond/maple-2000days.webp" alt="2000일 출석 기록" loading="lazy" width="768" height="182" />
             <figcaption>2000일 출석 기록</figcaption>
@@ -394,11 +430,10 @@
         <li><strong>74<small>종</small></strong><span>플레이한 게임 · 메인 게임 포함, 중복 제외</span></li>
         <li><strong>4</strong><span>플랫폼 · PC · 모바일 · 닌텐도 · PlayStation</span></li>
         <li><strong>10<small>년</small></strong><span>가장 오래 한 게임 · 메이플스토리</span></li>
-        <li><strong>18</strong><span>장르 그룹 · 칸이나 칩을 누르면 그 장르만 보기</span></li>
+        <li><strong>18</strong><span>장르 그룹</span></li>
       </ul>
 
       <!-- 현재 상태 줄 -->
-      <p class="genre-status" aria-live="polite"><span data-genre-label>전체 74종 보는 중</span><button type="button" class="genre-clear" aria-label="필터 해제" hidden>✕</button></p>
 
       <!-- 장르 분포 바 (칸 = 필터) -->
       <div class="genre-bar reveal" role="group" aria-label="장르 분포 · 칸을 누르면 그 장르만 보기">
@@ -888,9 +923,9 @@
   </button>
 </li>
 <li class="tile is-square" data-genre="mobile-방치형-키우기">
-  <button type="button" class="tile-btn" data-slug="mini-warriors" data-shape="square" data-name="Mini Warriors" data-platform="모바일" data-group="방치형 · 키우기" data-genre="mobile-방치형-키우기" data-unverified="1" aria-label="Mini Warriors 자세히">
+  <button type="button" class="tile-btn" data-slug="mini-warriors" data-shape="square" data-name="Mini Warriors" data-platform="모바일" data-group="방치형 · 키우기" data-genre="mobile-방치형-키우기" aria-label="Mini Warriors 자세히">
     <span class="tile-cover"><img src="assets/games/covers/mini-warriors.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">Mini Warriors ※</span>
+    <span class="tile-name">Mini Warriors</span>
     
   </button>
 </li>
@@ -993,9 +1028,9 @@
   </button>
 </li>
 <li class="tile is-square is-dup" data-genre="mobile-방치형-키우기" aria-hidden="true">
-  <button type="button" class="tile-btn" data-slug="mini-warriors" data-shape="square" data-name="Mini Warriors" data-platform="모바일" data-group="방치형 · 키우기" data-genre="mobile-방치형-키우기" data-unverified="1" tabindex="-1" aria-label="Mini Warriors 자세히">
+  <button type="button" class="tile-btn" data-slug="mini-warriors" data-shape="square" data-name="Mini Warriors" data-platform="모바일" data-group="방치형 · 키우기" data-genre="mobile-방치형-키우기" tabindex="-1" aria-label="Mini Warriors 자세히">
     <span class="tile-cover"><img src="assets/games/covers/mini-warriors.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">Mini Warriors ※</span>
+    <span class="tile-name">Mini Warriors</span>
     
   </button>
 </li>
@@ -1044,9 +1079,9 @@
   </button>
 </li>
 <li class="tile" data-genre="console-젤다의-전설">
-  <button type="button" class="tile-btn" data-slug="zelda-phantom-hourglass" data-shape="portrait" data-name="젤다의 전설 몽환의 모래시계" data-platform="콘솔" data-group="젤다의 전설" data-genre="console-젤다의-전설" data-unverified="1" aria-label="젤다의 전설 몽환의 모래시계 자세히">
+  <button type="button" class="tile-btn" data-slug="zelda-phantom-hourglass" data-shape="portrait" data-name="젤다의 전설 몽환의 모래시계" data-platform="콘솔" data-group="젤다의 전설" data-genre="console-젤다의-전설" aria-label="젤다의 전설 몽환의 모래시계 자세히">
     <span class="tile-cover"><img src="assets/games/covers/zelda-phantom-hourglass.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">젤다의 전설 몽환의 모래시계 ※</span>
+    <span class="tile-name">젤다의 전설 몽환의 모래시계</span>
     
   </button>
 </li>
@@ -1065,9 +1100,9 @@
   </button>
 </li>
 <li class="tile" data-genre="console-포켓몬스터">
-  <button type="button" class="tile-btn" data-slug="pokemon-dp-pt" data-shape="portrait" data-name="포켓몬스터DP 디아루가·펄기아 / 포켓몬스터Pt 기라티나" data-platform="콘솔" data-group="포켓몬스터" data-genre="console-포켓몬스터" data-unverified="1" aria-label="포켓몬스터DP 디아루가·펄기아 / 포켓몬스터Pt 기라티나 자세히">
+  <button type="button" class="tile-btn" data-slug="pokemon-dp-pt" data-shape="portrait" data-name="포켓몬스터DP 디아루가·펄기아 / 포켓몬스터Pt 기라티나" data-platform="콘솔" data-group="포켓몬스터" data-genre="console-포켓몬스터" aria-label="포켓몬스터DP 디아루가·펄기아 / 포켓몬스터Pt 기라티나 자세히">
     <span class="tile-cover"><img src="assets/games/covers/pokemon-dp-pt.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">포켓몬스터DP 디아루가·펄기아 / 포켓몬스터Pt 기라티나 ※</span>
+    <span class="tile-name">포켓몬스터DP 디아루가·펄기아 / 포켓몬스터Pt 기라티나</span>
     
   </button>
 </li>
@@ -1100,16 +1135,16 @@
   </button>
 </li>
 <li class="tile" data-genre="console-마리오">
-  <button type="button" class="tile-btn" data-slug="super-mario-64-ds" data-shape="portrait" data-name="슈퍼 마리오 64 DS" data-platform="콘솔" data-group="마리오" data-genre="console-마리오" data-unverified="1" aria-label="슈퍼 마리오 64 DS 자세히">
+  <button type="button" class="tile-btn" data-slug="super-mario-64-ds" data-shape="portrait" data-name="슈퍼 마리오 64 DS" data-platform="콘솔" data-group="마리오" data-genre="console-마리오" aria-label="슈퍼 마리오 64 DS 자세히">
     <span class="tile-cover"><img src="assets/games/covers/super-mario-64-ds.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">슈퍼 마리오 64 DS ※</span>
+    <span class="tile-name">슈퍼 마리오 64 DS</span>
     
   </button>
 </li>
 <li class="tile" data-genre="console-마리오">
-  <button type="button" class="tile-btn" data-slug="mario-kart-ds" data-shape="portrait" data-name="마리오 카트 DS" data-platform="콘솔" data-group="마리오" data-genre="console-마리오" data-unverified="1" aria-label="마리오 카트 DS 자세히">
+  <button type="button" class="tile-btn" data-slug="mario-kart-ds" data-shape="portrait" data-name="마리오 카트 DS" data-platform="콘솔" data-group="마리오" data-genre="console-마리오" aria-label="마리오 카트 DS 자세히">
     <span class="tile-cover"><img src="assets/games/covers/mario-kart-ds.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">마리오 카트 DS ※</span>
+    <span class="tile-name">마리오 카트 DS</span>
     
   </button>
 </li>
@@ -1121,9 +1156,9 @@
   </button>
 </li>
 <li class="tile" data-genre="console-마리오">
-  <button type="button" class="tile-btn" data-slug="new-super-mario-bros" data-shape="portrait" data-name="뉴 슈퍼 마리오브라더스" data-platform="콘솔" data-group="마리오" data-genre="console-마리오" data-unverified="1" aria-label="뉴 슈퍼 마리오브라더스 자세히">
+  <button type="button" class="tile-btn" data-slug="new-super-mario-bros" data-shape="portrait" data-name="뉴 슈퍼 마리오브라더스" data-platform="콘솔" data-group="마리오" data-genre="console-마리오" aria-label="뉴 슈퍼 마리오브라더스 자세히">
     <span class="tile-cover"><img src="assets/games/covers/new-super-mario-bros.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">뉴 슈퍼 마리오브라더스 ※</span>
+    <span class="tile-name">뉴 슈퍼 마리오브라더스</span>
     
   </button>
 </li>
@@ -1156,16 +1191,16 @@
   </button>
 </li>
 <li class="tile" data-genre="console-마리오">
-  <button type="button" class="tile-btn" data-slug="yoshis-island-ds" data-shape="portrait" data-name="요시 아일랜드 DS" data-platform="콘솔" data-group="마리오" data-genre="console-마리오" data-unverified="1" aria-label="요시 아일랜드 DS 자세히">
+  <button type="button" class="tile-btn" data-slug="yoshis-island-ds" data-shape="portrait" data-name="요시 아일랜드 DS" data-platform="콘솔" data-group="마리오" data-genre="console-마리오" aria-label="요시 아일랜드 DS 자세히">
     <span class="tile-cover"><img src="assets/games/covers/yoshis-island-ds.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">요시 아일랜드 DS ※</span>
+    <span class="tile-name">요시 아일랜드 DS</span>
     
   </button>
 </li>
 <li class="tile" data-genre="console-마리오">
-  <button type="button" class="tile-btn" data-slug="super-paper-mario" data-shape="portrait" data-name="슈퍼 페이퍼 마리오" data-platform="콘솔" data-group="마리오" data-genre="console-마리오" data-unverified="1" aria-label="슈퍼 페이퍼 마리오 자세히">
+  <button type="button" class="tile-btn" data-slug="super-paper-mario" data-shape="portrait" data-name="슈퍼 페이퍼 마리오" data-platform="콘솔" data-group="마리오" data-genre="console-마리오" aria-label="슈퍼 페이퍼 마리오 자세히">
     <span class="tile-cover"><img src="assets/games/covers/super-paper-mario.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">슈퍼 페이퍼 마리오 ※</span>
+    <span class="tile-name">슈퍼 페이퍼 마리오</span>
     
   </button>
 </li>
@@ -1177,9 +1212,9 @@
   </button>
 </li>
 <li class="tile" data-genre="console-마리오">
-  <button type="button" class="tile-btn" data-slug="mario-luigi-partners-in-time" data-shape="portrait" data-name="마리오&amp;루이지 RPG 시간의 파트너" data-platform="콘솔" data-group="마리오" data-genre="console-마리오" data-unverified="1" aria-label="마리오&amp;루이지 RPG 시간의 파트너 자세히">
+  <button type="button" class="tile-btn" data-slug="mario-luigi-partners-in-time" data-shape="portrait" data-name="마리오&amp;루이지 RPG 시간의 파트너" data-platform="콘솔" data-group="마리오" data-genre="console-마리오" aria-label="마리오&amp;루이지 RPG 시간의 파트너 자세히">
     <span class="tile-cover"><img src="assets/games/covers/mario-luigi-partners-in-time.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">마리오&amp;루이지 RPG 시간의 파트너 ※</span>
+    <span class="tile-name">마리오&amp;루이지 RPG 시간의 파트너</span>
     
   </button>
 </li>
@@ -1191,51 +1226,51 @@
   </button>
 </li>
 <li class="tile" data-genre="console-별의-커비">
-  <button type="button" class="tile-btn" data-slug="kirby-squeak-squad" data-shape="portrait" data-name="별의 커비 도팡 일당의 습격" data-platform="콘솔" data-group="별의 커비" data-genre="console-별의-커비" data-unverified="1" aria-label="별의 커비 도팡 일당의 습격 자세히">
+  <button type="button" class="tile-btn" data-slug="kirby-squeak-squad" data-shape="portrait" data-name="별의 커비 도팡 일당의 습격" data-platform="콘솔" data-group="별의 커비" data-genre="console-별의-커비" aria-label="별의 커비 도팡 일당의 습격 자세히">
     <span class="tile-cover"><img src="assets/games/covers/kirby-squeak-squad.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">별의 커비 도팡 일당의 습격 ※</span>
+    <span class="tile-name">별의 커비 도팡 일당의 습격</span>
     
   </button>
 </li>
 <li class="tile" data-genre="console-별의-커비">
-  <button type="button" class="tile-btn" data-slug="kirby-super-star-ultra" data-shape="portrait" data-name="별의 커비 울트라 슈퍼 디럭스" data-platform="콘솔" data-group="별의 커비" data-genre="console-별의-커비" data-unverified="1" aria-label="별의 커비 울트라 슈퍼 디럭스 자세히">
+  <button type="button" class="tile-btn" data-slug="kirby-super-star-ultra" data-shape="portrait" data-name="별의 커비 울트라 슈퍼 디럭스" data-platform="콘솔" data-group="별의 커비" data-genre="console-별의-커비" aria-label="별의 커비 울트라 슈퍼 디럭스 자세히">
     <span class="tile-cover"><img src="assets/games/covers/kirby-super-star-ultra.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">별의 커비 울트라 슈퍼 디럭스 ※</span>
+    <span class="tile-name">별의 커비 울트라 슈퍼 디럭스</span>
     
   </button>
 </li>
 <li class="tile" data-genre="console-별의-커비">
-  <button type="button" class="tile-btn" data-slug="kirbys-epic-yarn" data-shape="portrait" data-name="털실 커비 이야기" data-platform="콘솔" data-group="별의 커비" data-genre="console-별의-커비" data-unverified="1" aria-label="털실 커비 이야기 자세히">
+  <button type="button" class="tile-btn" data-slug="kirbys-epic-yarn" data-shape="portrait" data-name="털실 커비 이야기" data-platform="콘솔" data-group="별의 커비" data-genre="console-별의-커비" aria-label="털실 커비 이야기 자세히">
     <span class="tile-cover"><img src="assets/games/covers/kirbys-epic-yarn.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">털실 커비 이야기 ※</span>
+    <span class="tile-name">털실 커비 이야기</span>
     
   </button>
 </li>
 <li class="tile" data-genre="console-레이튼-교수">
-  <button type="button" class="tile-btn" data-slug="layton-curious-village" data-shape="portrait" data-name="레이튼 교수와 이상한 마을" data-platform="콘솔" data-group="레이튼 교수" data-genre="console-레이튼-교수" data-unverified="1" aria-label="레이튼 교수와 이상한 마을 자세히">
+  <button type="button" class="tile-btn" data-slug="layton-curious-village" data-shape="portrait" data-name="레이튼 교수와 이상한 마을" data-platform="콘솔" data-group="레이튼 교수" data-genre="console-레이튼-교수" aria-label="레이튼 교수와 이상한 마을 자세히">
     <span class="tile-cover"><img src="assets/games/covers/layton-curious-village.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">레이튼 교수와 이상한 마을 ※</span>
+    <span class="tile-name">레이튼 교수와 이상한 마을</span>
     
   </button>
 </li>
 <li class="tile" data-genre="console-레이튼-교수">
-  <button type="button" class="tile-btn" data-slug="layton-diabolical-box" data-shape="portrait" data-name="레이튼 교수와 악마의 상자" data-platform="콘솔" data-group="레이튼 교수" data-genre="console-레이튼-교수" data-unverified="1" aria-label="레이튼 교수와 악마의 상자 자세히">
+  <button type="button" class="tile-btn" data-slug="layton-diabolical-box" data-shape="portrait" data-name="레이튼 교수와 악마의 상자" data-platform="콘솔" data-group="레이튼 교수" data-genre="console-레이튼-교수" aria-label="레이튼 교수와 악마의 상자 자세히">
     <span class="tile-cover"><img src="assets/games/covers/layton-diabolical-box.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">레이튼 교수와 악마의 상자 ※</span>
+    <span class="tile-name">레이튼 교수와 악마의 상자</span>
     
   </button>
 </li>
 <li class="tile" data-genre="console-레이튼-교수">
-  <button type="button" class="tile-btn" data-slug="layton-unwound-future" data-shape="portrait" data-name="레이튼 교수와 최후의 시간여행" data-platform="콘솔" data-group="레이튼 교수" data-genre="console-레이튼-교수" data-unverified="1" aria-label="레이튼 교수와 최후의 시간여행 자세히">
+  <button type="button" class="tile-btn" data-slug="layton-unwound-future" data-shape="portrait" data-name="레이튼 교수와 최후의 시간여행" data-platform="콘솔" data-group="레이튼 교수" data-genre="console-레이튼-교수" aria-label="레이튼 교수와 최후의 시간여행 자세히">
     <span class="tile-cover"><img src="assets/games/covers/layton-unwound-future.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">레이튼 교수와 최후의 시간여행 ※</span>
+    <span class="tile-name">레이튼 교수와 최후의 시간여행</span>
     
   </button>
 </li>
 <li class="tile" data-genre="rhythm">
-  <button type="button" class="tile-btn" data-slug="rhythm-heaven-ds" data-shape="portrait" data-name="리듬 세상" data-platform="콘솔" data-group="리듬" data-genre="rhythm" data-unverified="1" aria-label="리듬 세상 자세히">
+  <button type="button" class="tile-btn" data-slug="rhythm-heaven-ds" data-shape="portrait" data-name="리듬 세상" data-platform="콘솔" data-group="리듬" data-genre="rhythm" aria-label="리듬 세상 자세히">
     <span class="tile-cover"><img src="assets/games/covers/rhythm-heaven-ds.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">리듬 세상 ※</span>
+    <span class="tile-name">리듬 세상</span>
     
   </button>
 </li>
@@ -1247,51 +1282,51 @@
   </button>
 </li>
 <li class="tile" data-genre="rhythm">
-  <button type="button" class="tile-btn" data-slug="rhythm-heaven-fever" data-shape="portrait" data-name="도와줘! 리듬 히어로" data-platform="콘솔" data-group="리듬" data-genre="rhythm" data-unverified="1" aria-label="도와줘! 리듬 히어로 자세히">
+  <button type="button" class="tile-btn" data-slug="rhythm-heaven-fever" data-shape="portrait" data-name="도와줘! 리듬 히어로" data-platform="콘솔" data-group="리듬" data-genre="rhythm" aria-label="도와줘! 리듬 히어로 자세히">
     <span class="tile-cover"><img src="assets/games/covers/rhythm-heaven-fever.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">도와줘! 리듬 히어로 ※</span>
+    <span class="tile-name">도와줘! 리듬 히어로</span>
     
   </button>
 </li>
 <li class="tile" data-genre="console-그-외-닌텐도">
-  <button type="button" class="tile-btn" data-slug="animal-crossing-wild-world" data-shape="portrait" data-name="놀러오세요 동물의 숲" data-platform="콘솔" data-group="그 외 닌텐도" data-genre="console-그-외-닌텐도" data-unverified="1" aria-label="놀러오세요 동물의 숲 자세히">
+  <button type="button" class="tile-btn" data-slug="animal-crossing-wild-world" data-shape="portrait" data-name="놀러오세요 동물의 숲" data-platform="콘솔" data-group="그 외 닌텐도" data-genre="console-그-외-닌텐도" aria-label="놀러오세요 동물의 숲 자세히">
     <span class="tile-cover"><img src="assets/games/covers/animal-crossing-wild-world.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">놀러오세요 동물의 숲 ※</span>
+    <span class="tile-name">놀러오세요 동물의 숲</span>
     
   </button>
 </li>
 <li class="tile" data-genre="console-그-외-닌텐도">
-  <button type="button" class="tile-btn" data-slug="elebits-ds" data-shape="portrait" data-name="엘레비츠: 카이와 제로의 신비한 모험" data-platform="콘솔" data-group="그 외 닌텐도" data-genre="console-그-외-닌텐도" data-unverified="1" aria-label="엘레비츠: 카이와 제로의 신비한 모험 자세히">
+  <button type="button" class="tile-btn" data-slug="elebits-ds" data-shape="portrait" data-name="엘레비츠: 카이와 제로의 신비한 모험" data-platform="콘솔" data-group="그 외 닌텐도" data-genre="console-그-외-닌텐도" aria-label="엘레비츠: 카이와 제로의 신비한 모험 자세히">
     <span class="tile-cover"><img src="assets/games/covers/elebits-ds.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">엘레비츠: 카이와 제로의 신비한 모험 ※</span>
+    <span class="tile-name">엘레비츠: 카이와 제로의 신비한 모험</span>
     
   </button>
 </li>
 <li class="tile" data-genre="console-그-외-닌텐도">
-  <button type="button" class="tile-btn" data-slug="maplestory-ds" data-shape="portrait" data-name="메이플스토리DS" data-platform="콘솔" data-group="그 외 닌텐도" data-genre="console-그-외-닌텐도" data-unverified="1" aria-label="메이플스토리DS 자세히">
+  <button type="button" class="tile-btn" data-slug="maplestory-ds" data-shape="portrait" data-name="메이플스토리DS" data-platform="콘솔" data-group="그 외 닌텐도" data-genre="console-그-외-닌텐도" aria-label="메이플스토리DS 자세히">
     <span class="tile-cover"><img src="assets/games/covers/maplestory-ds.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">메이플스토리DS ※</span>
+    <span class="tile-name">메이플스토리DS</span>
     
   </button>
 </li>
 <li class="tile" data-genre="console-그-외-닌텐도">
-  <button type="button" class="tile-btn" data-slug="drawn-to-life" data-shape="portrait" data-name="그려라 터치! 내가 만드는 세상" data-platform="콘솔" data-group="그 외 닌텐도" data-genre="console-그-외-닌텐도" data-unverified="1" aria-label="그려라 터치! 내가 만드는 세상 자세히">
+  <button type="button" class="tile-btn" data-slug="drawn-to-life" data-shape="portrait" data-name="그려라 터치! 내가 만드는 세상" data-platform="콘솔" data-group="그 외 닌텐도" data-genre="console-그-외-닌텐도" aria-label="그려라 터치! 내가 만드는 세상 자세히">
     <span class="tile-cover"><img src="assets/games/covers/drawn-to-life.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">그려라 터치! 내가 만드는 세상 ※</span>
+    <span class="tile-name">그려라 터치! 내가 만드는 세상</span>
     
   </button>
 </li>
 <li class="tile" data-genre="console-그-외-닌텐도">
-  <button type="button" class="tile-btn" data-slug="shin-chan-ds" data-shape="portrait" data-name="짱구는 못말려 DS 알쏭달쏭 크레용 대작전!" data-platform="콘솔" data-group="그 외 닌텐도" data-genre="console-그-외-닌텐도" data-unverified="1" aria-label="짱구는 못말려 DS 알쏭달쏭 크레용 대작전! 자세히">
+  <button type="button" class="tile-btn" data-slug="shin-chan-ds" data-shape="portrait" data-name="짱구는 못말려 DS 알쏭달쏭 크레용 대작전!" data-platform="콘솔" data-group="그 외 닌텐도" data-genre="console-그-외-닌텐도" aria-label="짱구는 못말려 DS 알쏭달쏭 크레용 대작전! 자세히">
     <span class="tile-cover"><img src="assets/games/covers/shin-chan-ds.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">짱구는 못말려 DS 알쏭달쏭 크레용 대작전! ※</span>
+    <span class="tile-name">짱구는 못말려 DS 알쏭달쏭 크레용 대작전!</span>
     
   </button>
 </li>
 <li class="tile" data-genre="console-playstation">
-  <button type="button" class="tile-btn" data-slug="ratchet-clank-ps2" data-shape="portrait" data-name="라쳇 &amp; 클랭크" data-platform="콘솔" data-group="PlayStation" data-genre="console-playstation" data-unverified="1" aria-label="라쳇 &amp; 클랭크 자세히">
+  <button type="button" class="tile-btn" data-slug="ratchet-clank-ps2" data-shape="portrait" data-name="라쳇 &amp; 클랭크" data-platform="콘솔" data-group="PlayStation" data-genre="console-playstation" aria-label="라쳇 &amp; 클랭크 자세히">
     <span class="tile-cover"><img src="assets/games/covers/ratchet-clank-ps2.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">라쳇 &amp; 클랭크 ※</span>
+    <span class="tile-name">라쳇 &amp; 클랭크</span>
     
   </button>
 </li>
@@ -1310,9 +1345,9 @@
   </button>
 </li>
 <li class="tile is-dup" data-genre="console-젤다의-전설" aria-hidden="true">
-  <button type="button" class="tile-btn" data-slug="zelda-phantom-hourglass" data-shape="portrait" data-name="젤다의 전설 몽환의 모래시계" data-platform="콘솔" data-group="젤다의 전설" data-genre="console-젤다의-전설" data-unverified="1" tabindex="-1" aria-label="젤다의 전설 몽환의 모래시계 자세히">
+  <button type="button" class="tile-btn" data-slug="zelda-phantom-hourglass" data-shape="portrait" data-name="젤다의 전설 몽환의 모래시계" data-platform="콘솔" data-group="젤다의 전설" data-genre="console-젤다의-전설" tabindex="-1" aria-label="젤다의 전설 몽환의 모래시계 자세히">
     <span class="tile-cover"><img src="assets/games/covers/zelda-phantom-hourglass.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">젤다의 전설 몽환의 모래시계 ※</span>
+    <span class="tile-name">젤다의 전설 몽환의 모래시계</span>
     
   </button>
 </li>
@@ -1331,9 +1366,9 @@
   </button>
 </li>
 <li class="tile is-dup" data-genre="console-포켓몬스터" aria-hidden="true">
-  <button type="button" class="tile-btn" data-slug="pokemon-dp-pt" data-shape="portrait" data-name="포켓몬스터DP 디아루가·펄기아 / 포켓몬스터Pt 기라티나" data-platform="콘솔" data-group="포켓몬스터" data-genre="console-포켓몬스터" data-unverified="1" tabindex="-1" aria-label="포켓몬스터DP 디아루가·펄기아 / 포켓몬스터Pt 기라티나 자세히">
+  <button type="button" class="tile-btn" data-slug="pokemon-dp-pt" data-shape="portrait" data-name="포켓몬스터DP 디아루가·펄기아 / 포켓몬스터Pt 기라티나" data-platform="콘솔" data-group="포켓몬스터" data-genre="console-포켓몬스터" tabindex="-1" aria-label="포켓몬스터DP 디아루가·펄기아 / 포켓몬스터Pt 기라티나 자세히">
     <span class="tile-cover"><img src="assets/games/covers/pokemon-dp-pt.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">포켓몬스터DP 디아루가·펄기아 / 포켓몬스터Pt 기라티나 ※</span>
+    <span class="tile-name">포켓몬스터DP 디아루가·펄기아 / 포켓몬스터Pt 기라티나</span>
     
   </button>
 </li>
@@ -1366,16 +1401,16 @@
   </button>
 </li>
 <li class="tile is-dup" data-genre="console-마리오" aria-hidden="true">
-  <button type="button" class="tile-btn" data-slug="super-mario-64-ds" data-shape="portrait" data-name="슈퍼 마리오 64 DS" data-platform="콘솔" data-group="마리오" data-genre="console-마리오" data-unverified="1" tabindex="-1" aria-label="슈퍼 마리오 64 DS 자세히">
+  <button type="button" class="tile-btn" data-slug="super-mario-64-ds" data-shape="portrait" data-name="슈퍼 마리오 64 DS" data-platform="콘솔" data-group="마리오" data-genre="console-마리오" tabindex="-1" aria-label="슈퍼 마리오 64 DS 자세히">
     <span class="tile-cover"><img src="assets/games/covers/super-mario-64-ds.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">슈퍼 마리오 64 DS ※</span>
+    <span class="tile-name">슈퍼 마리오 64 DS</span>
     
   </button>
 </li>
 <li class="tile is-dup" data-genre="console-마리오" aria-hidden="true">
-  <button type="button" class="tile-btn" data-slug="mario-kart-ds" data-shape="portrait" data-name="마리오 카트 DS" data-platform="콘솔" data-group="마리오" data-genre="console-마리오" data-unverified="1" tabindex="-1" aria-label="마리오 카트 DS 자세히">
+  <button type="button" class="tile-btn" data-slug="mario-kart-ds" data-shape="portrait" data-name="마리오 카트 DS" data-platform="콘솔" data-group="마리오" data-genre="console-마리오" tabindex="-1" aria-label="마리오 카트 DS 자세히">
     <span class="tile-cover"><img src="assets/games/covers/mario-kart-ds.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">마리오 카트 DS ※</span>
+    <span class="tile-name">마리오 카트 DS</span>
     
   </button>
 </li>
@@ -1387,9 +1422,9 @@
   </button>
 </li>
 <li class="tile is-dup" data-genre="console-마리오" aria-hidden="true">
-  <button type="button" class="tile-btn" data-slug="new-super-mario-bros" data-shape="portrait" data-name="뉴 슈퍼 마리오브라더스" data-platform="콘솔" data-group="마리오" data-genre="console-마리오" data-unverified="1" tabindex="-1" aria-label="뉴 슈퍼 마리오브라더스 자세히">
+  <button type="button" class="tile-btn" data-slug="new-super-mario-bros" data-shape="portrait" data-name="뉴 슈퍼 마리오브라더스" data-platform="콘솔" data-group="마리오" data-genre="console-마리오" tabindex="-1" aria-label="뉴 슈퍼 마리오브라더스 자세히">
     <span class="tile-cover"><img src="assets/games/covers/new-super-mario-bros.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">뉴 슈퍼 마리오브라더스 ※</span>
+    <span class="tile-name">뉴 슈퍼 마리오브라더스</span>
     
   </button>
 </li>
@@ -1422,16 +1457,16 @@
   </button>
 </li>
 <li class="tile is-dup" data-genre="console-마리오" aria-hidden="true">
-  <button type="button" class="tile-btn" data-slug="yoshis-island-ds" data-shape="portrait" data-name="요시 아일랜드 DS" data-platform="콘솔" data-group="마리오" data-genre="console-마리오" data-unverified="1" tabindex="-1" aria-label="요시 아일랜드 DS 자세히">
+  <button type="button" class="tile-btn" data-slug="yoshis-island-ds" data-shape="portrait" data-name="요시 아일랜드 DS" data-platform="콘솔" data-group="마리오" data-genre="console-마리오" tabindex="-1" aria-label="요시 아일랜드 DS 자세히">
     <span class="tile-cover"><img src="assets/games/covers/yoshis-island-ds.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">요시 아일랜드 DS ※</span>
+    <span class="tile-name">요시 아일랜드 DS</span>
     
   </button>
 </li>
 <li class="tile is-dup" data-genre="console-마리오" aria-hidden="true">
-  <button type="button" class="tile-btn" data-slug="super-paper-mario" data-shape="portrait" data-name="슈퍼 페이퍼 마리오" data-platform="콘솔" data-group="마리오" data-genre="console-마리오" data-unverified="1" tabindex="-1" aria-label="슈퍼 페이퍼 마리오 자세히">
+  <button type="button" class="tile-btn" data-slug="super-paper-mario" data-shape="portrait" data-name="슈퍼 페이퍼 마리오" data-platform="콘솔" data-group="마리오" data-genre="console-마리오" tabindex="-1" aria-label="슈퍼 페이퍼 마리오 자세히">
     <span class="tile-cover"><img src="assets/games/covers/super-paper-mario.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">슈퍼 페이퍼 마리오 ※</span>
+    <span class="tile-name">슈퍼 페이퍼 마리오</span>
     
   </button>
 </li>
@@ -1443,9 +1478,9 @@
   </button>
 </li>
 <li class="tile is-dup" data-genre="console-마리오" aria-hidden="true">
-  <button type="button" class="tile-btn" data-slug="mario-luigi-partners-in-time" data-shape="portrait" data-name="마리오&amp;루이지 RPG 시간의 파트너" data-platform="콘솔" data-group="마리오" data-genre="console-마리오" data-unverified="1" tabindex="-1" aria-label="마리오&amp;루이지 RPG 시간의 파트너 자세히">
+  <button type="button" class="tile-btn" data-slug="mario-luigi-partners-in-time" data-shape="portrait" data-name="마리오&amp;루이지 RPG 시간의 파트너" data-platform="콘솔" data-group="마리오" data-genre="console-마리오" tabindex="-1" aria-label="마리오&amp;루이지 RPG 시간의 파트너 자세히">
     <span class="tile-cover"><img src="assets/games/covers/mario-luigi-partners-in-time.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">마리오&amp;루이지 RPG 시간의 파트너 ※</span>
+    <span class="tile-name">마리오&amp;루이지 RPG 시간의 파트너</span>
     
   </button>
 </li>
@@ -1457,51 +1492,51 @@
   </button>
 </li>
 <li class="tile is-dup" data-genre="console-별의-커비" aria-hidden="true">
-  <button type="button" class="tile-btn" data-slug="kirby-squeak-squad" data-shape="portrait" data-name="별의 커비 도팡 일당의 습격" data-platform="콘솔" data-group="별의 커비" data-genre="console-별의-커비" data-unverified="1" tabindex="-1" aria-label="별의 커비 도팡 일당의 습격 자세히">
+  <button type="button" class="tile-btn" data-slug="kirby-squeak-squad" data-shape="portrait" data-name="별의 커비 도팡 일당의 습격" data-platform="콘솔" data-group="별의 커비" data-genre="console-별의-커비" tabindex="-1" aria-label="별의 커비 도팡 일당의 습격 자세히">
     <span class="tile-cover"><img src="assets/games/covers/kirby-squeak-squad.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">별의 커비 도팡 일당의 습격 ※</span>
+    <span class="tile-name">별의 커비 도팡 일당의 습격</span>
     
   </button>
 </li>
 <li class="tile is-dup" data-genre="console-별의-커비" aria-hidden="true">
-  <button type="button" class="tile-btn" data-slug="kirby-super-star-ultra" data-shape="portrait" data-name="별의 커비 울트라 슈퍼 디럭스" data-platform="콘솔" data-group="별의 커비" data-genre="console-별의-커비" data-unverified="1" tabindex="-1" aria-label="별의 커비 울트라 슈퍼 디럭스 자세히">
+  <button type="button" class="tile-btn" data-slug="kirby-super-star-ultra" data-shape="portrait" data-name="별의 커비 울트라 슈퍼 디럭스" data-platform="콘솔" data-group="별의 커비" data-genre="console-별의-커비" tabindex="-1" aria-label="별의 커비 울트라 슈퍼 디럭스 자세히">
     <span class="tile-cover"><img src="assets/games/covers/kirby-super-star-ultra.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">별의 커비 울트라 슈퍼 디럭스 ※</span>
+    <span class="tile-name">별의 커비 울트라 슈퍼 디럭스</span>
     
   </button>
 </li>
 <li class="tile is-dup" data-genre="console-별의-커비" aria-hidden="true">
-  <button type="button" class="tile-btn" data-slug="kirbys-epic-yarn" data-shape="portrait" data-name="털실 커비 이야기" data-platform="콘솔" data-group="별의 커비" data-genre="console-별의-커비" data-unverified="1" tabindex="-1" aria-label="털실 커비 이야기 자세히">
+  <button type="button" class="tile-btn" data-slug="kirbys-epic-yarn" data-shape="portrait" data-name="털실 커비 이야기" data-platform="콘솔" data-group="별의 커비" data-genre="console-별의-커비" tabindex="-1" aria-label="털실 커비 이야기 자세히">
     <span class="tile-cover"><img src="assets/games/covers/kirbys-epic-yarn.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">털실 커비 이야기 ※</span>
+    <span class="tile-name">털실 커비 이야기</span>
     
   </button>
 </li>
 <li class="tile is-dup" data-genre="console-레이튼-교수" aria-hidden="true">
-  <button type="button" class="tile-btn" data-slug="layton-curious-village" data-shape="portrait" data-name="레이튼 교수와 이상한 마을" data-platform="콘솔" data-group="레이튼 교수" data-genre="console-레이튼-교수" data-unverified="1" tabindex="-1" aria-label="레이튼 교수와 이상한 마을 자세히">
+  <button type="button" class="tile-btn" data-slug="layton-curious-village" data-shape="portrait" data-name="레이튼 교수와 이상한 마을" data-platform="콘솔" data-group="레이튼 교수" data-genre="console-레이튼-교수" tabindex="-1" aria-label="레이튼 교수와 이상한 마을 자세히">
     <span class="tile-cover"><img src="assets/games/covers/layton-curious-village.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">레이튼 교수와 이상한 마을 ※</span>
+    <span class="tile-name">레이튼 교수와 이상한 마을</span>
     
   </button>
 </li>
 <li class="tile is-dup" data-genre="console-레이튼-교수" aria-hidden="true">
-  <button type="button" class="tile-btn" data-slug="layton-diabolical-box" data-shape="portrait" data-name="레이튼 교수와 악마의 상자" data-platform="콘솔" data-group="레이튼 교수" data-genre="console-레이튼-교수" data-unverified="1" tabindex="-1" aria-label="레이튼 교수와 악마의 상자 자세히">
+  <button type="button" class="tile-btn" data-slug="layton-diabolical-box" data-shape="portrait" data-name="레이튼 교수와 악마의 상자" data-platform="콘솔" data-group="레이튼 교수" data-genre="console-레이튼-교수" tabindex="-1" aria-label="레이튼 교수와 악마의 상자 자세히">
     <span class="tile-cover"><img src="assets/games/covers/layton-diabolical-box.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">레이튼 교수와 악마의 상자 ※</span>
+    <span class="tile-name">레이튼 교수와 악마의 상자</span>
     
   </button>
 </li>
 <li class="tile is-dup" data-genre="console-레이튼-교수" aria-hidden="true">
-  <button type="button" class="tile-btn" data-slug="layton-unwound-future" data-shape="portrait" data-name="레이튼 교수와 최후의 시간여행" data-platform="콘솔" data-group="레이튼 교수" data-genre="console-레이튼-교수" data-unverified="1" tabindex="-1" aria-label="레이튼 교수와 최후의 시간여행 자세히">
+  <button type="button" class="tile-btn" data-slug="layton-unwound-future" data-shape="portrait" data-name="레이튼 교수와 최후의 시간여행" data-platform="콘솔" data-group="레이튼 교수" data-genre="console-레이튼-교수" tabindex="-1" aria-label="레이튼 교수와 최후의 시간여행 자세히">
     <span class="tile-cover"><img src="assets/games/covers/layton-unwound-future.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">레이튼 교수와 최후의 시간여행 ※</span>
+    <span class="tile-name">레이튼 교수와 최후의 시간여행</span>
     
   </button>
 </li>
 <li class="tile is-dup" data-genre="rhythm" aria-hidden="true">
-  <button type="button" class="tile-btn" data-slug="rhythm-heaven-ds" data-shape="portrait" data-name="리듬 세상" data-platform="콘솔" data-group="리듬" data-genre="rhythm" data-unverified="1" tabindex="-1" aria-label="리듬 세상 자세히">
+  <button type="button" class="tile-btn" data-slug="rhythm-heaven-ds" data-shape="portrait" data-name="리듬 세상" data-platform="콘솔" data-group="리듬" data-genre="rhythm" tabindex="-1" aria-label="리듬 세상 자세히">
     <span class="tile-cover"><img src="assets/games/covers/rhythm-heaven-ds.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">리듬 세상 ※</span>
+    <span class="tile-name">리듬 세상</span>
     
   </button>
 </li>
@@ -1513,51 +1548,51 @@
   </button>
 </li>
 <li class="tile is-dup" data-genre="rhythm" aria-hidden="true">
-  <button type="button" class="tile-btn" data-slug="rhythm-heaven-fever" data-shape="portrait" data-name="도와줘! 리듬 히어로" data-platform="콘솔" data-group="리듬" data-genre="rhythm" data-unverified="1" tabindex="-1" aria-label="도와줘! 리듬 히어로 자세히">
+  <button type="button" class="tile-btn" data-slug="rhythm-heaven-fever" data-shape="portrait" data-name="도와줘! 리듬 히어로" data-platform="콘솔" data-group="리듬" data-genre="rhythm" tabindex="-1" aria-label="도와줘! 리듬 히어로 자세히">
     <span class="tile-cover"><img src="assets/games/covers/rhythm-heaven-fever.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">도와줘! 리듬 히어로 ※</span>
+    <span class="tile-name">도와줘! 리듬 히어로</span>
     
   </button>
 </li>
 <li class="tile is-dup" data-genre="console-그-외-닌텐도" aria-hidden="true">
-  <button type="button" class="tile-btn" data-slug="animal-crossing-wild-world" data-shape="portrait" data-name="놀러오세요 동물의 숲" data-platform="콘솔" data-group="그 외 닌텐도" data-genre="console-그-외-닌텐도" data-unverified="1" tabindex="-1" aria-label="놀러오세요 동물의 숲 자세히">
+  <button type="button" class="tile-btn" data-slug="animal-crossing-wild-world" data-shape="portrait" data-name="놀러오세요 동물의 숲" data-platform="콘솔" data-group="그 외 닌텐도" data-genre="console-그-외-닌텐도" tabindex="-1" aria-label="놀러오세요 동물의 숲 자세히">
     <span class="tile-cover"><img src="assets/games/covers/animal-crossing-wild-world.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">놀러오세요 동물의 숲 ※</span>
+    <span class="tile-name">놀러오세요 동물의 숲</span>
     
   </button>
 </li>
 <li class="tile is-dup" data-genre="console-그-외-닌텐도" aria-hidden="true">
-  <button type="button" class="tile-btn" data-slug="elebits-ds" data-shape="portrait" data-name="엘레비츠: 카이와 제로의 신비한 모험" data-platform="콘솔" data-group="그 외 닌텐도" data-genre="console-그-외-닌텐도" data-unverified="1" tabindex="-1" aria-label="엘레비츠: 카이와 제로의 신비한 모험 자세히">
+  <button type="button" class="tile-btn" data-slug="elebits-ds" data-shape="portrait" data-name="엘레비츠: 카이와 제로의 신비한 모험" data-platform="콘솔" data-group="그 외 닌텐도" data-genre="console-그-외-닌텐도" tabindex="-1" aria-label="엘레비츠: 카이와 제로의 신비한 모험 자세히">
     <span class="tile-cover"><img src="assets/games/covers/elebits-ds.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">엘레비츠: 카이와 제로의 신비한 모험 ※</span>
+    <span class="tile-name">엘레비츠: 카이와 제로의 신비한 모험</span>
     
   </button>
 </li>
 <li class="tile is-dup" data-genre="console-그-외-닌텐도" aria-hidden="true">
-  <button type="button" class="tile-btn" data-slug="maplestory-ds" data-shape="portrait" data-name="메이플스토리DS" data-platform="콘솔" data-group="그 외 닌텐도" data-genre="console-그-외-닌텐도" data-unverified="1" tabindex="-1" aria-label="메이플스토리DS 자세히">
+  <button type="button" class="tile-btn" data-slug="maplestory-ds" data-shape="portrait" data-name="메이플스토리DS" data-platform="콘솔" data-group="그 외 닌텐도" data-genre="console-그-외-닌텐도" tabindex="-1" aria-label="메이플스토리DS 자세히">
     <span class="tile-cover"><img src="assets/games/covers/maplestory-ds.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">메이플스토리DS ※</span>
+    <span class="tile-name">메이플스토리DS</span>
     
   </button>
 </li>
 <li class="tile is-dup" data-genre="console-그-외-닌텐도" aria-hidden="true">
-  <button type="button" class="tile-btn" data-slug="drawn-to-life" data-shape="portrait" data-name="그려라 터치! 내가 만드는 세상" data-platform="콘솔" data-group="그 외 닌텐도" data-genre="console-그-외-닌텐도" data-unverified="1" tabindex="-1" aria-label="그려라 터치! 내가 만드는 세상 자세히">
+  <button type="button" class="tile-btn" data-slug="drawn-to-life" data-shape="portrait" data-name="그려라 터치! 내가 만드는 세상" data-platform="콘솔" data-group="그 외 닌텐도" data-genre="console-그-외-닌텐도" tabindex="-1" aria-label="그려라 터치! 내가 만드는 세상 자세히">
     <span class="tile-cover"><img src="assets/games/covers/drawn-to-life.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">그려라 터치! 내가 만드는 세상 ※</span>
+    <span class="tile-name">그려라 터치! 내가 만드는 세상</span>
     
   </button>
 </li>
 <li class="tile is-dup" data-genre="console-그-외-닌텐도" aria-hidden="true">
-  <button type="button" class="tile-btn" data-slug="shin-chan-ds" data-shape="portrait" data-name="짱구는 못말려 DS 알쏭달쏭 크레용 대작전!" data-platform="콘솔" data-group="그 외 닌텐도" data-genre="console-그-외-닌텐도" data-unverified="1" tabindex="-1" aria-label="짱구는 못말려 DS 알쏭달쏭 크레용 대작전! 자세히">
+  <button type="button" class="tile-btn" data-slug="shin-chan-ds" data-shape="portrait" data-name="짱구는 못말려 DS 알쏭달쏭 크레용 대작전!" data-platform="콘솔" data-group="그 외 닌텐도" data-genre="console-그-외-닌텐도" tabindex="-1" aria-label="짱구는 못말려 DS 알쏭달쏭 크레용 대작전! 자세히">
     <span class="tile-cover"><img src="assets/games/covers/shin-chan-ds.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">짱구는 못말려 DS 알쏭달쏭 크레용 대작전! ※</span>
+    <span class="tile-name">짱구는 못말려 DS 알쏭달쏭 크레용 대작전!</span>
     
   </button>
 </li>
 <li class="tile is-dup" data-genre="console-playstation" aria-hidden="true">
-  <button type="button" class="tile-btn" data-slug="ratchet-clank-ps2" data-shape="portrait" data-name="라쳇 &amp; 클랭크" data-platform="콘솔" data-group="PlayStation" data-genre="console-playstation" data-unverified="1" tabindex="-1" aria-label="라쳇 &amp; 클랭크 자세히">
+  <button type="button" class="tile-btn" data-slug="ratchet-clank-ps2" data-shape="portrait" data-name="라쳇 &amp; 클랭크" data-platform="콘솔" data-group="PlayStation" data-genre="console-playstation" tabindex="-1" aria-label="라쳇 &amp; 클랭크 자세히">
     <span class="tile-cover"><img src="assets/games/covers/ratchet-clank-ps2.webp" alt="" loading="lazy" decoding="async" width="360" height="480" draggable="false" /></span>
-    <span class="tile-name">라쳇 &amp; 클랭크 ※</span>
+    <span class="tile-name">라쳇 &amp; 클랭크</span>
     
   </button>
 </li>
@@ -1565,7 +1600,6 @@
           <button type="button" class="stream-arrow next" aria-label="콘솔 줄 오른쪽으로" tabindex="-1">›</button>
         </div>
       </div>
-      <p class="foot-note">명칭 확인 중인 게임은 ※ 표시 · 커버는 공식 스토어·공식 사이트, 없으면 공식 해외 페이지·Wikipedia 박스아트 (출처는 README) · 타일을 누르면 자세히</p>
     </div>
   </section>
 
@@ -1582,7 +1616,6 @@
           <div><dt>장르 그룹</dt><dd id="gd-group"></dd></div>
           <div id="gd-rec-row"><dt>기록</dt><dd id="gd-rec"></dd></div>
         </dl>
-        <p class="obs" id="gd-obs" data-observation=""><span class="hint">관찰 메모 추가 예정</span></p>
         <p class="gd-links" id="gd-links" hidden></p>
         <p class="gd-note" id="gd-note" hidden></p>
       </div>
@@ -1677,9 +1710,9 @@
     <div class="section-label">
       <p class="en"><span class="num">06</span>Professional Experience</p>
       <h2 class="ko">경력 사항</h2>
+      <p class="desc">프리랜서 업무 1년차 신입 기획자입니다.</p>
     </div>
     <div class="section-body">
-      <p class="muted small">프리랜서 업무 1년차 신입 기획자입니다.</p>
       <div class="exp-head">
         <span>케세라게임즈</span><span class="sep">|</span><span>프리랜서 기획자</span><span class="period">(2024 ~ 2025)</span>
       </div>
@@ -1700,26 +1733,16 @@
       <h2 class="ko">보유 역량</h2>
     </div>
     <div class="section-body">
-      <ul class="skill-cards">
-        <li class="skill-card reveal"><span class="ico"><img src="assets/icons/notion.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>Notion</strong><span>프로젝트 관리, 문서화, 협업 워크스페이스 구축</span></span></li>
-        <li class="skill-card reveal"><span class="ico"><img src="assets/icons/powerpoint.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>PowerPoint</strong><span>프레젠테이션 디자인, 문서 작성</span></span></li>
-        <li class="skill-card reveal"><span class="ico"><img src="assets/icons/excel.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>Excel</strong><span>스크립팅 및 데이터 정리</span></span></li>
-        <li class="skill-card reveal"><span class="ico"><img src="assets/icons/unity.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>Unity</strong><span>게임 내 스토리 연출</span></span></li>
-        <li class="skill-card reveal"><span class="ico"><img src="assets/icons/word.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>Word</strong><span>기획서 및 문서 작성</span></span></li>
-        <li class="skill-card reveal"><span class="ico"><img src="assets/icons/openai-black.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>ChatGPT</strong><span>에셋 제작</span></span></li>
-        <li class="skill-card reveal"><span class="ico"><img src="assets/icons/claude.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>Claude</strong><span>기획서 및 문서 작성 보조</span></span></li>
-      </ul>
-
       <!-- 작업 방식 도식 -->
       <figure class="workflow reveal" aria-labelledby="workflow-title">
         <figcaption>
           <p class="kicker">How I Work</p>
           <h3 id="workflow-title">Orca로 Claude와 Codex를 묶어 일합니다</h3>
-          <p class="sub">지시 → 분배 → 구현/검토 → 결과 → 내 검수로 되돌아오는 흐름입니다.</p>
+          <p class="sub">지시 → 분배 → 구현/검토 → 결과 → 검수로 되돌아오는 흐름입니다.</p>
         </figcaption>
 
         <!-- 데스크톱: 가로 흐름 (인라인 SVG) -->
-        <svg class="wf-svg" viewBox="0 0 960 340" role="img" aria-label="작업 방식 도식: 나 → Orca → Claude Code 와 Codex → 결과물 → 내 검수로 되돌아옴">
+        <svg class="wf-svg" viewBox="0 0 960 340" role="img" aria-label="작업 방식 도식: 나 → Orca → Claude Code 와 Codex → 결과물 → 검수로 되돌아옴">
           <defs>
             <marker id="wf-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
               <path d="M0 0 L10 5 L0 10 z" fill="var(--text-3)" />
@@ -1738,7 +1761,7 @@
             <path d="M730 88 C766 88 766 132 798 132" />
             <path d="M730 228 C766 228 766 132 798 132" />
           </g>
-          <!-- 되돌아가는 화살표: 결과 → 내 검수 -->
+          <!-- 되돌아가는 화살표: 결과 → 검수 -->
           <path d="M870 190 V304 H94 V196" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-dasharray="5 5" marker-end="url(#wf-arrow-accent)" />
 
           <!-- 화살표 라벨: 배경 패드 + 글자 (선 위에 올려도 겹쳐 보이지 않게) -->
@@ -1746,9 +1769,9 @@
             <rect x="178" y="122" width="40" height="20" rx="5" fill="var(--bg-soft)" /><text x="198" y="136">지시</text>
             <rect x="455" y="100" width="40" height="20" rx="5" fill="var(--bg-soft)" /><text x="475" y="114">분배</text>
             <rect x="455" y="144" width="40" height="20" rx="5" fill="var(--bg-soft)" /><text x="475" y="158">분배</text>
-            <rect x="722" y="100" width="88" height="20" rx="5" fill="var(--bg-soft)" /><text x="766" y="114">구현 · 검사</text>
-            <rect x="722" y="170" width="88" height="20" rx="5" fill="var(--bg-soft)" /><text x="766" y="184">초안 · 리뷰</text>
-            <rect x="412" y="294" width="136" height="20" rx="5" fill="var(--bg-soft)" /><text x="480" y="308" fill="var(--accent)">내 검수 (다시 지시)</text>
+            <rect x="731" y="100" width="66" height="20" rx="5" fill="var(--bg-soft)" /><text x="766" y="114">구현 · 검사</text>
+            <rect x="731" y="170" width="66" height="20" rx="5" fill="var(--bg-soft)" /><text x="766" y="184">초안 · 리뷰</text>
+            <rect x="412" y="294" width="136" height="20" rx="5" fill="var(--bg-soft)" /><text x="480" y="308" fill="var(--accent)">검수 (다시 지시)</text>
           </g>
 
           <!-- 노드: 나 (x 30~158) -->
@@ -1763,8 +1786,8 @@
           <!-- 노드: Orca (x 238~430) -->
           <g>
             <rect x="238" y="74" width="192" height="116" rx="14" fill="var(--card)" stroke="var(--accent)" stroke-width="1.5" />
-            <rect x="256" y="94" width="40" height="40" rx="10" fill="var(--accent)" />
-            <text x="276" y="121" text-anchor="middle" font-size="18" font-weight="800" fill="var(--on-accent)">O</text>
+            <rect x="256" y="94" width="40" height="40" rx="10" fill="#f4f5f7" stroke="var(--border)" />
+            <image class="orca-logo" href="assets/icons/orca.svg" x="264" y="102" width="24" height="24" />
             <text x="308" y="112" font-size="15" font-weight="800" fill="var(--text)">Orca</text>
             <text x="308" y="130" font-size="11.5" fill="var(--text-2)">작업 관리</text>
             <text x="334" y="157" text-anchor="middle" font-size="11" fill="var(--text-3)">봇·워커에게 일을 나누고</text>
@@ -1807,7 +1830,7 @@
         <ol class="wf-list" aria-hidden="true">
           <li class="wf-node me"><span class="wf-ico"><img src="assets/profile.webp" alt="" width="40" height="40" /></span><span><strong>나</strong><small>기획 · 판단 · 검수</small></span></li>
           <li class="wf-arrow">↓ 지시</li>
-          <li class="wf-node orca"><span class="wf-ico mark">O</span><span><strong>Orca</strong><small>작업 관리 — 봇·워커에게 일을 나누고 한곳에서 봄</small></span></li>
+          <li class="wf-node orca"><span class="wf-ico light"><img class="orca-logo" src="assets/icons/orca.svg" alt="" width="22" height="22" /></span><span><strong>Orca</strong><small>작업 관리 — 봇·워커에게 일을 나누고 한곳에서 봄</small></span></li>
           <li class="wf-arrow">↓ 분배</li>
           <li class="wf-pair">
             <div class="wf-node"><span class="wf-ico light"><img src="assets/icons/claude.svg" alt="" width="22" height="22" /></span><span><strong>Claude Code</strong><small>구현 · 규칙 검사 · 문서</small></span></div>
@@ -1815,9 +1838,20 @@
           </li>
           <li class="wf-arrow">↓ 구현 · 검토</li>
           <li class="wf-node result"><span><strong>결과물</strong><small>AI 게임 · 기획서 · 이 포트폴리오</small></span></li>
-          <li class="wf-arrow back">↺ 내 검수로 되돌아가 다시 지시</li>
+          <li class="wf-arrow back">↺ 검수로 되돌아가 다시 지시</li>
         </ol>
       </figure>
+
+      <ul class="skill-cards">
+        <li class="skill-card reveal"><span class="ico"><img src="assets/icons/notion.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>Notion</strong><span>프로젝트 관리, 문서화, 협업 워크스페이스 구축</span></span></li>
+        <li class="skill-card reveal"><span class="ico"><img src="assets/icons/powerpoint.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>PowerPoint</strong><span>프레젠테이션 디자인, 문서 작성</span></span></li>
+        <li class="skill-card reveal"><span class="ico"><img src="assets/icons/excel.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>Excel</strong><span>스크립팅 및 데이터 정리</span></span></li>
+        <li class="skill-card reveal"><span class="ico"><img src="assets/icons/unity.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>Unity</strong><span>게임 내 스토리 연출</span></span></li>
+        <li class="skill-card reveal"><span class="ico"><img src="assets/icons/word.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>Word</strong><span>기획서 및 문서 작성</span></span></li>
+        <li class="skill-card reveal"><span class="ico"><img src="assets/icons/openai-black.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>ChatGPT</strong><span>에셋 제작</span></span></li>
+        <li class="skill-card reveal"><span class="ico"><img src="assets/icons/claude.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>Claude</strong><span>기획서 및 문서 작성 보조</span></span></li>
+        <li class="skill-card reveal"><span class="ico"><img class="orca-logo" src="assets/icons/orca.svg" alt="" width="28" height="28" /></span><span class="txt"><strong>Orca</strong><span>작업 관리 · 봇·워커에게 일을 나누고 진행과 결과를 한곳에서 봄</span></span></li>
+      </ul>
     </div>
   </section>
 
@@ -1841,6 +1875,39 @@
 <script>
 (function () {
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---- AI 게임 시연 영상 ----
+  var demoVideos = document.querySelectorAll('.demo-player video');
+  demoVideos.forEach(function (video) {
+    var overlay = video.nextElementSibling;
+    video.controls = false;
+    overlay.hidden = false;
+
+    overlay.addEventListener('click', function () {
+      var moveFocus = document.activeElement === overlay;
+      video.play().then(function () {
+        if (moveFocus && document.activeElement === document.body) {
+          video.focus({ preventScroll: true });
+        }
+      }, function () {
+        // Leave the poster available so the viewer can retry.
+      });
+    });
+    video.addEventListener('play', function () {
+      demoVideos.forEach(function (other) {
+        if (other !== video) other.pause();
+      });
+      video.controls = true;
+      overlay.hidden = true;
+    });
+    video.addEventListener('ended', function () {
+      var returnFocus = document.activeElement === video;
+      video.controls = false;
+      video.load();
+      overlay.hidden = false;
+      if (returnFocus) overlay.focus({ preventScroll: true });
+    });
+  });
 
   // ---- 상단 바: 햄버거 메뉴 (1024px 미만) ----
   var nav = document.getElementById('nav');
@@ -1904,9 +1971,21 @@
     var slides = car.querySelectorAll('.slide');
     var dots = car.querySelectorAll('.dots button');
     var idx = 0;
+    var road = car.querySelector('.demo-player video');
+    var paired = car.classList.contains('boss-carousel');
     function go(n) {
       idx = (n + slides.length) % slides.length;
-      slides.forEach(function (s, i) { s.classList.toggle('is-active', i === idx); s.setAttribute('aria-hidden', i === idx ? 'false' : 'true'); });
+      var showPair = car.classList.contains('is-paired');
+      if (road && idx !== 0) {
+        if (slides[0].contains(document.activeElement)) car.focus({ preventScroll: true });
+        road.pause();
+      }
+      slides.forEach(function (s, i) {
+        var active = i === idx;
+        s.classList.toggle('is-active', active);
+        s.setAttribute('aria-hidden', String(!active && !showPair));
+        s.inert = !active && !showPair;
+      });
       dots.forEach(function (d, i) { d.setAttribute('aria-selected', i === idx ? 'true' : 'false'); });
       car.dispatchEvent(new CustomEvent('slidechange', { detail: { index: idx, slide: slides[idx] } }));
     }
@@ -1914,20 +1993,45 @@
     car.querySelector('.next').addEventListener('click', function () { go(idx + 1); });
     dots.forEach(function (d, i) { d.addEventListener('click', function () { go(i); }); });
     car.addEventListener('keydown', function (e) {
+      if (e.target.closest('video') || car.classList.contains('is-paired') || e.defaultPrevented) return;
       if (e.key === 'ArrowLeft') { go(idx - 1); e.preventDefault(); }
       if (e.key === 'ArrowRight') { go(idx + 1); e.preventDefault(); }
     });
     var sx = null;
     car.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; }, { passive: true });
     car.addEventListener('touchend', function (e) {
-      if (sx === null) return;
+      if (sx === null || e.target.closest('video') || car.classList.contains('is-paired')) { sx = null; return; }
       var dx = e.changedTouches[0].clientX - sx; sx = null;
       if (Math.abs(dx) > 40) go(dx < 0 ? idx + 1 : idx - 1);
     });
     go(0);
+    if (paired) {
+      function resizePair() {
+        var show = car.clientWidth >= 380;
+        car.classList.toggle('is-paired', show);
+        car.tabIndex = show ? -1 : 0;
+        go(idx);
+      }
+      resizePair();
+      new ResizeObserver(resizePair).observe(car);
+    }
   });
 
   // ---- 게임 밖 활동: 챕터(슬라이드)에 따라 왼쪽 글과 n / 2 갱신 + 사진 확대 보기 ----
+  var pd = document.getElementById('photo-dialog');
+  var pdLast = null;
+  function openPhoto(trigger, source, alt, caption) {
+    var image = document.getElementById('pd-img');
+    var label = document.getElementById('pd-cap');
+    image.src = source;
+    image.alt = alt;
+    label.textContent = caption || '캡션 추가 예정';
+    label.classList.toggle('hint', !caption);
+    pdLast = trigger;
+    if (typeof pd.showModal === 'function') pd.showModal(); else pd.setAttribute('open', '');
+  }
+  pd.addEventListener('click', function (e) { if (e.target === pd) pd.close(); });
+  pd.addEventListener('close', function () { if (pdLast) pdLast.focus({ preventScroll: true }); });
   var beyond = document.getElementById('beyond-car');
   if (beyond) {
     var groups = [
@@ -1947,41 +2051,65 @@
       cEl.textContent = e.detail.index + 1;
     });
     cEl.textContent = '1';
-    var pd = document.getElementById('photo-dialog');
-    var pdLast = null;
     beyond.addEventListener('click', function (e) {
-      var btn = e.target.closest('.photo-btn'); if (!btn) return;
+      var btn = e.target.closest('.photo-btn');
+      if (!btn) return;
       var fig = btn.closest('figure');
-      document.getElementById('pd-img').src = btn.getAttribute('data-src');
-      document.getElementById('pd-img').alt = btn.getAttribute('data-alt') || '';
-      var cap = fig.getAttribute('data-caption');
-      document.getElementById('pd-cap').innerHTML = cap ? '' : '<span class="hint">캡션 추가 예정</span>';
-      if (cap) document.getElementById('pd-cap').textContent = fig.querySelector('figcaption').textContent;
-      pdLast = btn;
-      if (typeof pd.showModal === 'function') pd.showModal(); else pd.setAttribute('open', '');
+      openPhoto(btn, btn.dataset.src, btn.dataset.alt || '', fig.dataset.caption && fig.querySelector('figcaption').textContent);
     });
-    pd.addEventListener('click', function (e) { if (e.target === pd) pd.close(); });
-    pd.addEventListener('close', function () { if (pdLast) pdLast.focus({ preventScroll: true }); });
   }
 
-  // ---- Chain Echo: 합동 필살기 스트립 (호버 시 1→8 순차 강조, 클릭 시 확대) ----
-  document.querySelectorAll('.ult-strip').forEach(function (strip) {
-    var items = strip.querySelectorAll('li'); var timer = null, idx = -1;
-    function mark(i) { items.forEach(function (li, k) { li.classList.toggle('is-on', k === i); }); }
-    function play() { if (reduce || timer) return; idx = -1; step(); timer = setInterval(step, 650); }
-    function step() { idx = (idx + 1) % items.length; mark(idx); }
-    function stop() { clearInterval(timer); timer = null; mark(-1); }
-    strip.addEventListener('mouseenter', play); strip.addEventListener('mouseleave', stop);
-    strip.addEventListener('focusin', function () { stop(); }); // 키보드 탐색 중에는 포커스 강조만
-    var pd = document.getElementById('photo-dialog');
-    if (pd) strip.addEventListener('click', function (e) {
-      var btn = e.target.closest('.photo-btn'); if (!btn) return;
-      document.getElementById('pd-img').src = btn.getAttribute('data-src'); document.getElementById('pd-img').alt = btn.getAttribute('data-alt') || '';
-      document.getElementById('pd-cap').textContent = btn.getAttribute('data-alt') || '';
-      if (typeof pd.showModal === 'function') pd.showModal(); else pd.setAttribute('open', '');
-      pd.addEventListener('close', function once() { btn.focus({ preventScroll: true }); pd.removeEventListener('close', once); });
-    });
+  // ---- Chain Echo 합동 필살기 ----
+  var viewer = document.querySelector('.ultimate-viewer');
+  var frameButton = viewer.querySelector('.ultimate-frame');
+  var zoomButton = viewer.querySelector('.ultimate-zoom');
+  var frameImage = frameButton.querySelector('img');
+  var frameName = viewer.querySelector('.ultimate-name');
+  var noMouse = matchMedia('(hover: none)').matches;
+  var frames = [
+    ["assets/ai/chain-echo/ult-1-start.webp","합동 필살기 1 · 시작","1 시작"],
+    ["assets/ai/chain-echo/ult-2-dragon.webp","합동 필살기 2 · 용","2 용"],
+    ["assets/ai/chain-echo/ult-3-ice-rain.webp","합동 필살기 3 · 얼음비","3 얼음비"],
+    ["assets/ai/chain-echo/ult-4-storm.webp","합동 필살기 4 · 폭풍","4 폭풍"],
+    ["assets/ai/chain-echo/ult-5-cutscene.webp","합동 필살기 5 · 컷신","5 컷신"],
+    ["assets/ai/chain-echo/ult-6-gather.webp","합동 필살기 6 · 집결","6 집결"],
+    ["assets/ai/chain-echo/ult-7-joint-strike.webp","합동 필살기 7 · 합동 타격","7 합동 타격"],
+    ["assets/ai/chain-echo/ult-8-explosion.webp","합동 필살기 8 · 폭발","8 폭발"],
+  ];
+  var frameIndex = 0;
+  var frameTimer = null;
+  var frameHovered = false;
+  var frameFocused = false;
+  function nextFrame() {
+    frameIndex = (frameIndex + 1) % frames.length;
+    var frame = frames[frameIndex];
+    frameImage.src = frame[0];
+    frameButton.setAttribute('aria-label', frame[1]);
+    frameName.textContent = frame[2];
+  }
+  function syncFrames() {
+    if (!reduce && !noMouse && !pd.open && (frameHovered || frameFocused)) {
+      if (frameTimer === null) frameTimer = setInterval(nextFrame, 450);
+    } else {
+      clearInterval(frameTimer);
+      frameTimer = null;
+    }
+  }
+  viewer.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { frameHovered = true; syncFrames(); } });
+  viewer.addEventListener('pointerleave', function () { frameHovered = false; syncFrames(); });
+  frameButton.addEventListener('focus', function () { frameFocused = frameButton.matches(':focus-visible'); syncFrames(); });
+  frameButton.addEventListener('blur', function () { frameFocused = false; syncFrames(); });
+  function zoomFrame(trigger) {
+    var frame = frames[frameIndex];
+    openPhoto(trigger, frame[0], frame[1], frame[1]);
+    syncFrames();
+  }
+  frameButton.addEventListener('click', function (e) {
+    if (reduce || noMouse || e.pointerType === 'touch') nextFrame();
+    else zoomFrame(frameButton);
   });
+  zoomButton.addEventListener('click', function () { zoomFrame(zoomButton); });
+  pd.addEventListener('close', syncFrames);
 
   // ---- 플레이한 게임: 스트림(드래그·관성·화살표·자동 흐름) · 팝오버 · 장르 필터 ----
   var gamelog = document.getElementById('gamelog');
@@ -2105,7 +2233,7 @@
       var d = btn.dataset;
       document.getElementById('gd-cover').src = 'assets/games/covers/' + d.slug + '.webp';
       document.getElementById('gd-cover').parentElement.classList.toggle('is-square', d.shape === 'square');
-      document.getElementById('gd-title').textContent = d.name + (d.unverified ? ' ※' : '');
+      document.getElementById('gd-title').textContent = d.name;
       document.getElementById('gd-platform').textContent = d.platform;
       document.getElementById('gd-group').textContent = d.group;
       var recRow = document.getElementById('gd-rec-row'); recRow.hidden = !d.rec; document.getElementById('gd-rec').textContent = d.rec || '';
@@ -2114,8 +2242,8 @@
       var arr = []; if (d.links) { try { arr = JSON.parse(d.links); } catch (e) {} }
       links.hidden = !arr.length;
       if (arr.length) links.innerHTML = '<span class="k">이 게임에서 만든 것</span>' + arr.map(function (l) { return '<a href="' + l.href + '">→ ' + l.label + '</a>'; }).join('');
-      var note = document.getElementById('gd-note'); note.hidden = !(d.note || d.unverified);
-      note.textContent = [d.note, d.unverified ? '※ 공식 표기 확인 중' : ''].filter(Boolean).join(' · ');
+      var note = document.getElementById('gd-note'); note.hidden = !d.note;
+      note.textContent = d.note || '';
       lastFocus = btn;
       if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open', '');
       dlg.querySelector('.gd-close').focus();
@@ -2124,31 +2252,24 @@
     dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); if (e.target.closest('a[href^="#"]')) dlg.close(); });
     dlg.addEventListener('close', function () { if (lastFocus) lastFocus.focus({ preventScroll: true }); });
 
-    // 장르 필터: 분포 바 칸 + 칩 + 상태 줄 (같은 장르를 가리킴)
+    // 장르 필터: 분포 바 칸 + 칩 (같은 장르를 가리킴)
     var segs = gamelog.querySelectorAll('.genre-bar .seg');
     var chips = gamelog.querySelectorAll('.gchip');
-    var statusLabel = gamelog.querySelector('[data-genre-label]');
-    var clearBtn = gamelog.querySelector('.genre-clear');
     var linkedCards = gamelog.querySelectorAll('.linked-card');
     var linkedRow = gamelog.querySelector('.linked-row');
-    var totalLabel = statusLabel.textContent;
     var current = '';
     function setFilter(genre) {
       current = genre || '';
       segs.forEach(function (s) { s.setAttribute('aria-pressed', s.dataset.genre === current ? 'true' : 'false'); });
-      var label = '', count = 0;
-      chips.forEach(function (c) { var on = c.dataset.genre === current; c.classList.toggle('is-on', on); c.setAttribute('aria-pressed', on ? 'true' : 'false'); if (on && current) { label = c.dataset.label; count = c.dataset.count; } });
+      chips.forEach(function (c) { var on = c.dataset.genre === current; c.classList.toggle('is-on', on); c.setAttribute('aria-pressed', on ? 'true' : 'false'); });
       gamelog.classList.toggle('is-filtering', !!current);
       var shownLinked = 0;
       linkedCards.forEach(function (li) { var hit = !current || li.getAttribute('data-genre') === current; li.hidden = !hit; if (hit) shownLinked++; });
       linkedRow.hidden = !!current && shownLinked === 0; // 작업으로 이어진 게임이 없으면 줄 전체 숨김
       streams.forEach(function (s) { s.filter(current); });
-      statusLabel.textContent = current ? label + ' · ' + count + '종 보는 중' : totalLabel;
-      clearBtn.hidden = !current;
     }
     segs.forEach(function (s) { s.addEventListener('click', function () { setFilter(current === s.dataset.genre ? '' : s.dataset.genre); }); });
     chips.forEach(function (c) { c.addEventListener('click', function () { setFilter(c.dataset.genre === current ? '' : c.dataset.genre); }); });
-    clearBtn.addEventListener('click', function () { setFilter(''); });
     function fitGenreBar() { segs.forEach(function (seg) { var i = seg.querySelector('i'); if (!i) return; i.style.visibility = 'visible'; if (i.scrollWidth + 8 > seg.clientWidth) i.style.visibility = 'hidden'; }); }
     fitGenreBar(); window.addEventListener('resize', fitGenreBar);
   }
