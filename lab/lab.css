@@ -228,6 +228,7 @@ main > .section:first-child { border-top: 0; padding-top: 56px; }
 }
 .section-label .en .num { color: var(--accent); margin-right: 10px; font-variant-numeric: tabular-nums; }
 .section-label .ko { margin: 0; font-size: 24px; font-weight: 800; line-height: 1.25; letter-spacing: -.02em; color: var(--text); }
+.section-body { min-width: 0; }
 .section-body > :first-child { margin-top: 0; }
 .label-links { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
 .label-links a { font-size: 13px; color: var(--text-2); line-height: 1.45; display: block; }
@@ -621,3 +622,91 @@ main > .section:first-child { border-top: 0; padding-top: 56px; }
   .wf-arrow { font-size: 12.5px; font-weight: 600; color: var(--text-3); padding-left: 14px; }
   .wf-arrow.back { color: var(--accent); }
 }
+
+/* ============================================================
+   5차: 플레이한 게임 — 플레이 로그 (요약 띠 · 장르 분포 바 · 플랫폼 탭 · 장르 선반)
+   ============================================================ */
+.stat-strip { list-style: none; margin: 18px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.stat-strip li { padding: 12px 14px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--card); display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.stat-strip strong { font-size: 26px; font-weight: 800; letter-spacing: -.02em; line-height: 1.1; color: var(--text); font-variant-numeric: tabular-nums; }
+.stat-strip strong small { font-size: 13px; font-weight: 700; margin-left: 2px; color: var(--text-2); }
+.stat-strip span { font-size: 12px; color: var(--text-3); line-height: 1.4; }
+@media (max-width: 640px) { .stat-strip { grid-template-columns: 1fr 1fr; } }
+
+/* 장르 분포 바: 액센트 한 색의 명도 단계만 */
+.genre-bar { display: flex; width: 100%; height: 30px; margin: 12px 0 22px; border-radius: 8px; overflow: visible; }
+.genre-bar .seg {
+  position: relative; flex: 0 0 var(--w); min-width: 0; height: 100%;
+  background: color-mix(in srgb, var(--accent) calc(100% - var(--l) * 13%), var(--bg)); /* --l 0~5 → 100%·87%·74%·61%·48%·35% */
+  display: flex; align-items: center; justify-content: center; overflow: hidden; cursor: default; outline-offset: 2px;
+}
+.genre-bar .seg:first-child { border-radius: 8px 0 0 8px; }
+.genre-bar .seg:last-child { border-radius: 0 8px 8px 0; }
+.genre-bar .seg + .seg { border-left: 1px solid var(--bg); }
+.genre-bar .seg i { font-style: normal; font-size: 11px; font-weight: 700; letter-spacing: .01em; white-space: nowrap; padding: 0 6px; color: #fff; mix-blend-mode: normal; }
+.genre-bar .seg[style*="--l:4"] i, .genre-bar .seg[style*="--l:5"] i { color: var(--text); }
+/* 좁으면 글자 숨김: 컨테이너 쿼리 대신 폭 추정 — 5% 미만은 JS 없이도 숨기도록 overflow 로 처리됨 */
+.genre-bar .seg::after {
+  content: attr(data-tip); position: absolute; left: 50%; bottom: calc(100% + 8px); transform: translateX(-50%);
+  padding: 4px 8px; border-radius: 6px; background: var(--text); color: var(--bg); font-size: 12px; font-weight: 600; white-space: nowrap;
+  opacity: 0; pointer-events: none; transition: opacity .15s ease; z-index: 3;
+}
+.genre-bar .seg:hover, .genre-bar .seg:focus-visible { overflow: visible; }
+.genre-bar .seg:hover::after, .genre-bar .seg:focus-visible::after { opacity: 1; }
+
+/* 플랫폼 탭 */
+.platform-tabs { display: flex; gap: 6px; border-bottom: 1px solid var(--border); margin-bottom: 20px; }
+.ptab {
+  font: inherit; font-size: 14.5px; font-weight: 600; color: var(--text-2); background: none; border: 0; cursor: pointer;
+  padding: 10px 14px; margin-bottom: -1px; border-bottom: 2px solid transparent; display: inline-flex; align-items: center; gap: 6px;
+}
+.ptab small { font-size: 11px; font-weight: 700; color: var(--text-3); background: var(--tag-bg); padding: 1px 7px; border-radius: 999px; }
+.ptab:hover { color: var(--accent); }
+.ptab.is-on { color: var(--accent); border-bottom-color: var(--accent); }
+.ptab.is-on small { background: var(--accent-soft); color: var(--accent); }
+.platform-panel { display: block; }
+.js .platform-panel:not(.is-on) { display: none; }
+.panel-sub { margin: -8px 0 14px; font-size: 12.5px; color: var(--text-3); }
+/* JS 없을 때는 패널 제목 역할로 탭이 보이지 않으니 패널마다 라벨을 보여 준다 */
+html:not(.js) .platform-panel::before { content: attr(aria-labelledby); display: none; }
+
+/* 장르 선반 */
+.shelf { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 18px; padding: 18px 0; border-top: 1px solid var(--border); }
+.shelf:first-of-type { border-top: 0; padding-top: 4px; }
+.shelf-head h3 { margin: 0; font-size: 16px; font-weight: 800; letter-spacing: -.01em; line-height: 1.35; }
+.shelf-head .count { font-size: 12px; font-weight: 700; color: var(--accent); margin-left: 6px; font-variant-numeric: tabular-nums; }
+.shelf-head .obs { margin: 6px 0 0; font-size: 13px; color: var(--text-2); }
+.shelf-head .obs .hint { color: var(--text-3); font-style: italic; }
+.shelf-head .obs:not([data-observation=""]) .hint { display: none; }
+.shelf-body { min-width: 0; }
+.shelf-row { display: flex; align-items: flex-start; gap: 14px; }
+.covers { list-style: none; margin: 0; padding: 0; display: flex; gap: 12px; flex-wrap: wrap; min-width: 0; }
+.cover { width: 135px; display: flex; flex-direction: column; gap: 4px; }
+.cover img { width: 135px; height: 180px; object-fit: cover; border-radius: 10px; border: 1px solid var(--border); background: var(--bg-soft); box-shadow: var(--shadow); transition: transform .15s ease; }
+.cover:hover img { transform: translateY(-2px); }
+.cover .cname { font-size: 12.5px; font-weight: 600; line-height: 1.35; color: var(--text); }
+.cover .crec { font-size: 12px; font-weight: 700; color: var(--accent); font-variant-numeric: tabular-nums; }
+.more {
+  font: inherit; font-size: 13px; font-weight: 600; color: var(--text-2); background: var(--card); border: 1px dashed var(--border-strong);
+  border-radius: 10px; padding: 0 14px; height: 180px; min-width: 96px; cursor: pointer; flex: none; white-space: nowrap;
+  transition: border-color .15s ease, color .15s ease;
+}
+.more:hover { border-color: var(--accent); color: var(--accent); }
+.more[aria-expanded="true"] { border-style: solid; color: var(--accent); border-color: var(--accent); }
+.chips { list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.js .chips.is-collapsed { display: none; }
+.chips li { font-size: 13px; padding: 6px 11px; border-radius: 999px; border: 1px solid var(--border); background: var(--card); color: var(--text); line-height: 1.4; display: inline-flex; align-items: baseline; gap: 6px; }
+.chips li a { color: inherit; display: inline-flex; align-items: baseline; gap: 6px; }
+.chips li a:hover { color: var(--accent); text-decoration: none; }
+.chips li b { font-weight: 700; color: var(--accent); font-size: 12px; font-variant-numeric: tabular-nums; }
+.chips li small { font-size: 11.5px; color: var(--text-3); }
+.chips li .mark { color: var(--text-3); font-size: 11px; }
+.foot-note { margin: 18px 0 0; font-size: 12px; color: var(--text-3); }
+@media (max-width: 820px) {
+  .shelf { grid-template-columns: 1fr; gap: 10px; }
+  .shelf-row { flex-direction: column; align-items: stretch; }
+  .covers { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 6px; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; }
+  .cover { flex: none; scroll-snap-align: start; }
+  .more { height: auto; padding: 9px 14px; width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) { .cover img, .genre-bar .seg::after, .more { transition: none; } }

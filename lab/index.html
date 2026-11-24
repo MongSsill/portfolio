@@ -315,17 +315,9 @@
       <h2 class="ko">플레이한 게임</h2>
     </div>
     <div class="section-body">
-      <div class="filter" role="group" aria-label="장르 필터">
-        <button type="button" class="chip is-on" data-genre="all" aria-pressed="true">전체</button>
-        <button type="button" class="chip" data-genre="battle-royale" aria-pressed="false">배틀로얄</button>
-        <button type="button" class="chip" data-genre="gacha-rpg" aria-pressed="false">수집형 RPG</button>
-        <button type="button" class="chip" data-genre="moba" aria-pressed="false">MOBA</button>
-        <button type="button" class="chip" data-genre="mmorpg" aria-pressed="false">MMORPG</button>
-        <button type="button" class="chip" data-genre="action-rpg" aria-pressed="false">액션 RPG</button>
-      </div>
 
       <!-- 메인 게임 (가장 오래 한 게임) -->
-      <article class="game-card featured reveal" data-genre="mmorpg" id="game-maplestory">
+      <article class="game-card featured reveal" id="game-maplestory">
         <div class="art"><img src="assets/games/maplestory.webp" alt="메이플스토리 공식 대표 이미지" loading="lazy" /></div>
         <div class="body">
           <p class="kicker">가장 오래 한 게임</p>
@@ -340,44 +332,478 @@
         </div>
       </article>
 
-      <div class="games" id="games">
-        <article class="game-card reveal" data-genre="battle-royale">
-          <div class="art"><img src="assets/games/pubg.webp" alt="배틀그라운드 공식 키아트" loading="lazy" /></div>
-          <div class="body">
-            <h3>배틀그라운드</h3>
-            <div class="row"><span class="tag">배틀로얄</span><span class="record">540시간</span></div>
+      <!-- 요약 띠 -->
+      <ul class="stat-strip reveal" aria-label="플레이 요약">
+        <li><strong>74<small>종</small></strong><span>플레이한 게임 · 메인 게임 포함, 중복 제외</span></li>
+        <li><strong>4</strong><span>플랫폼 · PC · 모바일 · 닌텐도 · PlayStation</span></li>
+        <li><strong>10<small>년</small></strong><span>가장 오래 한 게임 · 메이플스토리</span></li>
+        <li><strong>19</strong><span>장르 그룹 · 아래 선반 수</span></li>
+      </ul>
+
+      <!-- 장르 분포 바 (전체 기준) -->
+      <div class="genre-bar reveal" role="img" aria-label="장르 분포: MOBA · 전략 3종, 슈팅 · 배틀로얄 3종, 로그라이트 · 서바이버 6종, 액션 · 메트로배니아 2종, 퍼즐 · 시뮬레이션 2종, 스토리 · 연애 시뮬레이션 (국산 인디) 4종, 리듬 1종, 수집형 RPG 9종, 방치형 · 키우기 3종, 전략 · 오토배틀러 1종, 캐주얼 · 실시간 2종, 젤다의 전설 4종, 포켓몬스터 4종, 마리오 14종, 별의 커비 4종, 레이튼 교수 3종, 리듬 3종, 그 외 닌텐도 5종, PlayStation 1종">
+        <span class="seg" style="--w:4.05%;--l:0" tabindex="0" data-tip="PC · MOBA · 전략 · 3종"><i>MOBA · 전략</i></span>
+        <span class="seg" style="--w:4.05%;--l:1" tabindex="0" data-tip="PC · 슈팅 · 배틀로얄 · 3종"><i>슈팅 · 배틀로얄</i></span>
+        <span class="seg" style="--w:8.11%;--l:2" tabindex="0" data-tip="PC · 로그라이트 · 서바이버 · 6종"><i>로그라이트 · 서바이버</i></span>
+        <span class="seg" style="--w:2.70%;--l:3" tabindex="0" data-tip="PC · 액션 · 메트로배니아 · 2종"><i>액션 · 메트로배니아</i></span>
+        <span class="seg" style="--w:2.70%;--l:4" tabindex="0" data-tip="PC · 퍼즐 · 시뮬레이션 · 2종"><i>퍼즐 · 시뮬레이션</i></span>
+        <span class="seg" style="--w:5.41%;--l:5" tabindex="0" data-tip="PC · 스토리 · 연애 시뮬레이션 (국산 인디) · 4종"><i>스토리 · 연애 시뮬레이션 (국산 인디)</i></span>
+        <span class="seg" style="--w:1.35%;--l:0" tabindex="0" data-tip="PC · 리듬 · 1종"><i>리듬</i></span>
+        <span class="seg" style="--w:12.16%;--l:1" tabindex="0" data-tip="모바일 · 수집형 RPG · 9종"><i>수집형 RPG</i></span>
+        <span class="seg" style="--w:4.05%;--l:2" tabindex="0" data-tip="모바일 · 방치형 · 키우기 · 3종"><i>방치형 · 키우기</i></span>
+        <span class="seg" style="--w:1.35%;--l:3" tabindex="0" data-tip="모바일 · 전략 · 오토배틀러 · 1종"><i>전략 · 오토배틀러</i></span>
+        <span class="seg" style="--w:2.70%;--l:4" tabindex="0" data-tip="모바일 · 캐주얼 · 실시간 · 2종"><i>캐주얼 · 실시간</i></span>
+        <span class="seg" style="--w:5.41%;--l:5" tabindex="0" data-tip="콘솔 · 젤다의 전설 · 4종"><i>젤다의 전설</i></span>
+        <span class="seg" style="--w:5.41%;--l:0" tabindex="0" data-tip="콘솔 · 포켓몬스터 · 4종"><i>포켓몬스터</i></span>
+        <span class="seg" style="--w:18.92%;--l:1" tabindex="0" data-tip="콘솔 · 마리오 · 14종"><i>마리오</i></span>
+        <span class="seg" style="--w:5.41%;--l:2" tabindex="0" data-tip="콘솔 · 별의 커비 · 4종"><i>별의 커비</i></span>
+        <span class="seg" style="--w:4.05%;--l:3" tabindex="0" data-tip="콘솔 · 레이튼 교수 · 3종"><i>레이튼 교수</i></span>
+        <span class="seg" style="--w:4.05%;--l:4" tabindex="0" data-tip="콘솔 · 리듬 · 3종"><i>리듬</i></span>
+        <span class="seg" style="--w:6.76%;--l:5" tabindex="0" data-tip="콘솔 · 그 외 닌텐도 · 5종"><i>그 외 닌텐도</i></span>
+        <span class="seg" style="--w:1.35%;--l:0" tabindex="0" data-tip="콘솔 · PlayStation · 1종"><i>PlayStation</i></span>
+      </div>
+
+      <!-- 플랫폼 탭 -->
+      <div class="platform-tabs" role="tablist" aria-label="플랫폼">
+        <button type="button" role="tab" id="tab-pc" aria-controls="panel-pc" aria-selected="true" class="ptab is-on">PC<small>7</small></button>
+        <button type="button" role="tab" id="tab-mobile" aria-controls="panel-mobile" aria-selected="false" class="ptab">모바일<small>4</small></button>
+        <button type="button" role="tab" id="tab-console" aria-controls="panel-console" aria-selected="false" class="ptab">콘솔<small>8</small></button>
+      </div>
+      <div class="platform-panel" id="panel-pc" role="tabpanel" aria-labelledby="tab-pc">
+        <article class="shelf reveal">
+          <header class="shelf-head">
+            <h3>MOBA · 전략 <span class="count">3종</span></h3>
             <p class="obs" data-observation=""><span class="hint">관찰 메모 추가 예정</span></p>
-            <p class="link"><span class="k">연결 기획서</span><a href="#pdf-pubg">전리품 상자 파츠 루팅 프리셋</a></p>
+          </header>
+          <div class="shelf-body">
+            <div class="shelf-row">
+              <ul class="covers">
+                <li class="cover">
+                  <img src="assets/games/covers/lol.webp" alt="리그 오브 레전드 커버" loading="lazy" width="480" height="640" />
+                  <span class="cname">리그 오브 레전드</span><span class="crec">290레벨</span>
+                </li>
+                <li class="cover">
+                  <img src="assets/games/covers/dota2.webp" alt="Dota 2 커버" loading="lazy" width="480" height="640" />
+                  <span class="cname">Dota 2</span>
+                </li>
+              </ul>
+              <button class="more" type="button" aria-expanded="false" aria-controls="chips-pc-moba-전략">+1 더 보기</button>
+            </div>
+            <ul class="chips" id="chips-pc-moba-전략">
+              <li>전략적 팀 전투<small>모바일에서도 함</small></li>
+            </ul>
           </div>
         </article>
-        <article class="game-card reveal" data-genre="gacha-rpg">
-          <div class="art"><img src="assets/games/reverse1999.webp" alt="리버스:1999 공식 키아트" loading="lazy" /></div>
-          <div class="body">
-            <h3>리버스:1999</h3>
-            <div class="row"><span class="tag">수집형 RPG</span><span class="record">700일</span></div>
+        <article class="shelf reveal">
+          <header class="shelf-head">
+            <h3>슈팅 · 배틀로얄 <span class="count">3종</span></h3>
             <p class="obs" data-observation=""><span class="hint">관찰 메모 추가 예정</span></p>
-            <p class="link"><span class="k">연결 기획서</span><a href="#pdf-reverse1999">계정 단위 신규 성장 시스템 ‘잔향’</a></p>
+          </header>
+          <div class="shelf-body">
+            <div class="shelf-row">
+              <ul class="covers">
+                <li class="cover">
+                  <img src="assets/games/covers/pubg.webp" alt="PUBG: 배틀그라운드 커버" loading="lazy" width="480" height="640" />
+                  <span class="cname">PUBG: 배틀그라운드</span><span class="crec">540시간</span>
+                </li>
+                <li class="cover">
+                  <img src="assets/games/covers/overwatch.webp" alt="오버워치 커버" loading="lazy" width="480" height="640" />
+                  <span class="cname">오버워치</span>
+                </li>
+              </ul>
+              <button class="more" type="button" aria-expanded="false" aria-controls="chips-pc-슈팅-배틀로얄">+1 더 보기</button>
+            </div>
+            <ul class="chips" id="chips-pc-슈팅-배틀로얄">
+              <li>Apex 레전드</li>
+            </ul>
           </div>
         </article>
-        <article class="game-card reveal" data-genre="moba">
-          <div class="art"><img src="assets/games/lol.webp" alt="리그 오브 레전드 공식 키아트" loading="lazy" /></div>
-          <div class="body">
-            <h3>리그 오브 레전드</h3>
-            <div class="row"><span class="tag">MOBA</span><span class="record">290레벨</span></div>
+        <article class="shelf reveal">
+          <header class="shelf-head">
+            <h3>로그라이트 · 서바이버 <span class="count">6종</span></h3>
             <p class="obs" data-observation=""><span class="hint">관찰 메모 추가 예정</span></p>
+          </header>
+          <div class="shelf-body">
+            <div class="shelf-row">
+              <ul class="covers">
+                <li class="cover">
+                  <img src="assets/games/covers/vampire-survivors.webp" alt="Vampire Survivors 커버" loading="lazy" width="480" height="640" />
+                  <span class="cname">Vampire Survivors</span>
+                </li>
+                <li class="cover">
+                  <img src="assets/games/covers/enter-the-gungeon.webp" alt="Enter the Gungeon 커버" loading="lazy" width="480" height="640" />
+                  <span class="cname">Enter the Gungeon</span>
+                </li>
+              </ul>
+              <button class="more" type="button" aria-expanded="false" aria-controls="chips-pc-로그라이트-서바이버">+4 더 보기</button>
+            </div>
+            <ul class="chips" id="chips-pc-로그라이트-서바이버">
+              <li>Brotato</li>
+              <li>Spelunky 2</li>
+              <li>Cult of the Lamb</li>
+              <li>Ship of Fools</li>
+            </ul>
           </div>
         </article>
-        <article class="game-card reveal" data-genre="action-rpg">
-          <div class="art"><img src="assets/games/mongil-stardive.webp" alt="몬길: 스타다이브 공식 키아트" loading="lazy" /></div>
-          <div class="body">
-            <h3>몬길: 스타다이브</h3>
-            <div class="row"><span class="tag">액션 RPG</span></div>
+        <article class="shelf reveal">
+          <header class="shelf-head">
+            <h3>액션 · 메트로배니아 <span class="count">2종</span></h3>
             <p class="obs" data-observation=""><span class="hint">관찰 메모 추가 예정</span></p>
-            <p class="link"><span class="k">연결</span><a href="#ai-game">AI 게임 ‘태그 보스전’의 원작</a></p>
+          </header>
+          <div class="shelf-body">
+            <div class="shelf-row">
+              <ul class="covers">
+                <li class="cover">
+                  <img src="assets/games/covers/silksong.webp" alt="Hollow Knight: Silksong 커버" loading="lazy" width="480" height="640" />
+                  <span class="cname">Hollow Knight: Silksong</span>
+                </li>
+                <li class="cover">
+                  <img src="assets/games/covers/sanabi.webp" alt="산나비 커버" loading="lazy" width="480" height="640" />
+                  <span class="cname">산나비</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </article>
+        <article class="shelf reveal">
+          <header class="shelf-head">
+            <h3>퍼즐 · 시뮬레이션 <span class="count">2종</span></h3>
+            <p class="obs" data-observation=""><span class="hint">관찰 메모 추가 예정</span></p>
+          </header>
+          <div class="shelf-body">
+            <div class="shelf-row">
+              <ul class="covers">
+                <li class="cover">
+                  <img src="assets/games/covers/baba-is-you.webp" alt="Baba Is You 커버" loading="lazy" width="480" height="640" />
+                  <span class="cname">Baba Is You</span>
+                </li>
+              </ul>
+              <button class="more" type="button" aria-expanded="false" aria-controls="chips-pc-퍼즐-시뮬레이션">+1 더 보기</button>
+            </div>
+            <ul class="chips" id="chips-pc-퍼즐-시뮬레이션">
+              <li>팀파이트 매니저</li>
+            </ul>
+          </div>
+        </article>
+        <article class="shelf reveal">
+          <header class="shelf-head">
+            <h3>스토리 · 연애 시뮬레이션 (국산 인디) <span class="count">4종</span></h3>
+            <p class="obs" data-observation=""><span class="hint">관찰 메모 추가 예정</span></p>
+          </header>
+          <div class="shelf-body">
+            <div class="shelf-row">
+              <ul class="covers">
+                <li class="cover">
+                  <img src="assets/games/covers/love-delivery.webp" alt="러브 딜리버리 커버" loading="lazy" width="480" height="640" />
+                  <span class="cname">러브 딜리버리</span>
+                </li>
+              </ul>
+              <button class="more" type="button" aria-expanded="false" aria-controls="chips-pc-스토리-연애-시뮬레이션-국산-인디">+3 더 보기</button>
+            </div>
+            <ul class="chips" id="chips-pc-스토리-연애-시뮬레이션-국산-인디">
+              <li>썸썸 편의점</li>
+              <li>기적의 분식집</li>
+              <li>방구석에 인어아가씨<small>모바일</small></li>
+            </ul>
+          </div>
+        </article>
+        <article class="shelf reveal">
+          <header class="shelf-head">
+            <h3>리듬 <span class="count">1종</span></h3>
+            <p class="obs" data-observation=""><span class="hint">관찰 메모 추가 예정</span></p>
+          </header>
+          <div class="shelf-body">
+            <div class="shelf-row">
+              <ul class="covers">
+                <li class="cover">
+                  <img src="assets/games/covers/kalpa.webp" alt="칼파: 코스믹 심포니 커버" loading="lazy" width="480" height="640" />
+                  <span class="cname">칼파: 코스믹 심포니</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </article>
       </div>
-      <p class="empty" id="games-empty" hidden>이 장르의 게임이 없습니다.</p>
+      <div class="platform-panel" id="panel-mobile" role="tabpanel" aria-labelledby="tab-mobile">
+        <article class="shelf reveal">
+          <header class="shelf-head">
+            <h3>수집형 RPG <span class="count">9종</span></h3>
+            <p class="obs" data-observation=""><span class="hint">관찰 메모 추가 예정</span></p>
+          </header>
+          <div class="shelf-body">
+            <div class="shelf-row">
+              <ul class="covers">
+                <li class="cover">
+                  <img src="assets/games/covers/reverse1999.webp" alt="리버스: 1999 커버" loading="lazy" width="480" height="640" />
+                  <span class="cname">리버스: 1999</span><span class="crec">700일</span>
+                </li>
+                <li class="cover">
+                  <img src="assets/games/covers/nikke.webp" alt="승리의 여신: 니케 커버" loading="lazy" width="480" height="640" />
+                  <span class="cname">승리의 여신: 니케</span>
+                </li>
+                <li class="cover">
+                  <img src="assets/games/covers/blue-archive.webp" alt="블루 아카이브 커버" loading="lazy" width="480" height="640" />
+                  <span class="cname">블루 아카이브</span>
+                </li>
+                <li class="cover">
+                  <img src="assets/games/covers/genshin.webp" alt="원신 커버" loading="lazy" width="480" height="640" />
+                  <span class="cname">원신</span>
+                </li>
+              </ul>
+              <button class="more" type="button" aria-expanded="false" aria-controls="chips-mobile-수집형-rpg">+5 더 보기</button>
+            </div>
+            <ul class="chips" id="chips-mobile-수집형-rpg">
+              <li>트릭컬 리바이브</li>
+              <li>젠레스 존 제로</li>
+              <li>스텔라 소라</li>
+              <li>헤븐 번즈 레드</li>
+              <li><a href="#ai-game">몬길: STAR DIVE<small>AI 게임 ‘태그 보스전’의 원작</small></a></li>
+            </ul>
+          </div>
+        </article>
+        <article class="shelf reveal">
+          <header class="shelf-head">
+            <h3>방치형 · 키우기 <span class="count">3종</span></h3>
+            <p class="obs" data-observation=""><span class="hint">관찰 메모 추가 예정</span></p>
+          </header>
+          <div class="shelf-body">
+            <div class="shelf-row">
+              <ul class="covers">
+                <li class="cover">
+                  <img src="assets/games/covers/cookierun-kingdom.webp" alt="쿠키런: 킹덤 커버" loading="lazy" width="480" height="640" />
+                  <span class="cname">쿠키런: 킹덤</span>
+                </li>
+              </ul>
+              <button class="more" type="button" aria-expanded="false" aria-controls="chips-mobile-방치형-키우기">+2 더 보기</button>
+            </div>
+            <ul class="chips" id="chips-mobile-방치형-키우기">
+              <li>세븐나이츠 키우기</li>
+              <li>Mini Warriors <span class="mark" title="명칭 확인 중">※</span><small>현재 스토어에는 후속판 Mini Warriors Reborn! 만 있음</small></li>
+            </ul>
+          </div>
+        </article>
+        <article class="shelf reveal">
+          <header class="shelf-head">
+            <h3>전략 · 오토배틀러 <span class="count">1종</span></h3>
+            <p class="obs" data-observation=""><span class="hint">관찰 메모 추가 예정</span></p>
+          </header>
+          <div class="shelf-body">
+            <div class="shelf-row">
+              <ul class="covers">
+              </ul>
+            </div>
+            <ul class="chips always" id="chips-mobile-전략-오토배틀러">
+              <li>전략적 팀 전투<small>PC 와 중복</small></li>
+            </ul>
+          </div>
+        </article>
+        <article class="shelf reveal">
+          <header class="shelf-head">
+            <h3>캐주얼 · 실시간 <span class="count">2종</span></h3>
+            <p class="obs" data-observation=""><span class="hint">관찰 메모 추가 예정</span></p>
+          </header>
+          <div class="shelf-body">
+            <div class="shelf-row">
+              <ul class="covers">
+                <li class="cover">
+                  <img src="assets/games/covers/brawl-stars.webp" alt="브롤스타즈 커버" loading="lazy" width="480" height="640" />
+                  <span class="cname">브롤스타즈</span>
+                </li>
+              </ul>
+              <button class="more" type="button" aria-expanded="false" aria-controls="chips-mobile-캐주얼-실시간">+1 더 보기</button>
+            </div>
+            <ul class="chips" id="chips-mobile-캐주얼-실시간">
+              <li>Pokémon GO</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+      <div class="platform-panel" id="panel-console" role="tabpanel" aria-labelledby="tab-console" data-sub="닌텐도 DS · 3DS · Wii · Switch · Switch 2, PlayStation 2">
+        <p class="panel-sub">닌텐도 DS · 3DS · Wii · Switch · Switch 2, PlayStation 2</p>
+        <article class="shelf reveal">
+          <header class="shelf-head">
+            <h3>젤다의 전설 <span class="count">4종</span></h3>
+            <p class="obs" data-observation=""><span class="hint">관찰 메모 추가 예정</span></p>
+          </header>
+          <div class="shelf-body">
+            <div class="shelf-row">
+              <ul class="covers">
+                <li class="cover">
+                  <img src="assets/games/covers/zelda-botw.webp" alt="젤다의 전설 브레스 오브 더 와일드 커버" loading="lazy" width="480" height="640" />
+                  <span class="cname">젤다의 전설 브레스 오브 더 와일드</span>
+                </li>
+              </ul>
+              <button class="more" type="button" aria-expanded="false" aria-controls="chips-console-젤다의-전설">+3 더 보기</button>
+            </div>
+            <ul class="chips" id="chips-console-젤다의-전설">
+              <li>젤다의 전설 지혜의 투영</li>
+              <li>젤다의 전설 몽환의 모래시계 <span class="mark" title="명칭 확인 중">※</span></li>
+              <li>젤다의 전설 꿈꾸는 섬</li>
+            </ul>
+          </div>
+        </article>
+        <article class="shelf reveal">
+          <header class="shelf-head">
+            <h3>포켓몬스터 <span class="count">4종</span></h3>
+            <p class="obs" data-observation=""><span class="hint">관찰 메모 추가 예정</span></p>
+          </header>
+          <div class="shelf-body">
+            <div class="shelf-row">
+              <ul class="covers">
+                <li class="cover">
+                  <img src="assets/games/covers/pokemon-legends-arceus.webp" alt="Pokémon LEGENDS 아르세우스 커버" loading="lazy" width="480" height="640" />
+                  <span class="cname">Pokémon LEGENDS 아르세우스</span>
+                </li>
+              </ul>
+              <button class="more" type="button" aria-expanded="false" aria-controls="chips-console-포켓몬스터">+3 더 보기</button>
+            </div>
+            <ul class="chips" id="chips-console-포켓몬스터">
+              <li>포켓몬스터DP 디아루가·펄기아 / 포켓몬스터Pt 기라티나 <span class="mark" title="명칭 확인 중">※</span></li>
+              <li>포켓몬스터소드</li>
+              <li>포켓몬스터바이올렛</li>
+            </ul>
+          </div>
+        </article>
+        <article class="shelf reveal">
+          <header class="shelf-head">
+            <h3>마리오 <span class="count">14종</span></h3>
+            <p class="obs" data-observation=""><span class="hint">관찰 메모 추가 예정</span></p>
+          </header>
+          <div class="shelf-body">
+            <div class="shelf-row">
+              <ul class="covers">
+                <li class="cover">
+                  <img src="assets/games/covers/mario-odyssey.webp" alt="슈퍼 마리오 오디세이 커버" loading="lazy" width="480" height="640" />
+                  <span class="cname">슈퍼 마리오 오디세이</span>
+                </li>
+                <li class="cover">
+                  <img src="assets/games/covers/mario-galaxy-2.webp" alt="슈퍼 마리오 갤럭시 2 커버" loading="lazy" width="480" height="640" />
+                  <span class="cname">슈퍼 마리오 갤럭시 2</span>
+                </li>
+              </ul>
+              <button class="more" type="button" aria-expanded="false" aria-controls="chips-console-마리오">+12 더 보기</button>
+            </div>
+            <ul class="chips" id="chips-console-마리오">
+              <li>슈퍼 마리오 64 DS <span class="mark" title="명칭 확인 중">※</span></li>
+              <li>마리오 카트 DS <span class="mark" title="명칭 확인 중">※</span></li>
+              <li>마리오 카트 월드</li>
+              <li>뉴 슈퍼 마리오브라더스 <span class="mark" title="명칭 확인 중">※</span></li>
+              <li>동키콩 바난자</li>
+              <li>마리오 vs. 동키콩</li>
+              <li>슈퍼 마리오 메이커 2</li>
+              <li>마리오 파티 <span class="mark" title="명칭 확인 중">※</span></li>
+              <li>요시 아일랜드 DS <span class="mark" title="명칭 확인 중">※</span></li>
+              <li>슈퍼 페이퍼 마리오 <span class="mark" title="명칭 확인 중">※</span></li>
+              <li>페이퍼 마리오 1000년의 문</li>
+              <li>마리오&amp;루이지 RPG 시간의 파트너 <span class="mark" title="명칭 확인 중">※</span></li>
+            </ul>
+          </div>
+        </article>
+        <article class="shelf reveal">
+          <header class="shelf-head">
+            <h3>별의 커비 <span class="count">4종</span></h3>
+            <p class="obs" data-observation=""><span class="hint">관찰 메모 추가 예정</span></p>
+          </header>
+          <div class="shelf-body">
+            <div class="shelf-row">
+              <ul class="covers">
+                <li class="cover">
+                  <img src="assets/games/covers/kirby-forgotten-land.webp" alt="별의 커비 디스커버리 커버" loading="lazy" width="480" height="640" />
+                  <span class="cname">별의 커비 디스커버리</span>
+                </li>
+              </ul>
+              <button class="more" type="button" aria-expanded="false" aria-controls="chips-console-별의-커비">+3 더 보기</button>
+            </div>
+            <ul class="chips" id="chips-console-별의-커비">
+              <li>별의 커비 도팡 일당의 습격 <span class="mark" title="명칭 확인 중">※</span></li>
+              <li>별의 커비 울트라 슈퍼 디럭스 <span class="mark" title="명칭 확인 중">※</span></li>
+              <li>털실 커비 이야기 <span class="mark" title="명칭 확인 중">※</span></li>
+            </ul>
+          </div>
+        </article>
+        <article class="shelf reveal">
+          <header class="shelf-head">
+            <h3>레이튼 교수 <span class="count">3종</span></h3>
+            <p class="obs" data-observation=""><span class="hint">관찰 메모 추가 예정</span></p>
+          </header>
+          <div class="shelf-body">
+            <div class="shelf-row">
+              <ul class="covers">
+                <li class="cover">
+                  <img src="assets/games/covers/layton-curious-village.webp" alt="레이튼 교수와 이상한 마을 커버" loading="lazy" width="480" height="640" />
+                  <span class="cname">레이튼 교수와 이상한 마을 ※</span>
+                </li>
+              </ul>
+              <button class="more" type="button" aria-expanded="false" aria-controls="chips-console-레이튼-교수">+2 더 보기</button>
+            </div>
+            <ul class="chips" id="chips-console-레이튼-교수">
+              <li>레이튼 교수와 악마의 상자 <span class="mark" title="명칭 확인 중">※</span></li>
+              <li>레이튼 교수와 최후의 시간여행 <span class="mark" title="명칭 확인 중">※</span></li>
+            </ul>
+          </div>
+        </article>
+        <article class="shelf reveal">
+          <header class="shelf-head">
+            <h3>리듬 <span class="count">3종</span></h3>
+            <p class="obs" data-observation=""><span class="hint">관찰 메모 추가 예정</span></p>
+          </header>
+          <div class="shelf-body">
+            <div class="shelf-row">
+              <ul class="covers">
+                <li class="cover">
+                  <img src="assets/games/covers/rhythm-heaven-ds.webp" alt="리듬 세상 커버" loading="lazy" width="480" height="640" />
+                  <span class="cname">리듬 세상 ※</span>
+                </li>
+              </ul>
+              <button class="more" type="button" aria-expanded="false" aria-controls="chips-console-리듬">+2 더 보기</button>
+            </div>
+            <ul class="chips" id="chips-console-리듬">
+              <li>리듬 천국 미라클 스타즈</li>
+              <li>도와줘! 리듬 히어로 <span class="mark" title="명칭 확인 중">※</span></li>
+            </ul>
+          </div>
+        </article>
+        <article class="shelf reveal">
+          <header class="shelf-head">
+            <h3>그 외 닌텐도 <span class="count">5종</span></h3>
+            <p class="obs" data-observation=""><span class="hint">관찰 메모 추가 예정</span></p>
+          </header>
+          <div class="shelf-body">
+            <div class="shelf-row">
+              <ul class="covers">
+                <li class="cover">
+                  <img src="assets/games/covers/animal-crossing-wild-world.webp" alt="놀러오세요 동물의 숲 커버" loading="lazy" width="480" height="640" />
+                  <span class="cname">놀러오세요 동물의 숲 ※</span>
+                </li>
+              </ul>
+              <button class="more" type="button" aria-expanded="false" aria-controls="chips-console-그-외-닌텐도">+4 더 보기</button>
+            </div>
+            <ul class="chips" id="chips-console-그-외-닌텐도">
+              <li>엘레비츠: 카이와 제로의 신비한 모험 <span class="mark" title="명칭 확인 중">※</span></li>
+              <li>메이플스토리DS <span class="mark" title="명칭 확인 중">※</span></li>
+              <li>그려라 터치! 내가 만드는 세상 <span class="mark" title="명칭 확인 중">※</span></li>
+              <li>짱구는 못말려 DS 알쏭달쏭 크레용 대작전! <span class="mark" title="명칭 확인 중">※</span></li>
+            </ul>
+          </div>
+        </article>
+        <article class="shelf reveal">
+          <header class="shelf-head">
+            <h3>PlayStation <span class="count">1종</span></h3>
+            <p class="obs" data-observation=""><span class="hint">관찰 메모 추가 예정</span></p>
+          </header>
+          <div class="shelf-body">
+            <div class="shelf-row">
+              <ul class="covers">
+                <li class="cover">
+                  <img src="assets/games/covers/ratchet-clank-ps2.webp" alt="라쳇 &amp; 클랭크 커버" loading="lazy" width="480" height="640" />
+                  <span class="cname">라쳇 &amp; 클랭크 ※</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+      <p class="foot-note">명칭 확인 중인 게임은 ※ 표시 · 대표작 커버는 공식 사이트·스토어 이미지, 못 찾은 것은 게임명 타일</p>
     </div>
   </section>
 
@@ -721,22 +1147,43 @@
     cEl.textContent = '1';
   }
 
-  // ---- 플레이한 게임: 장르 필터 (메인 카드 포함) ----
-  var chips = document.querySelectorAll('.filter .chip');
-  var gameCards = document.querySelectorAll('#gamelog .game-card[data-genre]');
-  var empty = document.getElementById('games-empty');
-  chips.forEach(function (chip) {
-    chip.addEventListener('click', function () {
-      var g = chip.getAttribute('data-genre');
-      chips.forEach(function (c) { var on = c === chip; c.classList.toggle('is-on', on); c.setAttribute('aria-pressed', on ? 'true' : 'false'); });
-      var shown = 0;
-      gameCards.forEach(function (card) {
-        var show = g === 'all' || card.getAttribute('data-genre') === g;
-        card.hidden = !show; if (show) shown++;
-      });
-      empty.hidden = shown > 0;
+  // ---- 플레이한 게임: 플랫폼 탭 + 선반 펼침 (JS 없으면 전부 펼쳐 보임) ----
+  document.documentElement.classList.add('js');
+  var ptabs = document.querySelectorAll('.ptab');
+  var panels = document.querySelectorAll('.platform-panel');
+  function showPanel(id) {
+    ptabs.forEach(function (t) { var on = t.getAttribute('aria-controls') === id; t.classList.toggle('is-on', on); t.setAttribute('aria-selected', on ? 'true' : 'false'); });
+    panels.forEach(function (p) { p.classList.toggle('is-on', p.id === id); });
+  }
+  ptabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { showPanel(t.getAttribute('aria-controls')); });
+    t.addEventListener('keydown', function (e) {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      var n = (i + (e.key === 'ArrowRight' ? 1 : -1) + ptabs.length) % ptabs.length;
+      ptabs[n].focus(); showPanel(ptabs[n].getAttribute('aria-controls')); e.preventDefault();
     });
   });
+  if (panels.length) showPanel(panels[0].id);
+  document.querySelectorAll('.shelf .more').forEach(function (btn) {
+    var chips = document.getElementById(btn.getAttribute('aria-controls'));
+    if (!chips) return;
+    var n = chips.children.length;
+    chips.classList.add('is-collapsed');
+    btn.addEventListener('click', function () {
+      var open = chips.classList.toggle('is-collapsed') === false;
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.textContent = open ? '접기' : '+' + n + ' 더 보기';
+    });
+  });
+  // 장르 분포 바: 칸이 좁으면 이름 숨김
+  function fitGenreBar() {
+    document.querySelectorAll('.genre-bar .seg').forEach(function (seg) {
+      var i = seg.querySelector('i'); if (!i) return;
+      i.style.visibility = 'visible';
+      if (i.scrollWidth + 8 > seg.clientWidth) i.style.visibility = 'hidden';
+    });
+  }
+  fitGenreBar(); window.addEventListener('resize', fitGenreBar);
 })();
 </script>
 </body>

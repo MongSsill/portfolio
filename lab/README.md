@@ -131,3 +131,146 @@
 
 - 게임 밖 활동 캐러셀 6장의 캡션: `#beyond .carousel.big .slide[data-caption=""] figcaption`
 - 메이플스토리 메인 카드와 나머지 4장의 관찰 메모: `.game-card .obs[data-observation=""]`
+
+---
+
+## 5차 (2026-11-24): "플레이한 게임"을 플레이 로그 형식으로
+
+같은 브랜치에 쌓은 다섯 번째 변경입니다. 기존 파일은 여전히 건드리지 않았습니다.
+
+### 구조 (위에서 아래로)
+
+1. **메인 게임 카드** — 4차의 메이플스토리 카드 그대로(가장 오래 한 게임 · MMORPG · 플레이 기간 10년 · 2000일 출석 썸네일 · 연결 기획서 2개 · 관찰 메모 자리).
+2. **요약 띠** — 플레이한 게임 **74종**(아래 목록 73종 + 메인 게임, 중복 제거) · 플랫폼 **4**(PC · 모바일 · 닌텐도 · PlayStation) · 가장 오래 한 게임 **10년**(메이플스토리) · 장르 그룹 **19**(아래 선반 수).
+3. **장르 분포 바** — 19개 그룹의 게임 수 비율로 칸을 나눈 누적 막대. 액센트 한 색의 명도 6단계만 씁니다(`color-mix`). 칸이 좁으면 이름을 숨기고(작은 JS), 호버·포커스 시 "플랫폼 · 그룹명 · N종" 툴팁. 플랫폼 탭과 무관하게 전체 기준이며, 전략적 팀 전투는 PC·모바일 두 그룹에 모두 들어 있어 바에서는 두 번(합 74), 총계에서는 한 번 셉니다.
+4. **플랫폼 탭 3개** — PC(7그룹) / 모바일(4) / 콘솔(8). 기본 PC. 탭 아래에 그 플랫폼의 장르 선반이 세로로 쌓입니다. JS 가 없으면 세 패널이 모두 펼쳐져 보입니다.
+5. **장르 선반** — 왼쪽: 그룹명 + N종 + 관찰 메모 자리(`data-observation=""`, "관찰 메모 추가 예정"). 오른쪽: 대표작(★) 커버 1~4장(3:4, 135×180px, 기록이 있으면 커버 아래 표시) + "+N 더 보기" 버튼 → 나머지 게임이 텍스트 칩으로 펼쳐집니다(접기 가능, 기본 접힘, JS 없으면 모두 보임). 대표작이 없는 그룹(모바일 · 전략 · 오토배틀러)은 칩만 바로 보입니다.
+6. 섹션 하단 작은 글씨: "명칭 확인 중인 게임은 ※ 표시".
+
+동작: 탭은 클릭과 ←/→ 키, 선반 펼침은 버튼(`aria-expanded`), 툴팁은 CSS. `prefers-reduced-motion` 이면 전환 효과를 끕니다. 모바일(820px 이하)에서는 선반이 세로로 쌓이고 커버 줄은 가로 스크롤, "+N 더 보기"는 커버 줄 아래 전체 폭 버튼입니다.
+
+### 총계 산출 방식
+
+- 게임 종수: 아래 표의 게임을 이름 기준으로 세되 **전략적 팀 전투(PC·모바일 중복)는 한 번**, **칼파는 한 번**만 셉니다 → 73종. 여기에 메인 게임 메이플스토리를 더해 **74종**.
+- 장르 그룹: 선반 수 19(PC 7 + 모바일 4 + 콘솔 8). 메인 게임의 MMORPG 는 선반이 아니라 그룹 수에 넣지 않았습니다.
+- 생성: 목록은 스크래치의 생성기 스크립트(데이터 → HTML)로 만들어 `lab/index.html` 에 정적으로 넣었습니다. 사이트에는 JSON 이나 빌드 단계가 없습니다.
+
+### 대표작 커버 출처 (`lab/assets/games/covers/`, 모두 480×640 WebP)
+
+| 대표작 | 파일 | 출처 | 비고 |
+|---|---|---|---|
+| 리그 오브 레전드 | lol.webp | https://www.leagueoflegends.com/ko-kr/ og:image (2차에서 받음) | 가로 로고 이미지라 흐린 배경 위에 레터박스 |
+| Dota 2 | dota2.webp | Steam 스토어 세로 캡슐 https://store.steampowered.com/app/570/ | |
+| PUBG: 배틀그라운드 | pubg.webp | Steam 세로 캡슐 https://store.steampowered.com/app/578080/ | |
+| 오버워치 | overwatch.webp | Steam 세로 캡슐 https://store.steampowered.com/app/2357570/ | |
+| Vampire Survivors | vampire-survivors.webp | Steam 세로 캡슐 https://store.steampowered.com/app/1794680/ | |
+| Enter the Gungeon | enter-the-gungeon.webp | Steam 세로 캡슐 https://store.steampowered.com/app/311690/ | |
+| Hollow Knight: Silksong | silksong.webp | Steam 세로 캡슐 https://store.steampowered.com/app/1030300/ | |
+| 산나비 | sanabi.webp | Steam 세로 캡슐 https://store.steampowered.com/app/1562700/ | |
+| Baba Is You | baba-is-you.webp | Steam 세로 캡슐 https://store.steampowered.com/app/736260/ | |
+| 러브 딜리버리 | love-delivery.webp | Steam 세로 캡슐 https://store.steampowered.com/app/1817940/ | |
+| 칼파: 코스믹 심포니 | kalpa.webp | Steam 세로 캡슐 https://store.steampowered.com/app/2717010/ | |
+| 리버스: 1999 | reverse1999.webp | https://re1999.bluepoch.com/ og:image (2차에서 받음) | 레터박스 |
+| 승리의 여신: 니케 | nikke.webp | https://nikke-kr.com/ og:image | 레터박스 |
+| 블루 아카이브 | blue-archive.webp | https://bluearchive.nexon.com/ og:image (현재 이벤트 키비주얼) | 레터박스 |
+| 원신 | genshin.webp | https://genshin.hoyoverse.com/ko/home og:image | |
+| 쿠키런: 킹덤 | cookierun-kingdom.webp | https://www.cookierun-kingdom.com/ko/ og:image | |
+| 브롤스타즈 | brawl-stars.webp | https://supercell.com/en/games/brawlstars/ og:image | |
+| 젤다의 전설 브레스 오브 더 와일드 | zelda-botw.webp | 닌텐도 코리아 스토어 https://store.nintendo.co.kr/70010000009367 제품 이미지 | |
+| Pokémon LEGENDS 아르세우스 | pokemon-legends-arceus.webp | https://store.nintendo.co.kr/70010000039947 제품 이미지 | |
+| 슈퍼 마리오 오디세이 | mario-odyssey.webp | https://store.nintendo.co.kr/70010000009372 제품 이미지 | |
+| 슈퍼 마리오 갤럭시 2 | mario-galaxy-2.webp | https://store.nintendo.co.kr/70010000104194 제품 이미지 | |
+| 별의 커비 디스커버리 | kirby-forgotten-land.webp | https://store.nintendo.co.kr/hacparzgakor 제품 이미지 | |
+| 레이튼 교수와 이상한 마을 | layton-curious-village.webp | **타이포 타일** — Level-5 공식 페이지(layton.jp)에서 받을 수 있는 이미지 없음 | |
+| 리듬 세상 | rhythm-heaven-ds.webp | **타이포 타일** — 닌텐도 공식 DS 페이지 없음 | |
+| 놀러오세요 동물의 숲 | animal-crossing-wild-world.webp | **타이포 타일** — nintendo.co.jp DS 페이지에 og:image 없음 | |
+| 라쳇 & 클랭크 (PS2) | ratchet-clank-ps2.webp | **타이포 타일** — PlayStation 사이트에는 PS4 리메이크만 있음 | |
+
+가로형 원본은 주요 피사체 기준으로 세로 크롭했고, 로고 중심의 가로 이미지 4장(리그 오브 레전드 · 리버스: 1999 · 블루 아카이브 · 니케)은 잘리면 읽히지 않아 흐린 배경 위에 원본을 그대로 올리는 레터박스로 만들었습니다. 대표작이 아닌 게임의 이미지는 받지 않았습니다.
+
+### 명칭 확인 결과 (모든 게임)
+
+공식 사이트·공식 스토어 페이지(Steam KR, App Store KR, 닌텐도 코리아 스토어)에서 직접 확인한 표기는 "확인", 보도자료 인용 기사 같은 2차 출처만 있거나 아무 데서도 못 찾은 것은 "※ 미확인"으로 두고 페이지에도 ※ 를 붙였습니다. 영문 공식명만 있는 게임은 영문 그대로 썼습니다.
+
+| 플랫폼 | 그룹 | 원래 메모 | 쓴 표기 | 확인 출처 | 상태 |
+|---|---|---|---|---|---|
+| — | 메인 | 메이플스토리 | 메이플스토리 | https://maplestory.nexon.com/ (2차에서 확인) | 확인 |
+| PC | MOBA · 전략 | 리그 오브 레전드 | 리그 오브 레전드 | https://www.leagueoflegends.com/ko-kr/ | 확인 |
+| PC | MOBA · 전략 | Dota 2 | Dota 2 | https://store.steampowered.com/app/570/ | 확인 |
+| PC | MOBA · 전략 | 전략적 팀 전투(TFT) | 전략적 팀 전투 | https://apps.apple.com/kr/app/id1480616748 | 확인 |
+| PC | 슈팅 · 배틀로얄 | 배틀그라운드 | PUBG: 배틀그라운드 | https://pubg.com/ko | 확인 |
+| PC | 슈팅 · 배틀로얄 | 오버워치 | 오버워치 | https://overwatch.blizzard.com/ko-kr/ | 확인 |
+| PC | 슈팅 · 배틀로얄 | Apex 레전드 | Apex 레전드 | https://store.steampowered.com/app/1172470/ | 확인 |
+| PC | 로그라이트 · 서바이버 | Vampire Survivors | Vampire Survivors | https://store.steampowered.com/app/1794680/ | 확인 |
+| PC | 로그라이트 · 서바이버 | 엔터 더 건전 | Enter the Gungeon | https://store.steampowered.com/app/311690/ | 확인 |
+| PC | 로그라이트 · 서바이버 | Brotato | Brotato | https://store.steampowered.com/app/1942280/ | 확인 |
+| PC | 로그라이트 · 서바이버 | Spelunky 2 | Spelunky 2 | https://store.steampowered.com/app/418530/ | 확인 |
+| PC | 로그라이트 · 서바이버 | Cult of the Lamb | Cult of the Lamb | https://store.steampowered.com/app/1313140/ | 확인 |
+| PC | 로그라이트 · 서바이버 | Ship of Fools | Ship of Fools | https://store.steampowered.com/app/1286580/ | 확인 |
+| PC | 액션 · 메트로배니아 | 할로우 나이트: 실크송 | Hollow Knight: Silksong | https://store.steampowered.com/app/1030300/ | 확인 |
+| PC | 액션 · 메트로배니아 | 산나비 | 산나비 | https://store.steampowered.com/app/1562700/ | 확인 |
+| PC | 퍼즐 · 시뮬레이션 | Baba Is You | Baba Is You | https://store.steampowered.com/app/736260/ | 확인 |
+| PC | 퍼즐 · 시뮬레이션 | 팀파이트 매니저 | 팀파이트 매니저 | https://store.steampowered.com/app/1372810/ | 확인 |
+| PC | 스토리 · 연애 시뮬레이션 (국산 인디) | 러브 딜리버리 | 러브 딜리버리 | https://store.steampowered.com/app/1817940/ | 확인 |
+| PC | 스토리 · 연애 시뮬레이션 (국산 인디) | 썸썸편의점 | 썸썸 편의점 | https://store.steampowered.com/app/1217390/ | 확인 |
+| PC | 스토리 · 연애 시뮬레이션 (국산 인디) | 기적의 분식집 | 기적의 분식집 | https://store.steampowered.com/app/995460/ | 확인 |
+| PC | 스토리 · 연애 시뮬레이션 (국산 인디) | 방구석의 인어아가씨 | 방구석에 인어아가씨 | https://apps.apple.com/kr/app/id904882274 | 확인 |
+| PC | 리듬 | 칼파(KALPA) | 칼파: 코스믹 심포니 | https://store.steampowered.com/app/2717010/ | 확인 |
+| 모바일 | 수집형 RPG | 리버스:1999 | 리버스: 1999 | https://apps.apple.com/kr/app/id6449023119 | 확인 |
+| 모바일 | 수집형 RPG | 승리의 여신: 니케 | 승리의 여신: 니케 | https://nikke-kr.com/ | 확인 |
+| 모바일 | 수집형 RPG | 블루 아카이브 | 블루 아카이브 | https://bluearchive.nexon.com/ | 확인 |
+| 모바일 | 수집형 RPG | 원신 | 원신 | https://apps.apple.com/kr/app/id1517783697 | 확인 |
+| 모바일 | 수집형 RPG | 트릭컬 리바이브 | 트릭컬 리바이브 | https://apps.apple.com/kr/app/id6443824730 | 확인 |
+| 모바일 | 수집형 RPG | 젠레스 존 제로 | 젠레스 존 제로 | https://apps.apple.com/kr/app/id1606356401 | 확인 |
+| 모바일 | 수집형 RPG | 스텔라 소라 | 스텔라 소라 | https://apps.apple.com/kr/app/id6738407268 | 확인 |
+| 모바일 | 수집형 RPG | 헤븐 번즈 레드 | 헤븐 번즈 레드 | https://apps.apple.com/kr/app/id1576831351 | 확인 |
+| 모바일 | 수집형 RPG | 몬길: 스타다이브 | 몬길: STAR DIVE | https://stardive.netmarble.com/ | 확인 |
+| 모바일 | 방치형 · 키우기 | 쿠키런: 킹덤 | 쿠키런: 킹덤 | https://www.cookierun-kingdom.com/ko/ | 확인 |
+| 모바일 | 방치형 · 키우기 | 세븐나이츠 키우기 | 세븐나이츠 키우기 | https://apps.apple.com/kr/app/id1658717149 | 확인 |
+| 모바일 | 방치형 · 키우기 | Mini Warriors | Mini Warriors ※ | https://apps.apple.com/kr/app/id6742878205 | ※ 미확인 |
+| 모바일 | 전략 · 오토배틀러 | 전략적 팀 전투(TFT) | 전략적 팀 전투 | https://apps.apple.com/kr/app/id1480616748 | 확인 |
+| 모바일 | 캐주얼 · 실시간 | 브롤스타즈 | 브롤스타즈 | https://apps.apple.com/kr/app/id1229016807 | 확인 |
+| 모바일 | 캐주얼 · 실시간 | 포켓몬 GO | Pokémon GO | https://apps.apple.com/kr/app/id1094591345 | 확인 |
+| 콘솔 | 젤다의 전설 | 젤다의 전설: 야생의 숨결 | 젤다의 전설 브레스 오브 더 와일드 | https://store.nintendo.co.kr/70010000009367 | 확인 |
+| 콘솔 | 젤다의 전설 | 지혜의 투영 | 젤다의 전설 지혜의 투영 | https://store.nintendo.co.kr/70010000084620 | 확인 |
+| 콘솔 | 젤다의 전설 | 몽환의 모래시계 | 젤다의 전설 몽환의 모래시계 ※ | https://www.gamemeca.com/view.php?gid=70372 | ※ 미확인 — 한국닌텐도 보도자료를 인용한 기사(2차 출처) |
+| 콘솔 | 젤다의 전설 | 꿈꾸는 섬 | 젤다의 전설 꿈꾸는 섬 | https://store.nintendo.co.kr/70010000022823 | 확인 |
+| 콘솔 | 포켓몬스터 | Pokémon LEGENDS 아르세우스 | Pokémon LEGENDS 아르세우스 | https://store.nintendo.co.kr/70010000039947 | 확인 |
+| 콘솔 | 포켓몬스터 | 포켓몬스터 디아루가·펄기아·Pt 기라티나 | 포켓몬스터DP 디아루가·펄기아 / 포켓몬스터Pt 기라티나 ※ | https://www.gamemeca.com/view.php?gid=82367 | ※ 미확인 — 한국닌텐도 보도자료를 인용한 기사(2차 출처) |
+| 콘솔 | 포켓몬스터 | 포켓몬스터 소드 | 포켓몬스터소드 | https://store.nintendo.co.kr/70010000026251 | 확인 |
+| 콘솔 | 포켓몬스터 | 포켓몬스터 바이올렛 | 포켓몬스터바이올렛 | https://store.nintendo.co.kr/70010000053973 | 확인 |
+| 콘솔 | 마리오 | 슈퍼 마리오 오디세이 | 슈퍼 마리오 오디세이 | https://store.nintendo.co.kr/70010000009372 | 확인 |
+| 콘솔 | 마리오 | 슈퍼 마리오 갤럭시 2 | 슈퍼 마리오 갤럭시 2 | https://store.nintendo.co.kr/70010000104194 | 확인 |
+| 콘솔 | 마리오 | 슈퍼 마리오 64 DS | 슈퍼 마리오 64 DS ※ | https://www.gamemeca.com/view.php?gid=52608 | ※ 미확인 — 유통사 보도 기사만 확인(2차 출처) |
+| 콘솔 | 마리오 | 마리오 카트 DS (“카트”로만 적혀 있어 DS 로 추정) | 마리오 카트 DS ※ | https://www.gamemeca.com/view.php?gid=52608 | ※ 미확인 — 작품 특정이 추정이며 기사(2차 출처)만 확인 |
+| 콘솔 | 마리오 | 마리오 카트 월드 | 마리오 카트 월드 | https://store.nintendo.co.kr/beepaaaaakor | 확인 |
+| 콘솔 | 마리오 | 뉴 슈퍼 마리오브라더스 | 뉴 슈퍼 마리오브라더스 ※ | — | ※ 미확인 — 공식 페이지·보도 모두 확인 못 함 |
+| 콘솔 | 마리오 | 동키콩 바난자 | 동키콩 바난자 | https://store.nintendo.co.kr/7000200 | 확인 |
+| 콘솔 | 마리오 | 마리오 vs. 동키콩(DS) | 마리오 vs. 동키콩 | https://store.nintendo.co.kr/70010000072193 | 확인 |
+| 콘솔 | 마리오 | 슈퍼 마리오 메이커 2 | 슈퍼 마리오 메이커 2 | https://store.nintendo.co.kr/70010000020843 | 확인 |
+| 콘솔 | 마리오 | 마리오 파티 (어느 작품인지 확인 필요) | 마리오 파티 ※ | — | ※ 미확인 — 시리즈 중 어느 작품인지 미확정 |
+| 콘솔 | 마리오 | 요시 아일랜드 DS | 요시 아일랜드 DS ※ | — | ※ 미확인 — 공식 페이지·보도 모두 확인 못 함 |
+| 콘솔 | 마리오 | 슈퍼 페이퍼 마리오 | 슈퍼 페이퍼 마리오 ※ | — | ※ 미확인 — 공식 페이지·보도 모두 확인 못 함 |
+| 콘솔 | 마리오 | 페이퍼 마리오 1000년의 문 | 페이퍼 마리오 1000년의 문 | https://store.nintendo.co.kr/70010000079169 | 확인 |
+| 콘솔 | 마리오 | 마리오&루이지 RPG 2 | 마리오&루이지 RPG 시간의 파트너 ※ | https://www.gamemeca.com/view.php?gid=86775 | ※ 미확인 — 한국닌텐도 보도자료를 인용한 기사(2차 출처) |
+| 콘솔 | 별의 커비 | 별의 커비 디스커버리 | 별의 커비 디스커버리 | https://store.nintendo.co.kr/hacparzgakor | 확인 |
+| 콘솔 | 별의 커비 | 별의 커비 도팡 일당의 습격 | 별의 커비 도팡 일당의 습격 ※ | — | ※ 미확인 — 공식 페이지·보도 모두 확인 못 함 |
+| 콘솔 | 별의 커비 | 별의 커비 울트라 슈퍼 디럭스 | 별의 커비 울트라 슈퍼 디럭스 ※ | — | ※ 미확인 — 공식 페이지·보도 모두 확인 못 함 |
+| 콘솔 | 별의 커비 | 털실 커비 이야기 | 털실 커비 이야기 ※ | https://www.gamemeca.com/view.php?gid=91962 | ※ 미확인 — 한국닌텐도 보도자료를 인용한 기사(2차 출처) |
+| 콘솔 | 레이튼 교수 | 레이튼 교수와 이상한 마을 | 레이튼 교수와 이상한 마을 ※ | https://www.gamemeca.com/view.php?gid=72987 | ※ 미확인 — 한국닌텐도 보도자료를 인용한 기사(2차 출처) |
+| 콘솔 | 레이튼 교수 | 레이튼 교수와 악마의 상자 | 레이튼 교수와 악마의 상자 ※ | — | ※ 미확인 — 공식 페이지·보도 모두 확인 못 함 |
+| 콘솔 | 레이튼 교수 | 레이튼 교수와 최후의 시간여행 | 레이튼 교수와 최후의 시간여행 ※ | — | ※ 미확인 — 공식 페이지·보도 모두 확인 못 함 |
+| 콘솔 | 리듬 | 리듬 세상 | 리듬 세상 ※ | https://www.gamemeca.com/view.php?gid=83934 | ※ 미확인 — DS 판 소개 기사만 확인(2차 출처) |
+| 콘솔 | 리듬 | 리듬 천국 미라클 스타즈 | 리듬 천국 미라클 스타즈 | https://store.nintendo.co.kr/hacpbfltakor | 확인 |
+| 콘솔 | 리듬 | 도와줘! 리듬 히어로 | 도와줘! 리듬 히어로 ※ | — | ※ 미확인 — 공식 페이지·보도 모두 확인 못 함 |
+| 콘솔 | 그 외 닌텐도 | 놀러오세요 동물의 숲 | 놀러오세요 동물의 숲 ※ | https://www.gamemeca.com/view.php?gid=83193 | ※ 미확인 — 후속작 기사에 국내 판매량과 함께 언급(2차 출처) |
+| 콘솔 | 그 외 닌텐도 | 엘레비츠: 카이와 제로의 신비한 모험 | 엘레비츠: 카이와 제로의 신비한 모험 ※ | — | ※ 미확인 — 공식 페이지·보도 모두 확인 못 함 |
+| 콘솔 | 그 외 닌텐도 | 메이플스토리 DS | 메이플스토리DS ※ | https://www.gamemeca.com/view.php?gid=79968 | ※ 미확인 — 한국닌텐도 보도자료를 인용한 기사(2차 출처) |
+| 콘솔 | 그 외 닌텐도 | 그려라 터치! 내가 만드는 세상 | 그려라 터치! 내가 만드는 세상 ※ | — | ※ 미확인 — 공식 페이지·보도 모두 확인 못 함 |
+| 콘솔 | 그 외 닌텐도 | 짱구 크레용 대작전 | 짱구는 못말려 DS 알쏭달쏭 크레용 대작전! ※ | https://www.gamemeca.com/view.php?gid=70428 | ※ 미확인 — 유통사(대원미디어) 발표 기사(2차 출처) |
+| 콘솔 | PlayStation | 라쳇 & 클랭크(PS2) — “PS2 로 했었음, 명칭 확인 필요” | 라쳇 & 클랭크 ※ | https://www.gamemeca.com/view.php?gid=47912 | ※ 미확인 — PS2 국내판은 2편 「라쳇 & 클랭크 : 공구전사 대박몰이」(2004) 기사만 확인. 어느 편인지 미확정 |
+
+### 5차에서 비워 둔 자리
+
+- 19개 선반의 관찰 메모: `.shelf-head .obs[data-observation=""]`
+- 메인 카드 관찰 메모: `#game-maplestory .obs[data-observation=""]`
